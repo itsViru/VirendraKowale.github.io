@@ -4,7 +4,7 @@
 	<title>Virendra Kowale — E-Mobility & Data Analytics</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="E-Mobility and energy professional in Aachen, Germany — EV charging test automation (OCPP, ISO 15118, SiL/HiL) plus 2.5 years of European market intelligence across 25+ markets. Open to Business Analyst, Data Analyst, Test Automation, and EV Charging Consultant roles." />
+	<meta name="description" content="E-Mobility and energy professional in Aachen, Germany — EV charging test automation (OCPP, ISO 15118, SiL/HiL) plus 2.5 years of European market intelligence across 25+ markets. Open to Business Analyst, Data Analyst, Test Automation, Market Intelligence, Project Management, and EV Charging Consultant roles." />
 	<meta name="author" content="Virendra Kowale" />
 	<meta name="theme-color" content="#0a0a0a" />
 
@@ -84,7 +84,7 @@
 			top: 1.5rem; left: 50%;
 			transform: translateX(-50%);
 			z-index: 100;
-			display: flex; align-items: center; gap: 0.4rem;
+			display: flex; align-items: center; gap: 0.3rem;
 			padding: 0.4rem 0.5rem 0.4rem 1rem;
 			background: rgba(15,15,15,0.78);
 			backdrop-filter: blur(20px);
@@ -121,6 +121,25 @@
 			letter-spacing: 0.02em;
 		}
 		.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
+		.lang-switch {
+			display: flex; gap: 0.1rem;
+			padding: 0 0.35rem;
+			border-left: 1px solid var(--line);
+		}
+		.lang-switch button {
+			font-family: var(--mono);
+			font-size: 0.68rem;
+			padding: 0.38rem 0.5rem;
+			background: transparent;
+			border: none;
+			color: var(--ink-3);
+			cursor: pointer;
+			border-radius: 99px;
+			transition: color 0.2s, background 0.2s;
+			letter-spacing: 0.04em;
+		}
+		.lang-switch button:hover { color: var(--ink); }
+		.lang-switch button.active { color: var(--acid); background: var(--acid-pale); }
 		.nav-cta {
 			background: var(--acid);
 			color: #0a0a0a !important;
@@ -132,8 +151,9 @@
 		.nav-cta:hover { background: var(--acid-dim); }
 		@media (max-width: 720px) {
 			.nav { top: 0.8rem; padding: 0.35rem 0.4rem 0.35rem 0.85rem; }
-			.nav-links a { padding: 0.4rem 0.55rem; font-size: 0.68rem; }
-			.nav-cta { padding: 0.45rem 0.85rem; font-size: 0.7rem; }
+			.nav-links a { padding: 0.4rem 0.5rem; font-size: 0.66rem; }
+			.lang-switch button { padding: 0.35rem 0.4rem; font-size: 0.64rem; }
+			.nav-cta { padding: 0.45rem 0.75rem; font-size: 0.66rem; }
 		}
 
 		/* ═══ HERO ═══ */
@@ -237,7 +257,6 @@
 			color: var(--ink);
 			background: var(--acid-pale);
 		}
-		.pill .ico { font-style: normal; }
 
 		.hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2.6rem; }
 		.btn {
@@ -412,26 +431,23 @@
 			overflow: hidden;
 			position: relative;
 		}
-		.proj-img img {
-			width: 100%; height: 100%;
-			object-fit: cover;
-			transition: transform 0.6s var(--ease);
-		}
-		.proj:hover .proj-img img { transform: scale(1.04); }
 
+		/* Consistent metric tiles for ALL projects */
 		.tile {
 			width: 100%; height: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			gap: 0.4rem;
+			gap: 0.45rem;
 			background-image:
 				linear-gradient(rgba(182,255,60,0.05) 1px, transparent 1px),
 				linear-gradient(90deg, rgba(182,255,60,0.05) 1px, transparent 1px);
 			background-size: 28px 28px;
 			position: relative;
+			transition: transform 0.6s var(--ease);
 		}
+		.proj:hover .tile { transform: scale(1.03); }
 		.tile::after {
 			content: '';
 			position: absolute; inset: 0;
@@ -455,6 +471,8 @@
 			text-transform: uppercase;
 			letter-spacing: 0.12em;
 			position: relative; z-index: 1;
+			text-align: center;
+			padding: 0 0.5rem;
 		}
 
 		.badge {
@@ -593,7 +611,7 @@
 			font-style: italic;
 			font-size: clamp(1.05rem, 1.8vw, 1.35rem);
 			color: var(--ink-2);
-			max-width: 42ch;
+			max-width: 46ch;
 			margin: 0 auto 2.4rem;
 			line-height: 1.45;
 		}
@@ -740,11 +758,15 @@
 		<span>VK</span>
 	</a>
 	<div class="nav-links">
-		<a href="#work">Work</a>
-		<a href="#about">About</a>
-		<a href="cv.html">CV</a>
+		<a href="#work" data-i18n="nav_work">Work</a>
+		<a href="#about" data-i18n="nav_about">About</a>
+		<a href="cv.html" data-i18n="nav_cv">CV</a>
 	</div>
-	<a href="mailto:kowalevirendra@gmail.com" class="nav-cta">Get in touch</a>
+	<div class="lang-switch" aria-label="Language">
+		<button type="button" data-lang="en" class="active">EN</button>
+		<button type="button" data-lang="de">DE</button>
+	</div>
+	<a href="mailto:kowalevirendra@gmail.com" class="nav-cta" data-i18n="nav_cta">Get in touch</a>
 </nav>
 
 <!-- HERO -->
@@ -753,44 +775,44 @@
 	<div class="container hero-inner">
 		<div class="hero-meta">
 			<span class="hero-meta-dot"></span>
-			<span>AVAILABLE · AACHEN / EU / REMOTE</span>
+			<span data-i18n="hero_meta">AVAILABLE · AACHEN / EU / REMOTE</span>
 		</div>
 
 		<h1>
-			<span class="hi">Hi 👋, I'm</span>
+			<span class="hi" data-i18n="hero_hi">Hi 👋, I'm</span>
 			Virendra <span class="ser">Kowale.</span>
 		</h1>
 
-		<p class="hero-sub">
+		<p class="hero-sub" data-i18n="hero_sub">
 			A rare blend of management and engineering — commercial strategy on one side, protocol-level EV charging on the other.
 		</p>
 
 		<div class="pills">
-			<span class="pill"><span class="ico">📊</span> Business &amp; Data Analyst</span>
-			<span class="pill"><span class="ico">⚡</span> E-Mobility / EV Charging Consultant</span>
-			<span class="pill"><span class="ico">🔧</span> Test Automation Engineer</span>
-			<span class="pill"><span class="ico">🎓</span> M.Sc. RWTH Aachen</span>
-			<span class="pill"><span class="ico">🇩🇪</span> German — daily working language</span>
-			<span class="pill"><span class="ico">📍</span> Aachen, Germany</span>
+			<span class="pill" data-i18n="pill1">📊&nbsp; Business &amp; Data Analyst</span>
+			<span class="pill" data-i18n="pill2">⚡&nbsp; E-Mobility / EV Charging Consultant</span>
+			<span class="pill" data-i18n="pill3">🔧&nbsp; Test Automation Engineer</span>
+			<span class="pill" data-i18n="pill4">🎓&nbsp; M.Sc. RWTH Aachen</span>
+			<span class="pill" data-i18n="pill5">🇩🇪&nbsp; German — daily working language</span>
+			<span class="pill" data-i18n="pill6">📍&nbsp; Aachen, Germany</span>
 		</div>
 
 		<div class="hero-cta-row">
 			<a href="#work" class="btn btn-primary">
-				See selected work
+				<span data-i18n="btn_work">See selected work</span>
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
 			</a>
-			<a href="cv.html" class="btn btn-ghost">Read my story</a>
+			<a href="cv.html" class="btn btn-ghost"><span data-i18n="btn_story">Read my story</span></a>
 		</div>
 
 		<div class="hero-stats">
-			<div class="hero-stat"><div class="v">3+</div><div class="l">Years in E-Mobility</div></div>
-			<div class="hero-stat"><div class="v">25+</div><div class="l">EU markets analysed</div></div>
-			<div class="hero-stat"><div class="v">100k+</div><div class="l">Data points analysed</div></div>
-			<div class="hero-stat"><div class="v">50+</div><div class="l">Market reports delivered</div></div>
+			<div class="hero-stat"><div class="v">3+</div><div class="l" data-i18n="stat1">Years in E-Mobility</div></div>
+			<div class="hero-stat"><div class="v">25+</div><div class="l" data-i18n="stat2">EU markets analysed</div></div>
+			<div class="hero-stat"><div class="v">100k+</div><div class="l" data-i18n="stat3">Data points analysed</div></div>
+			<div class="hero-stat"><div class="v">50+</div><div class="l" data-i18n="stat4">Market reports delivered</div></div>
 		</div>
 	</div>
 	<div class="hero-scroll">
-		<span>SCROLL</span>
+		<span data-i18n="scroll">SCROLL</span>
 		<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
 	</div>
 </section>
@@ -799,17 +821,17 @@
 <section id="about">
 	<div class="container reveal">
 		<div class="sec-head">
-			<div class="sec-num"><strong>01</strong> / ABOUT</div>
-			<h2 class="sec-title">Two halves, <em>one career.</em></h2>
+			<div class="sec-num"><strong>01</strong> / <span data-i18n="sec01">ABOUT</span></div>
+			<h2 class="sec-title" data-i18n="sec01_title">Two halves, <em>one career.</em></h2>
 		</div>
-		<p class="about-lead">
+		<p class="about-lead" data-i18n="about_lead">
 			I turn <span class="hl">market data into investment decisions</span> — and charging protocols into automated tests.
 		</p>
-		<p class="about-line">
+		<p class="about-line" data-i18n="about_line">
 			2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation with a projected €35–45k annual efficiency gain.
 		</p>
 		<a href="cv.html" class="about-cv-link">
-			Read the full story on my CV
+			<span data-i18n="about_cv">Read the full story on my CV</span>
 			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
 		</a>
 	</div>
@@ -819,8 +841,8 @@
 <section id="work">
 	<div class="container reveal">
 		<div class="sec-head">
-			<div class="sec-num"><strong>02</strong> / SELECTED WORK</div>
-			<h2 class="sec-title">Projects, <em>shipped.</em></h2>
+			<div class="sec-num"><strong>02</strong> / <span data-i18n="sec02">SELECTED WORK</span></div>
+			<h2 class="sec-title" data-i18n="sec02_title">Projects, <em>shipped.</em></h2>
 		</div>
 
 		<div class="proj-list">
@@ -828,68 +850,69 @@
 			<!-- ★ FEATURED — Germany 2030 -->
 			<a href="https://github.com/itsViru/EV_Charging_Infrastructure_Analysis_Tool" target="_blank" rel="noopener" class="proj featured">
 				<div class="proj-img">
-					<span class="badge">★ Featured</span>
-					<!-- THUMBNAIL: when ready, replace this .tile div with:
-					     <img src="images/germany2030.jpg" alt="Strategic Investment Planner Germany 2030" loading="lazy" /> -->
+					<span class="badge" data-i18n="badge_feat">★ Featured</span>
 					<div class="tile">
 						<span class="big">DE → 2030</span>
-						<span class="small">Tableau Dashboard</span>
+						<span class="small" data-i18n="tile1">Tableau Dashboard</span>
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year">Jan – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering</div>
-					<h3 class="proj-title">Strategic Investment Planner: <em>Germany 2030</em></h3>
-					<p class="proj-desc">Interactive Tableau dashboard quantifying Germany's EV charging infrastructure gap through 2030 — What-If scenario sliders that update a <strong>revenue opportunity model</strong> live, built to support Charge Point Operator investment decisions.</p>
-					<p class="proj-kpi">Revenue Opportunity Gap · AFIR Compliance Index · Infrastructure Sufficiency · 4 Scenario Sliders</p>
+					<div class="proj-year" data-i18n="p1_year">Jan – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering</div>
+					<h3 class="proj-title" data-i18n="p1_title">Strategic Investment Planner: <em>Germany 2030</em></h3>
+					<p class="proj-desc" data-i18n="p1_desc">Interactive Tableau dashboard quantifying Germany's EV charging infrastructure gap through 2030 — What-If scenario sliders that update a <strong>revenue opportunity model</strong> live, built to support Charge Point Operator investment decisions.</p>
+					<p class="proj-kpi" data-i18n="p1_kpi">Revenue Opportunity Gap · AFIR Compliance Index · Infrastructure Sufficiency · 4 Scenario Sliders</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
-						<span>Tableau</span><span>Excel</span><span>EV Market Analysis</span>
-						<span>Business Intelligence</span><span>Scenario Modelling</span>
+						<span>Tableau</span><span>Excel</span><span data-i18n="p1_t3">EV Market Analysis</span>
+						<span>Business Intelligence</span><span data-i18n="p1_t5">Scenario Modelling</span>
 					</div>
-					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+					<span class="proj-link"><span data-i18n="link_gh">View on GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
 				</div>
 			</a>
 
 			<!-- Documentation Automation Initiative -->
 			<div class="proj">
 				<div class="proj-img">
-					<span class="badge">Internal Initiative</span>
+					<span class="badge" data-i18n="badge_int">Internal Initiative</span>
 					<div class="tile">
 						<span class="big">AI × Reporting</span>
-						<span class="small">Piloting · aixACCT</span>
+						<span class="small" data-i18n="tile2">Piloting · aixACCT</span>
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year">Nov 2025 – ongoing · Strategic efficiency initiative, direct reporting line to department head</div>
-					<h3 class="proj-title">Documentation <em>Automation Initiative</em></h3>
-					<p class="proj-desc">Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.</p>
+					<div class="proj-year" data-i18n="p2_year">May 2026 – ongoing · Strategic efficiency initiative, direct reporting line to department head</div>
+					<h3 class="proj-title" data-i18n="p2_title">Documentation <em>Automation Initiative</em></h3>
+					<p class="proj-desc" data-i18n="p2_desc">Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
 						<span>Python</span><span>Jira</span><span>Enterprise Claude AI</span>
-						<span>GDPR</span><span>Process Automation</span>
+						<span data-i18n="p2_t4">GDPR</span><span data-i18n="p2_t5">Process Automation</span>
 					</div>
-					<span class="proj-link muted">Internal project — details on request</span>
+					<span class="proj-link muted" data-i18n="p2_link">Internal project — details on request</span>
 				</div>
 			</div>
 
 			<!-- Master Thesis -->
 			<a href="https://github.com/itsViru/E-Mobility_Market_Dynamics_Model" target="_blank" rel="noopener" class="proj">
 				<div class="proj-img">
-					<img src="images/emobility.jpg" alt="E-Mobility Market Dynamics — Master Thesis" loading="lazy" />
+					<div class="tile">
+						<span class="big">R² 0.735</span>
+						<span class="small" data-i18n="tile3">Master Thesis · OLS Model</span>
+					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year">Mar – Sept 2024 · RWTH Aachen × Numbat GmbH</div>
-					<h3 class="proj-title">Master Thesis — <em>E-Mobility Market Dynamics</em></h3>
-					<p class="proj-desc">Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm — finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.</p>
+					<div class="proj-year" data-i18n="p3_year">Mar – Sept 2024 · RWTH Aachen × Numbat GmbH</div>
+					<h3 class="proj-title" data-i18n="p3_title">Master Thesis — <em>E-Mobility Market Dynamics</em></h3>
+					<p class="proj-desc" data-i18n="p3_desc">Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm — finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
 						<span>Python</span><span>Pandas</span><span>Statsmodels</span>
-						<span>OLS Regression</span><span>E-Mobility</span>
+						<span data-i18n="p3_t4">OLS Regression</span><span>E-Mobility</span>
 					</div>
-					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+					<span class="proj-link"><span data-i18n="link_gh2">View on GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
 				</div>
 			</a>
 
@@ -899,40 +922,43 @@
 			     and the closing </div> to </a>, then remove the .soon badge. -->
 			<div class="proj">
 				<div class="proj-img">
-					<span class="badge soon">Repo Coming Soon</span>
+					<span class="badge soon" data-i18n="badge_soon">Repo Coming Soon</span>
 					<div class="tile">
 						<span class="big">StreetScooter</span>
-						<span class="small">Strategy Project</span>
+						<span class="small" data-i18n="tile4">Strategy Project</span>
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year">Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course</div>
-					<h3 class="proj-title">Strategieprojekt <em>StreetScooter GmbH</em></h3>
-					<p class="proj-desc">Strategy case on Aachen's own EV pioneer — developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.</p>
+					<div class="proj-year" data-i18n="p4_year">Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course</div>
+					<h3 class="proj-title" data-i18n="p4_title">Strategieprojekt <em>StreetScooter GmbH</em></h3>
+					<p class="proj-desc" data-i18n="p4_desc">Strategy case on Aachen's own EV pioneer — developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
-						<span>Strategy</span><span>Business Model</span><span>PaaS</span><span>E-Mobility</span>
+						<span data-i18n="p4_t1">Strategy</span><span data-i18n="p4_t2">Business Model</span><span>PaaS</span><span>E-Mobility</span>
 					</div>
-					<span class="proj-link muted">GitHub link coming soon</span>
+					<span class="proj-link muted" data-i18n="p4_link">GitHub link coming soon</span>
 				</div>
 			</div>
 
 			<!-- Sensor Motion -->
 			<a href="https://github.com/itsViru/Sensor-Based-Motion-Classification" target="_blank" rel="noopener" class="proj">
 				<div class="proj-img">
-					<img src="images/sensormotion.jpg" alt="Sensor-Based Motion Classification" loading="lazy" />
+					<div class="tile">
+						<span class="big">97.5%</span>
+						<span class="small" data-i18n="tile5">CNN Classifier</span>
+					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year">Nov 2020 – Feb 2021 · RWTH Aachen course project</div>
-					<h3 class="proj-title">Sensor-Based <em>Motion Classification</em></h3>
-					<p class="proj-desc">CNN classifying walking patterns from accelerometer data with a Butterworth pre-filter — <strong>97.5% accuracy</strong> through systematic hyperparameter optimisation.</p>
+					<div class="proj-year" data-i18n="p5_year">Nov 2020 – Feb 2021 · RWTH Aachen course project</div>
+					<h3 class="proj-title" data-i18n="p5_title">Sensor-Based <em>Motion Classification</em></h3>
+					<p class="proj-desc" data-i18n="p5_desc">CNN classifying walking patterns from accelerometer data with a Butterworth pre-filter — <strong>97.5% accuracy</strong> through systematic hyperparameter optimisation.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
 						<span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>CNN</span>
 					</div>
-					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+					<span class="proj-link"><span data-i18n="link_gh3">View on GitHub</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
 				</div>
 			</a>
 
@@ -943,9 +969,9 @@
 <!-- CONTACT -->
 <section id="contact" class="contact">
 	<div class="container reveal">
-		<span class="contact-pre">AVAILABLE FOR FULL-TIME ROLES</span>
-		<h2 class="contact-title">Let's <em>talk.</em></h2>
-		<p class="contact-sub">Business Analyst · Data Analyst · Test Automation Engineer · E-Mobility / EV Charging Consultant — Aachen, EU, or remote.</p>
+		<span class="contact-pre" data-i18n="contact_pre">AVAILABLE FOR FULL-TIME ROLES</span>
+		<h2 class="contact-title" data-i18n="contact_title">Let's <em>talk.</em></h2>
+		<p class="contact-sub" data-i18n="contact_sub">Business Analyst · Data Analyst · Test Automation Engineer · Market Intelligence Consultant · Project Manager · E-Mobility / EV Charging Consultant — Aachen, EU, or remote.</p>
 		<a href="mailto:kowalevirendra@gmail.com" class="contact-cta">
 			kowalevirendra@gmail.com
 			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -970,23 +996,23 @@
 <!-- MARQUEE — end of page -->
 <div class="marquee" aria-hidden="true">
 	<div class="marquee-track">
-		<span class="marquee-item">Business Analysis</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item alt">Data Analytics</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item">Test Automation</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m1">Business Analysis</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt" data-i18n="m2">Data Analytics</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m3">Test Automation</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">Market Intelligence</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item alt">Product Strategy</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt" data-i18n="m8">Product Strategy</span><span class="marquee-item acc">★</span>
 		<!-- duplicate for seamless loop -->
-		<span class="marquee-item">Business Analysis</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item alt">Data Analytics</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item">Test Automation</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m1">Business Analysis</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt" data-i18n="m2">Data Analytics</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m3">Test Automation</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">Market Intelligence</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item alt">Product Strategy</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt" data-i18n="m8">Product Strategy</span><span class="marquee-item acc">★</span>
 	</div>
 </div>
 
@@ -996,34 +1022,35 @@
 		<div class="footer-grid">
 			<div class="footer-brand">
 				<h4>Virendra<br/><em>Kowale.</em></h4>
-				<p>© Virendra Kowale 2026 · Aachen, Germany</p>
+				<p data-i18n="f_copy">© Virendra Kowale 2026 · Aachen, Germany</p>
 			</div>
 			<div class="footer-col">
-				<h5>Navigation</h5>
+				<h5 data-i18n="f_nav">Navigation</h5>
 				<ul>
-					<li><a href="#top">Home</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="cv.html">CV</a></li>
+					<li><a href="#top" data-i18n="f_home">Home</a></li>
+					<li><a href="#work" data-i18n="f_work">Work</a></li>
+					<li><a href="#about" data-i18n="f_about">About</a></li>
+					<li><a href="cv.html" data-i18n="f_cv">CV</a></li>
 				</ul>
 			</div>
 			<div class="footer-col">
-				<h5>Connect</h5>
+				<h5 data-i18n="f_conn">Connect</h5>
 				<ul>
-					<li><a href="mailto:kowalevirendra@gmail.com">Email</a></li>
+					<li><a href="mailto:kowalevirendra@gmail.com" data-i18n="f_email">Email</a></li>
 					<li><a href="https://www.linkedin.com/in/virendra-kowale/" target="_blank" rel="noopener">LinkedIn</a></li>
 					<li><a href="https://github.com/itsViru" target="_blank" rel="noopener">GitHub</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<span>BUILT WITH HTML · CSS · JS</span>
-			<span>NO FRAMEWORKS, NO BLOAT</span>
+			<span data-i18n="f_b1">BUILT WITH HTML · CSS · JS</span>
+			<span data-i18n="f_b2">NO FRAMEWORKS, NO BLOAT</span>
 		</div>
 	</div>
 </footer>
 
 <script>
+/* ═══ Scroll reveal ═══ */
 (function() {
 	if ('IntersectionObserver' in window) {
 		var io = new IntersectionObserver(function(entries) {
@@ -1036,111 +1063,147 @@
 		document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in'); });
 	}
 })();
+
+/* ═══ EN / DE language toggle ═══ */
+(function() {
+	var I18N = {
+		en: {
+			nav_work: "Work", nav_about: "About", nav_cv: "CV", nav_cta: "Get in touch",
+			hero_meta: "AVAILABLE · AACHEN / EU / REMOTE",
+			hero_hi: "Hi 👋, I'm",
+			hero_sub: "A rare blend of management and engineering — commercial strategy on one side, protocol-level EV charging on the other.",
+			pill1: "📊&nbsp; Business &amp; Data Analyst",
+			pill2: "⚡&nbsp; E-Mobility / EV Charging Consultant",
+			pill3: "🔧&nbsp; Test Automation Engineer",
+			pill4: "🎓&nbsp; M.Sc. RWTH Aachen",
+			pill5: "🇩🇪&nbsp; German — daily working language",
+			pill6: "📍&nbsp; Aachen, Germany",
+			btn_work: "See selected work", btn_story: "Read my story",
+			stat1: "Years in E-Mobility", stat2: "EU markets analysed",
+			stat3: "Data points analysed", stat4: "Market reports delivered",
+			scroll: "SCROLL",
+			sec01: "ABOUT", sec01_title: "Two halves, <em>one career.</em>",
+			about_lead: "I turn <span class=\"hl\">market data into investment decisions</span> — and charging protocols into automated tests.",
+			about_line: "2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation with a projected €35–45k annual efficiency gain.",
+			about_cv: "Read the full story on my CV",
+			sec02: "SELECTED WORK", sec02_title: "Projects, <em>shipped.</em>",
+			badge_feat: "★ Featured", badge_int: "Internal Initiative", badge_soon: "Repo Coming Soon",
+			tile1: "Tableau Dashboard", tile2: "Piloting · aixACCT", tile3: "Master Thesis · OLS Model",
+			tile4: "Strategy Project", tile5: "CNN Classifier",
+			p1_year: "Jan – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering",
+			p1_title: "Strategic Investment Planner: <em>Germany 2030</em>",
+			p1_desc: "Interactive Tableau dashboard quantifying Germany's EV charging infrastructure gap through 2030 — What-If scenario sliders that update a <strong>revenue opportunity model</strong> live, built to support Charge Point Operator investment decisions.",
+			p1_kpi: "Revenue Opportunity Gap · AFIR Compliance Index · Infrastructure Sufficiency · 4 Scenario Sliders",
+			p1_t3: "EV Market Analysis", p1_t5: "Scenario Modelling",
+			p2_year: "May 2026 – ongoing · Strategic efficiency initiative, direct reporting line to department head",
+			p2_title: "Documentation <em>Automation Initiative</em>",
+			p2_desc: "Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.",
+			p2_t4: "GDPR", p2_t5: "Process Automation",
+			p2_link: "Internal project — details on request",
+			p3_year: "Mar – Sept 2024 · RWTH Aachen × Numbat GmbH",
+			p3_title: "Master Thesis — <em>E-Mobility Market Dynamics</em>",
+			p3_desc: "Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm — finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.",
+			p3_t4: "OLS Regression",
+			p4_year: "Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course",
+			p4_title: "Strategieprojekt <em>StreetScooter GmbH</em>",
+			p4_desc: "Strategy case on Aachen's own EV pioneer — developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.",
+			p4_t1: "Strategy", p4_t2: "Business Model",
+			p4_link: "GitHub link coming soon",
+			p5_year: "Nov 2020 – Feb 2021 · RWTH Aachen course project",
+			p5_title: "Sensor-Based <em>Motion Classification</em>",
+			p5_desc: "CNN classifying walking patterns from accelerometer data with a Butterworth pre-filter — <strong>97.5% accuracy</strong> through systematic hyperparameter optimisation.",
+			link_gh: "View on GitHub", link_gh2: "View on GitHub", link_gh3: "View on GitHub",
+			contact_pre: "AVAILABLE FOR FULL-TIME ROLES",
+			contact_title: "Let's <em>talk.</em>",
+			contact_sub: "Business Analyst · Data Analyst · Test Automation Engineer · Market Intelligence Consultant · Project Manager · E-Mobility / EV Charging Consultant — Aachen, EU, or remote.",
+			m1: "Business Analysis", m2: "Data Analytics", m3: "Test Automation", m8: "Product Strategy",
+			f_copy: "© Virendra Kowale 2026 · Aachen, Germany",
+			f_nav: "Navigation", f_home: "Home", f_work: "Work", f_about: "About", f_cv: "CV",
+			f_conn: "Connect", f_email: "Email",
+			f_b1: "BUILT WITH HTML · CSS · JS", f_b2: "NO FRAMEWORKS, NO BLOAT",
+			title: "Virendra Kowale — E-Mobility & Data Analytics"
+		},
+		de: {
+			nav_work: "Projekte", nav_about: "Über mich", nav_cv: "Lebenslauf", nav_cta: "Kontakt",
+			hero_meta: "VERFÜGBAR · AACHEN / EU / REMOTE",
+			hero_hi: "Hi 👋, ich bin",
+			hero_sub: "Eine seltene Kombination aus Management und Engineering — kommerzielle Strategie auf der einen Seite, EV-Laden auf Protokollebene auf der anderen.",
+			pill1: "📊&nbsp; Business &amp; Data Analyst",
+			pill2: "⚡&nbsp; E-Mobility / EV-Charging-Consultant",
+			pill3: "🔧&nbsp; Test Automation Engineer",
+			pill4: "🎓&nbsp; M.Sc. RWTH Aachen",
+			pill5: "🇩🇪&nbsp; Deutsch — tägliche Arbeitssprache",
+			pill6: "📍&nbsp; Aachen, Deutschland",
+			btn_work: "Ausgewählte Projekte", btn_story: "Mein Werdegang",
+			stat1: "Jahre E-Mobility", stat2: "EU-Märkte analysiert",
+			stat3: "Datenpunkte analysiert", stat4: "Marktreports erstellt",
+			scroll: "SCROLLEN",
+			sec01: "ÜBER MICH", sec01_title: "Zwei Hälften, <em>eine Karriere.</em>",
+			about_lead: "Ich übersetze <span class=\"hl\">Marktdaten in Investitionsentscheidungen</span> — und Ladeprotokolle in automatisierte Tests.",
+			about_line: "2,5 Jahre europäische Market Intelligence bei <strong>Numbat GmbH</strong>, ein M.Sc. der <strong>RWTH Aachen</strong> und heute Testautomatisierung für EV-Ladeinfrastruktur bei <strong>aixACCT Systems</strong> — wo ich zusätzlich eine KI-gestützte Reporting-Automatisierung mit prognostiziertem Effizienzgewinn von 35–45 T€ pro Jahr initiiert habe.",
+			about_cv: "Die ganze Geschichte im Lebenslauf",
+			sec02: "AUSGEWÄHLTE ARBEITEN", sec02_title: "Projekte, <em>geliefert.</em>",
+			badge_feat: "★ Highlight", badge_int: "Interne Initiative", badge_soon: "Repo folgt",
+			tile1: "Tableau-Dashboard", tile2: "Pilotphase · aixACCT", tile3: "Masterarbeit · OLS-Modell",
+			tile4: "Strategieprojekt", tile5: "CNN-Klassifikator",
+			p1_year: "Jan – Feb 2026 · Case Study für eine Managementberatung im Bereich Automotive und Engineering",
+			p1_title: "Strategic Investment Planner: <em>Deutschland 2030</em>",
+			p1_desc: "Interaktives Tableau-Dashboard zur Quantifizierung der Ladeinfrastruktur-Lücke in Deutschland bis 2030 — What-If-Szenario-Regler aktualisieren ein <strong>Umsatzpotenzial-Modell</strong> live, entwickelt zur Unterstützung von Investitionsentscheidungen von Charge Point Operators.",
+			p1_kpi: "Revenue Opportunity Gap · AFIR Compliance Index · Infrastruktur-Suffizienz · 4 Szenario-Regler",
+			p1_t3: "EV-Marktanalyse", p1_t5: "Szenario-Modellierung",
+			p2_year: "Mai 2026 – laufend · Strategische Effizienzinitiative mit direkter Berichtslinie an den Bereichsleiter",
+			p2_title: "Dokumentations-<em>Automatisierungsinitiative</em>",
+			p2_desc: "Eigeninitiierte KI-gestützte Automatisierung technischer Reporting-Workflows — Python + Jira + Enterprise Claude, DSGVO-konforme Architektur mit Human-in-the-Loop-Review. <strong>Prognostizierter Effizienzgewinn von 35–45 T€ pro Jahr</strong> bei Implementierungskosten unter 3,3 T€; der Bereichsleitung präsentiert, aktuell in der Pilotphase.",
+			p2_t4: "DSGVO", p2_t5: "Prozessautomatisierung",
+			p2_link: "Internes Projekt — Details auf Anfrage",
+			p3_year: "März – Sept 2024 · RWTH Aachen × Numbat GmbH",
+			p3_title: "Masterarbeit — <em>E-Mobility Market Dynamics</em>",
+			p3_desc: "Mixed-Methods-Studie über 25+ europäische Märkte mit OLS-Regressionsmodell (<strong>R² = 0,735</strong>) und Python-Standort-Ranking-Algorithmus — zentrales Ergebnis: Zugang zu privaten Wallboxen, nicht der Preis, ist der dominierende Adoptionstreiber. KPI-Empfehlungen ans Senior Management präsentiert.",
+			p3_t4: "OLS-Regression",
+			p4_year: "Nov 2021 – Feb 2022 · RWTH Aachen, Kurs Strategisches Management",
+			p4_title: "Strategieprojekt <em>StreetScooter GmbH</em>",
+			p4_desc: "Strategie-Case zu Aachens eigenem EV-Pionier — Entwicklung eines <strong>Battery-Swapping-PaaS-Geschäftsmodells mit Break-even in 5 Jahren</strong>, Koordination der Anforderungen zwischen technischen und kommerziellen Teams.",
+			p4_t1: "Strategie", p4_t2: "Geschäftsmodell",
+			p4_link: "GitHub-Link folgt in Kürze",
+			p5_year: "Nov 2020 – Feb 2021 · RWTH Aachen, Kursprojekt",
+			p5_title: "Sensorbasierte <em>Bewegungsklassifikation</em>",
+			p5_desc: "CNN klassifiziert Gehmuster aus Beschleunigungsdaten mit Butterworth-Vorfilter — <strong>97,5 % Genauigkeit</strong> durch systematische Hyperparameter-Optimierung.",
+			link_gh: "Auf GitHub ansehen", link_gh2: "Auf GitHub ansehen", link_gh3: "Auf GitHub ansehen",
+			contact_pre: "VERFÜGBAR FÜR FESTANSTELLUNGEN",
+			contact_title: "Sprechen <em>wir.</em>",
+			contact_sub: "Business Analyst · Data Analyst · Test Automation Engineer · Market Intelligence Consultant · Projektmanager · E-Mobility / EV-Charging-Consultant — Aachen, EU oder remote.",
+			m1: "Business-Analyse", m2: "Datenanalyse", m3: "Testautomatisierung", m8: "Produktstrategie",
+			f_copy: "© Virendra Kowale 2026 · Aachen, Deutschland",
+			f_nav: "Navigation", f_home: "Start", f_work: "Projekte", f_about: "Über mich", f_cv: "Lebenslauf",
+			f_conn: "Kontakt", f_email: "E-Mail",
+			f_b1: "GEBAUT MIT HTML · CSS · JS", f_b2: "KEINE FRAMEWORKS, KEIN BALLAST",
+			title: "Virendra Kowale — E-Mobility & Datenanalyse"
+		}
+	};
+
+	function setLang(lang) {
+		var dict = I18N[lang] || I18N.en;
+		document.querySelectorAll('[data-i18n]').forEach(function(el) {
+			var key = el.getAttribute('data-i18n');
+			if (dict[key] !== undefined) el.innerHTML = dict[key];
+		});
+		document.documentElement.lang = lang;
+		document.title = dict.title;
+		document.querySelectorAll('.lang-switch button').forEach(function(b) {
+			b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+		});
+		try { localStorage.setItem('vk-lang', lang); } catch (e) {}
+	}
+
+	document.querySelectorAll('.lang-switch button').forEach(function(b) {
+		b.addEventListener('click', function() { setLang(b.getAttribute('data-lang')); });
+	});
+
+	var saved = 'en';
+	try { saved = localStorage.getItem('vk-lang') || 'en'; } catch (e) {}
+	if (saved === 'de') setLang('de');
+})();
 </script>
 
 </body>
-</html>							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/itsViru/Data-Cleaning-Exploring-using-SQL">Data Cleaning and Exploration Using SQL<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/itsViru/Data-Cleaning-Exploring-using-SQL" class="image fit"><img src="images/housing.jpg" alt="" /></a>
-									<p>In this project, raw housing data was transformed in SQL Server for improved usability by removing duplicates, standardizing data, handling null or blank values, eliminating unnecessary columns, and conducting data exploration. </p>
-									<ul class="actions special">
-										<li><a href="https://github.com/itsViru/Data-Cleaning-Exploring-using-SQL" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/itsViru/Sensor-Based-Motion-Classification">Sensor Based Motion Classification<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/itsViru/Sensor-Based-Motion-Classification" class="image fit"><img src="images/sensormotion.jpg" alt="" /></a>
-									<p>Collaborated on a group project for Computational Intelligence in Engineering subject, where I designed and implemented a Low-Pass Butterworth filter for preprocessing accelerometer data. Leveraged Python and TensorFlow to classify walking patterns with CNNs, achieving 97.5% accuracy through hyperparameter optimization while working in an interdisciplinary team.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/itsViru/Sensor-Based-Motion-Classification" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/itsViru/Bike-Sales-Dashboard-Design-Development">Bike Sales Dashboard Design Development<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/itsViru/Bike-Sales-Dashboard-Design-Development" class="image fit"><img src="images/dashboard.jpg" alt="" /></a>
-									<p>Utilized Kaggle data to clean, standardize, and develop pivot tables for insightful analysis, creating charts and dashboards to visualize bike sales trends effectively for stakeholders.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/itsViru/Bike-Sales-Dashboard-Design-Development" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/itsViru/Data-Professional-Survey-Breakdown-using-Power-BI-">Data Professional Survey Breakdown using Power BI<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/itsViru/Data-Professional-Survey-Breakdown-using-Power-BI-" class="image fit"><img src="images/PowerBI.jpg" alt="" /></a>
-									<p>This project analyzes a global survey conducted among data science professionals to compare different roles, salary distributions, job satisfaction (happiness index), and gender-based variations. The survey data, collected by a third party, was processed and visualized using Power BI dashboards, enabling dynamic insights into industry trends. This project provides a comprehensive overview of the data science job landscape, helping stakeholders understand key patterns and disparities within the field.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/itsViru/Data-Professional-Survey-Breakdown-using-Power-BI-" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								
-							</section>
-
-						
-
-				
-						
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p><br />
-								Aachen, Germany 52070</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+4915906138066</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">virendrakowalevk@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									
-									<li><a href="https://www.linkedin.com/in/virendra-kowale/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									
-									<li><a href="https://github.com/itsViru" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
