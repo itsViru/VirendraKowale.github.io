@@ -1,68 +1,1045 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Virendra Kowale Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+	<title>Virendra Kowale — E-Mobility & Data Analytics</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="E-Mobility and energy professional in Aachen, Germany — EV charging test automation (OCPP, ISO 15118, SiL/HiL) plus 2.5 years of European market intelligence across 25+ markets. Open to Business Analyst, Data Analyst, Test Automation, and EV Charging Consultant roles." />
+	<meta name="author" content="Virendra Kowale" />
+	<meta name="theme-color" content="#0a0a0a" />
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://itsviru.github.io/VirendraKowale.github.io/" />
+	<meta property="og:title" content="Virendra Kowale — E-Mobility & Data Analytics" />
+	<meta property="og:description" content="A rare blend of management and engineering — EV charging test automation plus European market intelligence across 25+ markets. Aachen, Germany." />
+	<meta name="twitter:card" content="summary" />
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Virendra Kowale Portfolio<br />
-						</h1>
-						<p>A consultant skilled in research, data analytics, impactful presentations, and driven by a passion for sustainability <a href="https://www.linkedin.com/in/virendra-kowale/">@VirendraKowale</a> <br />
-						</a></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23B6FF3C'%3EV%3C/text%3E%3C/svg%3E" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Virendra Kowale",
+		"jobTitle": "Test Automation and Hardware Engineer",
+		"description": "E-Mobility and energy professional — EV charging test automation and European market intelligence.",
+		"url": "https://itsviru.github.io/VirendraKowale.github.io/",
+		"email": "kowalevirendra@gmail.com",
+		"telephone": "+4915906138066",
+		"address": {"@type":"PostalAddress","addressLocality":"Aachen","addressCountry":"DE"},
+		"alumniOf": {"@type":"CollegeOrUniversity","name":"RWTH Aachen University"},
+		"worksFor": {"@type":"Organization","name":"aixACCT Systems GmbH"},
+		"knowsLanguage": ["en","de","hi","mr"],
+		"sameAs": ["https://www.linkedin.com/in/virendra-kowale/","https://github.com/itsViru"]
+	}
+	</script>
+
+	<style>
+		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+		:root {
+			--bg:        #0a0a0a;
+			--bg-2:      #111111;
+			--bg-3:      #161616;
+			--ink:       #f5f5f5;
+			--ink-2:     rgba(245,245,245,0.74);
+			--ink-3:     rgba(245,245,245,0.46);
+			--ink-4:     rgba(245,245,245,0.22);
+			--line:      rgba(245,245,245,0.10);
+			--line-2:    rgba(245,245,245,0.18);
+			--acid:      #B6FF3C;
+			--acid-dim:  #98DC2A;
+			--acid-pale: rgba(182, 255, 60, 0.10);
+			--acid-glow: rgba(182, 255, 60, 0.35);
+			--sans:      'Inter', system-ui, sans-serif;
+			--serif:     'Instrument Serif', Georgia, serif;
+			--mono:      'JetBrains Mono', monospace;
+			--ease:      cubic-bezier(0.22, 1, 0.36, 1);
+			--ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+			--max:       1180px;
+			--gutter:    clamp(1.25rem, 4vw, 3rem);
+		}
+
+		html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+		body {
+			font-family: var(--sans);
+			background: var(--bg);
+			color: var(--ink);
+			line-height: 1.5;
+			overflow-x: hidden;
+		}
+		::selection { background: var(--acid); color: #000; }
+		img { max-width: 100%; display: block; }
+		a { color: inherit; text-decoration: none; }
+
+		.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+		/* ═══ NAV ═══ */
+		.nav {
+			position: fixed;
+			top: 1.5rem; left: 50%;
+			transform: translateX(-50%);
+			z-index: 100;
+			display: flex; align-items: center; gap: 0.4rem;
+			padding: 0.4rem 0.5rem 0.4rem 1rem;
+			background: rgba(15,15,15,0.78);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			border: 1px solid var(--line);
+			border-radius: 99px;
+			font-family: var(--mono);
+			font-size: 0.78rem;
+		}
+		.nav-logo {
+			display: inline-flex; align-items: center; gap: 0.5em;
+			color: var(--ink);
+			padding-right: 0.7rem;
+			border-right: 1px solid var(--line);
+		}
+		.nav-logo-dot {
+			width: 7px; height: 7px;
+			background: var(--acid);
+			border-radius: 50%;
+			box-shadow: 0 0 10px var(--acid-glow);
+			animation: dot-pulse 2.4s ease-in-out infinite;
+		}
+		@keyframes dot-pulse {
+			0%, 100% { opacity: 1; transform: scale(1); }
+			50%      { opacity: 0.65; transform: scale(0.85); }
+		}
+		.nav-links { display: flex; gap: 0.1rem; }
+		.nav-links a {
+			padding: 0.45rem 0.85rem;
+			color: var(--ink-3);
+			border-radius: 99px;
+			transition: color 0.2s, background 0.2s;
+			font-size: 0.74rem;
+			letter-spacing: 0.02em;
+		}
+		.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
+		.nav-cta {
+			background: var(--acid);
+			color: #0a0a0a !important;
+			padding: 0.5rem 1rem;
+			border-radius: 99px;
+			font-weight: 600;
+			transition: background 0.2s;
+		}
+		.nav-cta:hover { background: var(--acid-dim); }
+		@media (max-width: 720px) {
+			.nav { top: 0.8rem; padding: 0.35rem 0.4rem 0.35rem 0.85rem; }
+			.nav-links a { padding: 0.4rem 0.55rem; font-size: 0.68rem; }
+			.nav-cta { padding: 0.45rem 0.85rem; font-size: 0.7rem; }
+		}
+
+		/* ═══ HERO ═══ */
+		.hero {
+			position: relative;
+			min-height: 92vh;
+			padding: 9rem 0 4rem;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+		}
+		.hero-bg {
+			position: absolute; inset: 0;
+			background-image:
+				linear-gradient(rgba(182,255,60,0.04) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(182,255,60,0.04) 1px, transparent 1px);
+			background-size: 60px 60px;
+			mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%);
+			-webkit-mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%);
+			pointer-events: none;
+		}
+		.hero-bg::after {
+			content: '';
+			position: absolute; inset: 0;
+			background:
+				radial-gradient(circle at 75% 15%, rgba(182,255,60,0.06), transparent 50%),
+				radial-gradient(circle at 10% 85%, rgba(182,255,60,0.04), transparent 50%);
+		}
+		.hero-inner { position: relative; z-index: 1; width: 100%; }
+
+		.hero-meta {
+			display: inline-flex; align-items: center; gap: 0.6rem;
+			font-family: var(--mono);
+			font-size: 0.74rem;
+			color: var(--ink-3);
+			margin-bottom: 1.8rem;
+			letter-spacing: 0.05em;
+		}
+		.hero-meta-dot {
+			width: 8px; height: 8px;
+			background: var(--acid);
+			border-radius: 50%;
+			box-shadow: 0 0 12px var(--acid-glow);
+			animation: dot-pulse 2.4s ease-in-out infinite;
+		}
+
+		.hero h1 {
+			font-size: clamp(2.6rem, 8vw, 5.6rem);
+			font-weight: 800;
+			line-height: 1.02;
+			letter-spacing: -0.04em;
+			margin-bottom: 1.4rem;
+		}
+		.hero h1 .hi {
+			display: block;
+			font-size: 0.5em;
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			color: var(--ink-2);
+			margin-bottom: 0.25em;
+		}
+		.hero h1 .ser {
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+			color: var(--acid);
+			letter-spacing: -0.02em;
+		}
+
+		.hero-sub {
+			font-family: var(--serif);
+			font-style: italic;
+			font-size: clamp(1.15rem, 2vw, 1.5rem);
+			color: var(--ink-2);
+			max-width: 44ch;
+			line-height: 1.4;
+			margin-bottom: 2rem;
+		}
+
+		.pills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.55rem;
+			margin-bottom: 2.2rem;
+			max-width: 680px;
+		}
+		.pill {
+			display: inline-flex; align-items: center; gap: 0.45em;
+			font-family: var(--mono);
+			font-size: 0.76rem;
+			padding: 0.5em 0.95em;
+			background: var(--bg-2);
+			border: 1px solid var(--line-2);
+			border-radius: 99px;
+			color: var(--ink-2);
+			transition: border-color 0.2s, color 0.2s, background 0.2s;
+			cursor: default;
+		}
+		.pill:hover {
+			border-color: var(--acid);
+			color: var(--ink);
+			background: var(--acid-pale);
+		}
+		.pill .ico { font-style: normal; }
+
+		.hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2.6rem; }
+		.btn {
+			display: inline-flex; align-items: center; gap: 0.5em;
+			font-family: var(--sans);
+			font-size: 0.83rem;
+			font-weight: 600;
+			padding: 0.85em 1.5em;
+			border-radius: 99px;
+			border: 1px solid transparent;
+			transition: all 0.25s var(--ease);
+		}
+		.btn-primary { background: var(--acid); color: #0a0a0a !important; }
+		.btn-primary:hover {
+			background: var(--acid-dim);
+			box-shadow: 0 0 0 6px var(--acid-pale);
+			transform: translateY(-2px);
+		}
+		.btn-ghost { background: transparent; color: var(--ink) !important; border-color: var(--line-2); }
+		.btn-ghost:hover { border-color: var(--acid); color: var(--acid) !important; }
+		.btn svg { width: 14px; height: 14px; transition: transform 0.25s; }
+		.btn:hover svg { transform: translateX(2px); }
+
+		.hero-stats {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 0.6rem;
+			max-width: 760px;
+		}
+		.hero-stat {
+			background: var(--bg-2);
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			padding: 0.9rem 1rem;
+		}
+		.hero-stat .v {
+			font-family: var(--serif);
+			font-size: 1.6rem;
+			color: var(--acid);
+			letter-spacing: -0.02em;
+			line-height: 1;
+			margin-bottom: 0.3rem;
+			font-style: italic;
+		}
+		.hero-stat .l {
+			font-family: var(--mono);
+			font-size: 0.62rem;
+			color: var(--ink-3);
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+		@media (max-width: 720px) {
+			.hero-stats { grid-template-columns: repeat(2, 1fr); }
+		}
+
+		.hero-scroll {
+			position: absolute;
+			bottom: 2rem; left: 50%;
+			transform: translateX(-50%);
+			font-family: var(--mono);
+			font-size: 0.7rem;
+			color: var(--ink-3);
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			display: flex; align-items: center; gap: 0.5em;
+			animation: float 2.2s ease-in-out infinite;
+		}
+		@keyframes float {
+			0%, 100% { transform: translateX(-50%) translateY(0); }
+			50%      { transform: translateX(-50%) translateY(6px); }
+		}
+
+		/* ═══ SECTIONS ═══ */
+		section { padding: 6.5rem 0; }
+		@media (max-width: 720px) { section { padding: 4rem 0; } }
+
+		.sec-head {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			margin-bottom: 3.5rem;
+		}
+		@media (min-width: 980px) {
+			.sec-head { grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: end; }
+		}
+		.sec-num {
+			font-family: var(--mono);
+			font-size: 0.78rem;
+			color: var(--ink-3);
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px solid var(--line);
+			width: fit-content;
+		}
+		.sec-num strong { color: var(--acid); font-weight: 500; }
+		.sec-title {
+			font-size: clamp(1.9rem, 5vw, 3.2rem);
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			line-height: 1;
+		}
+		.sec-title em {
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+			color: var(--acid);
+		}
+
+		/* ═══ ABOUT ═══ */
+		.about-lead {
+			font-family: var(--serif);
+			font-style: italic;
+			font-size: clamp(1.35rem, 2.6vw, 2rem);
+			font-weight: 400;
+			line-height: 1.4;
+			color: var(--ink);
+			max-width: 32ch;
+			margin-bottom: 1.6rem;
+		}
+		.about-lead .hl {
+			color: var(--acid);
+			background: linear-gradient(transparent 62%, var(--acid-pale) 62%);
+			padding: 0 0.1em;
+		}
+		.about-line {
+			font-size: 1rem;
+			line-height: 1.75;
+			color: var(--ink-2);
+			font-weight: 300;
+			max-width: 60ch;
+			margin-bottom: 1.8rem;
+		}
+		.about-line strong { color: var(--ink); font-weight: 600; }
+		.about-cv-link {
+			display: inline-flex; align-items: center; gap: 0.45em;
+			font-family: var(--mono);
+			font-size: 0.82rem;
+			color: var(--ink);
+			padding: 0.6em 0;
+			border-bottom: 1px solid var(--ink-4);
+			transition: color 0.2s, border-color 0.2s, gap 0.25s;
+		}
+		.about-cv-link:hover { color: var(--acid); border-color: var(--acid); gap: 0.75em; }
+		.about-cv-link svg { width: 13px; height: 13px; }
+
+		/* ═══ PROJECTS ═══ */
+		.proj-list { display: flex; flex-direction: column; }
+		.proj {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1.4rem;
+			padding: 2.4rem 0;
+			border-top: 1px solid var(--line);
+			transition: background 0.3s var(--ease), padding 0.3s var(--ease);
+		}
+		.proj:last-child { border-bottom: 1px solid var(--line); }
+		a.proj:hover {
+			background: linear-gradient(90deg, var(--acid-pale), transparent 60%);
+			padding-left: 1.4rem;
+			padding-right: 1.4rem;
+		}
+		@media (min-width: 980px) {
+			.proj { grid-template-columns: 0.7fr 1.3fr 0.9fr; gap: 2.6rem; align-items: start; }
+		}
+
+		.proj-img {
+			aspect-ratio: 4/3;
+			background: var(--bg-2);
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			overflow: hidden;
+			position: relative;
+		}
+		.proj-img img {
+			width: 100%; height: 100%;
+			object-fit: cover;
+			transition: transform 0.6s var(--ease);
+		}
+		.proj:hover .proj-img img { transform: scale(1.04); }
+
+		.tile {
+			width: 100%; height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 0.4rem;
+			background-image:
+				linear-gradient(rgba(182,255,60,0.05) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(182,255,60,0.05) 1px, transparent 1px);
+			background-size: 28px 28px;
+			position: relative;
+		}
+		.tile::after {
+			content: '';
+			position: absolute; inset: 0;
+			background: radial-gradient(circle at 70% 20%, var(--acid-pale), transparent 60%);
+		}
+		.tile .big {
+			font-family: var(--serif);
+			font-style: italic;
+			font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+			color: var(--acid);
+			letter-spacing: -0.02em;
+			line-height: 1;
+			position: relative; z-index: 1;
+			text-align: center;
+			padding: 0 0.5rem;
+		}
+		.tile .small {
+			font-family: var(--mono);
+			font-size: 0.62rem;
+			color: var(--ink-3);
+			text-transform: uppercase;
+			letter-spacing: 0.12em;
+			position: relative; z-index: 1;
+		}
+
+		.badge {
+			position: absolute;
+			top: 0.7rem; left: 0.7rem;
+			z-index: 2;
+			font-family: var(--mono);
+			font-size: 0.62rem;
+			padding: 0.25em 0.7em;
+			background: rgba(10,10,10,0.78);
+			backdrop-filter: blur(8px);
+			border: 1px solid var(--acid);
+			color: var(--acid);
+			border-radius: 99px;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+		}
+		.badge.soon { border-color: var(--line-2); color: var(--ink-3); }
+
+		.proj-info { display: flex; flex-direction: column; }
+		.proj-year {
+			font-family: var(--mono);
+			font-size: 0.76rem;
+			color: var(--ink-3);
+			margin-bottom: 0.55rem;
+			letter-spacing: 0.04em;
+		}
+		.proj-title {
+			font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+			font-weight: 700;
+			letter-spacing: -0.025em;
+			line-height: 1.12;
+			margin-bottom: 0.7rem;
+		}
+		.proj-title em {
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+			color: var(--acid);
+		}
+		.proj-desc {
+			font-size: 0.9rem;
+			line-height: 1.65;
+			color: var(--ink-2);
+			font-weight: 300;
+		}
+		.proj-desc strong { color: var(--ink); font-weight: 600; }
+		.proj-kpi {
+			font-family: var(--mono);
+			font-size: 0.68rem;
+			color: var(--ink-3);
+			letter-spacing: 0.05em;
+			margin-top: 0.7rem;
+			text-transform: uppercase;
+		}
+
+		.proj-meta {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 1.2rem;
+		}
+		.proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+		.proj-stack span {
+			font-family: var(--mono);
+			font-size: 0.68rem;
+			padding: 0.22em 0.65em;
+			background: var(--bg-2);
+			border: 1px solid var(--line-2);
+			color: var(--ink-2);
+			border-radius: 99px;
+		}
+		.proj-link {
+			display: inline-flex; align-items: center; gap: 0.4em;
+			font-family: var(--mono);
+			font-size: 0.78rem;
+			color: var(--ink);
+			padding: 0.6em 0;
+			border-bottom: 1px solid var(--ink-4);
+			width: fit-content;
+			transition: color 0.2s, border-color 0.2s, gap 0.25s;
+		}
+		.proj:hover .proj-link { color: var(--acid); border-color: var(--acid); gap: 0.7em; }
+		.proj-link svg { width: 12px; height: 12px; }
+		.proj-link.muted { color: var(--ink-3); border-style: dashed; }
+
+		.proj.featured {
+			background: linear-gradient(135deg, rgba(182,255,60,0.05), transparent 55%);
+			border: 1px solid var(--line-2);
+			border-radius: 18px;
+			padding: 2rem;
+			margin-bottom: 1.6rem;
+		}
+		.proj.featured:hover {
+			border-color: var(--acid);
+			background: linear-gradient(135deg, rgba(182,255,60,0.09), transparent 60%);
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.proj.featured + .proj { border-top: 1px solid var(--line); }
+
+		/* ═══ CONTACT ═══ */
+		.contact { text-align: center; }
+		.contact-pre {
+			font-family: var(--mono);
+			font-size: 0.78rem;
+			color: var(--acid);
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			margin-bottom: 1.5rem;
+			display: inline-flex; align-items: center; gap: 0.5em;
+		}
+		.contact-pre::before {
+			content: '';
+			width: 8px; height: 8px;
+			background: var(--acid);
+			border-radius: 50%;
+			animation: dot-pulse 2.4s ease-in-out infinite;
+			box-shadow: 0 0 12px var(--acid-glow);
+		}
+		.contact-title {
+			font-size: clamp(2.6rem, 8vw, 5.5rem);
+			font-weight: 800;
+			letter-spacing: -0.04em;
+			line-height: 1;
+			margin-bottom: 1.8rem;
+		}
+		.contact-title em {
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+			color: var(--acid);
+		}
+		.contact-sub {
+			font-family: var(--serif);
+			font-style: italic;
+			font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+			color: var(--ink-2);
+			max-width: 42ch;
+			margin: 0 auto 2.4rem;
+			line-height: 1.45;
+		}
+		.contact-cta {
+			display: inline-flex; align-items: center; gap: 0.6em;
+			font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+			font-weight: 600;
+			padding: 1.05em 1.9em;
+			background: var(--acid);
+			color: #0a0a0a !important;
+			border-radius: 99px;
+			transition: all 0.25s var(--ease);
+			margin-bottom: 2.6rem;
+		}
+		.contact-cta:hover {
+			box-shadow: 0 0 0 8px var(--acid-pale);
+			transform: translateY(-2px);
+		}
+		.contact-cta svg { width: 17px; height: 17px; transition: transform 0.25s; }
+		.contact-cta:hover svg { transform: translate(3px, -3px); }
+		.contact-channels {
+			display: flex; flex-wrap: wrap; gap: 2rem;
+			justify-content: center;
+			font-family: var(--mono);
+			font-size: 0.8rem;
+		}
+		.contact-channels a {
+			display: inline-flex; align-items: center; gap: 0.4em;
+			color: var(--ink);
+			transition: color 0.2s;
+		}
+		.contact-channels a:hover { color: var(--acid); }
+		.contact-channels svg { width: 14px; height: 14px; }
+
+		/* ═══ MARQUEE ═══ */
+		.marquee {
+			border-top: 1px solid var(--line);
+			border-bottom: 1px solid var(--line);
+			padding: 1.4rem 0;
+			overflow: hidden;
+		}
+		.marquee-track {
+			display: flex;
+			gap: 3rem;
+			width: max-content;
+			animation: marquee 40s linear infinite;
+			align-items: center;
+		}
+		@keyframes marquee {
+			from { transform: translateX(0); }
+			to   { transform: translateX(-50%); }
+		}
+		.marquee-item {
+			font-weight: 800;
+			font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+			letter-spacing: -0.025em;
+			color: var(--ink);
+			white-space: nowrap;
+		}
+		.marquee-item.alt { color: var(--ink-4); }
+		.marquee-item.acc {
+			color: var(--acid);
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+		}
+
+		/* ═══ FOOTER ═══ */
+		footer { padding: 3rem 0 2.5rem; }
+		.footer-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			align-items: end;
+			margin-bottom: 2.6rem;
+		}
+		@media (min-width: 720px) {
+			.footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+		}
+		.footer-brand h4 {
+			font-size: clamp(1.9rem, 5vw, 3rem);
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			line-height: 1;
+			margin-bottom: 0.5rem;
+		}
+		.footer-brand h4 em {
+			font-family: var(--serif);
+			font-style: italic;
+			font-weight: 400;
+			color: var(--acid);
+		}
+		.footer-brand p {
+			font-family: var(--mono);
+			font-size: 0.75rem;
+			color: var(--ink-3);
+		}
+		.footer-col h5 {
+			font-family: var(--mono);
+			font-size: 0.65rem;
+			color: var(--ink-3);
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			margin-bottom: 0.9rem;
+			font-weight: 500;
+		}
+		.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+		.footer-col a { font-size: 0.85rem; color: var(--ink-2); transition: color 0.2s; }
+		.footer-col a:hover { color: var(--acid); }
+		.footer-bottom {
+			padding-top: 2rem;
+			border-top: 1px solid var(--line);
+			display: flex; flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 1rem;
+			font-family: var(--mono);
+			font-size: 0.7rem;
+			color: var(--ink-3);
+		}
+
+		/* ═══ REVEAL ═══ */
+		.reveal {
+			opacity: 0;
+			transform: translateY(28px);
+			transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+		}
+		.reveal.in { opacity: 1; transform: translateY(0); }
+		@media (prefers-reduced-motion: reduce) {
+			*, ::before, ::after {
+				animation-duration: 0.01ms !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: 0.01ms !important;
+			}
+			.reveal { opacity: 1; transform: none; }
+		}
+	</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+	<a href="#top" class="nav-logo">
+		<span class="nav-logo-dot"></span>
+		<span>VK</span>
+	</a>
+	<div class="nav-links">
+		<a href="#work">Work</a>
+		<a href="#about">About</a>
+		<a href="cv.html">CV</a>
+	</div>
+	<a href="mailto:kowalevirendra@gmail.com" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+	<div class="hero-bg"></div>
+	<div class="container hero-inner">
+		<div class="hero-meta">
+			<span class="hero-meta-dot"></span>
+			<span>AVAILABLE · AACHEN / EU / REMOTE</span>
+		</div>
+
+		<h1>
+			<span class="hi">Hi 👋, I'm</span>
+			Virendra <span class="ser">Kowale.</span>
+		</h1>
+
+		<p class="hero-sub">
+			A rare blend of management and engineering — commercial strategy on one side, protocol-level EV charging on the other.
+		</p>
+
+		<div class="pills">
+			<span class="pill"><span class="ico">📊</span> Business &amp; Data Analyst</span>
+			<span class="pill"><span class="ico">⚡</span> E-Mobility / EV Charging Consultant</span>
+			<span class="pill"><span class="ico">🔧</span> Test Automation Engineer</span>
+			<span class="pill"><span class="ico">🎓</span> M.Sc. RWTH Aachen</span>
+			<span class="pill"><span class="ico">🇩🇪</span> German — daily working language</span>
+			<span class="pill"><span class="ico">📍</span> Aachen, Germany</span>
+		</div>
+
+		<div class="hero-cta-row">
+			<a href="#work" class="btn btn-primary">
+				See selected work
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+			</a>
+			<a href="cv.html" class="btn btn-ghost">Read my story</a>
+		</div>
+
+		<div class="hero-stats">
+			<div class="hero-stat"><div class="v">3+</div><div class="l">Years in E-Mobility</div></div>
+			<div class="hero-stat"><div class="v">25+</div><div class="l">EU markets analysed</div></div>
+			<div class="hero-stat"><div class="v">100k+</div><div class="l">Data points analysed</div></div>
+			<div class="hero-stat"><div class="v">50+</div><div class="l">Market reports delivered</div></div>
+		</div>
+	</div>
+	<div class="hero-scroll">
+		<span>SCROLL</span>
+		<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+	</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+	<div class="container reveal">
+		<div class="sec-head">
+			<div class="sec-num"><strong>01</strong> / ABOUT</div>
+			<h2 class="sec-title">Two halves, <em>one career.</em></h2>
+		</div>
+		<p class="about-lead">
+			I turn <span class="hl">market data into investment decisions</span> — and charging protocols into automated tests.
+		</p>
+		<p class="about-line">
+			2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation with a projected €35–45k annual efficiency gain.
+		</p>
+		<a href="cv.html" class="about-cv-link">
+			Read the full story on my CV
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+		</a>
+	</div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+	<div class="container reveal">
+		<div class="sec-head">
+			<div class="sec-num"><strong>02</strong> / SELECTED WORK</div>
+			<h2 class="sec-title">Projects, <em>shipped.</em></h2>
+		</div>
+
+		<div class="proj-list">
+
+			<!-- ★ FEATURED — Germany 2030 -->
+			<a href="https://github.com/itsViru/EV_Charging_Infrastructure_Analysis_Tool" target="_blank" rel="noopener" class="proj featured">
+				<div class="proj-img">
+					<span class="badge">★ Featured</span>
+					<!-- THUMBNAIL: when ready, replace this .tile div with:
+					     <img src="images/germany2030.jpg" alt="Strategic Investment Planner Germany 2030" loading="lazy" /> -->
+					<div class="tile">
+						<span class="big">DE → 2030</span>
+						<span class="small">Tableau Dashboard</span>
 					</div>
+				</div>
+				<div class="proj-info">
+					<div class="proj-year">Jan – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering</div>
+					<h3 class="proj-title">Strategic Investment Planner: <em>Germany 2030</em></h3>
+					<p class="proj-desc">Interactive Tableau dashboard quantifying Germany's EV charging infrastructure gap through 2030 — What-If scenario sliders that update a <strong>revenue opportunity model</strong> live, built to support Charge Point Operator investment decisions.</p>
+					<p class="proj-kpi">Revenue Opportunity Gap · AFIR Compliance Index · Infrastructure Sufficiency · 4 Scenario Sliders</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>Tableau</span><span>Excel</span><span>EV Market Analysis</span>
+						<span>Business Intelligence</span><span>Scenario Modelling</span>
+					</div>
+					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+				</div>
+			</a>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Virendra Kowale</a>
-					</header>
+			<!-- Documentation Automation Initiative -->
+			<div class="proj">
+				<div class="proj-img">
+					<span class="badge">Internal Initiative</span>
+					<div class="tile">
+						<span class="big">AI × Reporting</span>
+						<span class="small">Piloting · aixACCT</span>
+					</div>
+				</div>
+				<div class="proj-info">
+					<div class="proj-year">Nov 2025 – ongoing · Strategic efficiency initiative, direct reporting line to department head</div>
+					<h3 class="proj-title">Documentation <em>Automation Initiative</em></h3>
+					<p class="proj-desc">Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>Python</span><span>Jira</span><span>Enterprise Claude AI</span>
+						<span>GDPR</span><span>Process Automation</span>
+					</div>
+					<span class="proj-link muted">Internal project — details on request</span>
+				</div>
+			</div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/virendra-kowale/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									
-							<li><a href="https://github.com/itsViru" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							
-						</ul>
-					</nav>
+			<!-- Master Thesis -->
+			<a href="https://github.com/itsViru/E-Mobility_Market_Dynamics_Model" target="_blank" rel="noopener" class="proj">
+				<div class="proj-img">
+					<img src="images/emobility.jpg" alt="E-Mobility Market Dynamics — Master Thesis" loading="lazy" />
+				</div>
+				<div class="proj-info">
+					<div class="proj-year">Mar – Sept 2024 · RWTH Aachen × Numbat GmbH</div>
+					<h3 class="proj-title">Master Thesis — <em>E-Mobility Market Dynamics</em></h3>
+					<p class="proj-desc">Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm — finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>Python</span><span>Pandas</span><span>Statsmodels</span>
+						<span>OLS Regression</span><span>E-Mobility</span>
+					</div>
+					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+				</div>
+			</a>
 
-				<!-- Main -->
-					<div id="main">
+			<!-- StreetScooter -->
+			<!-- TO ACTIVATE GITHUB LINK: change this <div class="proj"> to
+			     <a href="GITHUB_REPO_URL" target="_blank" rel="noopener" class="proj">
+			     and the closing </div> to </a>, then remove the .soon badge. -->
+			<div class="proj">
+				<div class="proj-img">
+					<span class="badge soon">Repo Coming Soon</span>
+					<div class="tile">
+						<span class="big">StreetScooter</span>
+						<span class="small">Strategy Project</span>
+					</div>
+				</div>
+				<div class="proj-info">
+					<div class="proj-year">Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course</div>
+					<h3 class="proj-title">Strategieprojekt <em>StreetScooter GmbH</em></h3>
+					<p class="proj-desc">Strategy case on Aachen's own EV pioneer — developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>Strategy</span><span>Business Model</span><span>PaaS</span><span>E-Mobility</span>
+					</div>
+					<span class="proj-link muted">GitHub link coming soon</span>
+				</div>
+			</div>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/itsViru/E-Mobility_Market_Dynamics_Model">E-Mobility Market Dynamics<br />
-									</a></h2>
-									<p>Developed a regression model using Python to analyze factors like tax incentives and subsidies influencing the European e-mobility market, complemented by qualitative analysis to address real-world complexities and data limitations. This mixed-methods approach provided actionable insights to support stakeholders in fostering sustainable EV infrastructure.</p>
-								</header>
-								<a href="https://github.com/itsViru/E-Mobility_Market_Dynamics_Model" class="image main"><img src="images/emobility.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/itsViru/E-Mobility_Market_Dynamics_Model" class="button large">View Project</a></li>
-								</ul>
-							</article>
+			<!-- Sensor Motion -->
+			<a href="https://github.com/itsViru/Sensor-Based-Motion-Classification" target="_blank" rel="noopener" class="proj">
+				<div class="proj-img">
+					<img src="images/sensormotion.jpg" alt="Sensor-Based Motion Classification" loading="lazy" />
+				</div>
+				<div class="proj-info">
+					<div class="proj-year">Nov 2020 – Feb 2021 · RWTH Aachen course project</div>
+					<h3 class="proj-title">Sensor-Based <em>Motion Classification</em></h3>
+					<p class="proj-desc">CNN classifying walking patterns from accelerometer data with a Butterworth pre-filter — <strong>97.5% accuracy</strong> through systematic hyperparameter optimisation.</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>CNN</span>
+					</div>
+					<span class="proj-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+	<div class="container reveal">
+		<span class="contact-pre">AVAILABLE FOR FULL-TIME ROLES</span>
+		<h2 class="contact-title">Let's <em>talk.</em></h2>
+		<p class="contact-sub">Business Analyst · Data Analyst · Test Automation Engineer · E-Mobility / EV Charging Consultant — Aachen, EU, or remote.</p>
+		<a href="mailto:kowalevirendra@gmail.com" class="contact-cta">
+			kowalevirendra@gmail.com
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+		</a>
+		<div class="contact-channels">
+			<a href="https://www.linkedin.com/in/virendra-kowale/" target="_blank" rel="noopener">
+				<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66h-3.55v-11.42h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.25zm-14.96-13c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.07 2.06-2.07s2.06.93 2.06 2.07c0 1.14-.92 2.07-2.06 2.07zm1.78 13h-3.56v-11.42h3.56v11.42zm14.95-20.45h-19.78c-.98 0-1.78.78-1.78 1.75v19.5c0 .97.79 1.75 1.78 1.75h19.78c.98 0 1.78-.78 1.78-1.75v-19.5c0-.97-.79-1.75-1.78-1.75z"/></svg>
+				LinkedIn
+			</a>
+			<a href="https://github.com/itsViru" target="_blank" rel="noopener">
+				<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.72-4.04-1.4-4.04-1.4-.55-1.4-1.34-1.78-1.34-1.78-1.08-.74.09-.73.09-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.92 0-1.3.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.61-5.49 5.91.43.37.81 1.1.81 2.22v3.29c0 .31.21.69.84.57A12 12 0 0012 .3"/></svg>
+				GitHub
+			</a>
+			<a href="tel:+4915906138066">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+				+49 1590 6138066
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- MARQUEE — end of page -->
+<div class="marquee" aria-hidden="true">
+	<div class="marquee-track">
+		<span class="marquee-item">Business Analysis</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Data Analytics</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Test Automation</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Market Intelligence</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Product Strategy</span><span class="marquee-item acc">★</span>
+		<!-- duplicate for seamless loop -->
+		<span class="marquee-item">Business Analysis</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Data Analytics</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Test Automation</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Market Intelligence</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Product Strategy</span><span class="marquee-item acc">★</span>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+	<div class="container">
+		<div class="footer-grid">
+			<div class="footer-brand">
+				<h4>Virendra<br/><em>Kowale.</em></h4>
+				<p>© Virendra Kowale 2026 · Aachen, Germany</p>
+			</div>
+			<div class="footer-col">
+				<h5>Navigation</h5>
+				<ul>
+					<li><a href="#top">Home</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="cv.html">CV</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h5>Connect</h5>
+				<ul>
+					<li><a href="mailto:kowalevirendra@gmail.com">Email</a></li>
+					<li><a href="https://www.linkedin.com/in/virendra-kowale/" target="_blank" rel="noopener">LinkedIn</a></li>
+					<li><a href="https://github.com/itsViru" target="_blank" rel="noopener">GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>BUILT WITH HTML · CSS · JS</span>
+			<span>NO FRAMEWORKS, NO BLOAT</span>
+		</div>
+	</div>
+</footer>
+
+<script>
+(function() {
+	if ('IntersectionObserver' in window) {
+		var io = new IntersectionObserver(function(entries) {
+			entries.forEach(function(e) {
+				if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+			});
+		}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+		document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+	} else {
+		document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in'); });
+	}
+})();
+</script>
+
+</body>
+</html>							</article>
 
 						<!-- Posts -->
 							<section class="posts">
