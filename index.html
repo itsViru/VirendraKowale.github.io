@@ -18,7 +18,7 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
 
 	<script type="application/ld+json">
 	{
@@ -55,9 +55,8 @@
 			--acid-dim:  #98DC2A;
 			--acid-pale: rgba(182, 255, 60, 0.10);
 			--acid-glow: rgba(182, 255, 60, 0.35);
-			--sans:      'Inter', system-ui, sans-serif;
-			--serif:     'Instrument Serif', Georgia, serif;
-			--mono:      'JetBrains Mono', monospace;
+			--sans:      'Geist', system-ui, sans-serif;
+			--mono:      'Geist Mono', monospace;
 			--ease:      cubic-bezier(0.22, 1, 0.36, 1);
 			--ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
 			--max:       1180px;
@@ -77,6 +76,13 @@
 		a { color: inherit; text-decoration: none; }
 
 		.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+		/* Accent words: upright Geist in acid-lime (no italics anywhere) */
+		h1 em, h2 em, h3 em, .sec-title em, .proj-title em, .contact-title em, .footer-brand h4 em {
+			font-style: normal;
+			font-family: var(--sans);
+			color: var(--acid);
+		}
 
 		/* ═══ NAV ═══ */
 		.nav {
@@ -204,7 +210,7 @@
 			font-size: clamp(2.6rem, 8vw, 5.6rem);
 			font-weight: 800;
 			line-height: 1.02;
-			letter-spacing: -0.04em;
+			letter-spacing: -0.045em;
 			margin-bottom: 1.4rem;
 		}
 		.hero h1 .hi {
@@ -216,21 +222,20 @@
 			margin-bottom: 0.25em;
 		}
 		.hero h1 .ser {
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
+			font-style: normal;
+			font-weight: 800;
 			color: var(--acid);
-			letter-spacing: -0.02em;
+			letter-spacing: -0.045em;
 		}
 
 		.hero-sub {
-			font-family: var(--serif);
-			font-style: italic;
-			font-size: clamp(1.15rem, 2vw, 1.5rem);
+			font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+			font-weight: 400;
 			color: var(--ink-2);
-			max-width: 44ch;
-			line-height: 1.4;
+			max-width: 52ch;
+			line-height: 1.55;
 			margin-bottom: 2rem;
+			letter-spacing: -0.01em;
 		}
 
 		.pills {
@@ -293,13 +298,13 @@
 			padding: 0.9rem 1rem;
 		}
 		.hero-stat .v {
-			font-family: var(--serif);
-			font-size: 1.6rem;
+			font-family: var(--mono);
+			font-weight: 600;
+			font-size: 1.4rem;
 			color: var(--acid);
 			letter-spacing: -0.02em;
 			line-height: 1;
-			margin-bottom: 0.3rem;
-			font-style: italic;
+			margin-bottom: 0.35rem;
 		}
 		.hero-stat .l {
 			font-family: var(--mono);
@@ -356,25 +361,18 @@
 		.sec-title {
 			font-size: clamp(1.9rem, 5vw, 3.2rem);
 			font-weight: 800;
-			letter-spacing: -0.035em;
-			line-height: 1;
-		}
-		.sec-title em {
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
-			color: var(--acid);
+			letter-spacing: -0.04em;
+			line-height: 1.02;
 		}
 
 		/* ═══ ABOUT ═══ */
 		.about-lead {
-			font-family: var(--serif);
-			font-style: italic;
-			font-size: clamp(1.35rem, 2.6vw, 2rem);
-			font-weight: 400;
-			line-height: 1.4;
+			font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+			font-weight: 500;
+			line-height: 1.42;
+			letter-spacing: -0.02em;
 			color: var(--ink);
-			max-width: 32ch;
+			max-width: 36ch;
 			margin-bottom: 1.6rem;
 		}
 		.about-lead .hl {
@@ -388,9 +386,10 @@
 			color: var(--ink-2);
 			font-weight: 300;
 			max-width: 60ch;
-			margin-bottom: 1.8rem;
+			margin-bottom: 1.4rem;
 		}
 		.about-line strong { color: var(--ink); font-weight: 600; }
+		.about-line:last-of-type { margin-bottom: 1.8rem; }
 		.about-cv-link {
 			display: inline-flex; align-items: center; gap: 0.45em;
 			font-family: var(--mono);
@@ -402,6 +401,109 @@
 		}
 		.about-cv-link:hover { color: var(--acid); border-color: var(--acid); gap: 0.75em; }
 		.about-cv-link svg { width: 13px; height: 13px; }
+
+		/* ═══ CAPABILITIES (What I Can Deliver) ═══ */
+		.cap-lead {
+			font-size: 1rem;
+			line-height: 1.75;
+			color: var(--ink-2);
+			font-weight: 300;
+			max-width: 72ch;
+			margin: -1.6rem 0 2.4rem;
+		}
+		.cap-lead strong { color: var(--ink); font-weight: 600; }
+		.cap-proof {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 0.8rem;
+			margin-bottom: 0.8rem;
+		}
+		@media (min-width: 720px) {
+			.cap-proof { grid-template-columns: 1fr 1fr; }
+		}
+		.proof-card {
+			background: linear-gradient(135deg, rgba(182,255,60,0.07), transparent 55%), var(--bg-2);
+			border: 1px solid var(--line-2);
+			border-radius: 16px;
+			padding: 1.4rem 1.5rem;
+			transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+		}
+		.proof-card:hover { border-color: var(--acid); transform: translateY(-3px); }
+		.proof-card .pv {
+			font-family: var(--mono);
+			font-weight: 600;
+			font-size: clamp(1.5rem, 3vw, 2rem);
+			color: var(--acid);
+			letter-spacing: -0.02em;
+			line-height: 1;
+			margin-bottom: 0.5rem;
+		}
+		.proof-card .pl {
+			font-family: var(--mono);
+			font-size: 0.62rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--ink-3);
+			margin-bottom: 0.6rem;
+		}
+		.proof-card .pd {
+			font-size: 0.88rem;
+			line-height: 1.65;
+			color: var(--ink-2);
+			font-weight: 300;
+		}
+		.proof-card .pd strong { color: var(--ink); font-weight: 600; }
+		.cap-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+			gap: 0.8rem;
+		}
+		.cap-card {
+			background: var(--bg-2);
+			border: 1px solid var(--line);
+			border-radius: 16px;
+			padding: 1.3rem 1.2rem;
+			transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), background 0.25s var(--ease);
+		}
+		.cap-card:hover {
+			border-color: var(--acid);
+			transform: translateY(-3px);
+			background: linear-gradient(160deg, var(--acid-pale), transparent 60%), var(--bg-2);
+		}
+		.cap-top {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 0.95rem;
+		}
+		.cap-icon {
+			width: 42px; height: 42px;
+			border-radius: 11px;
+			background: var(--acid-pale);
+			border: 1px solid rgba(182,255,60,0.35);
+			display: flex; align-items: center; justify-content: center;
+			color: var(--acid);
+		}
+		.cap-icon svg { width: 20px; height: 20px; }
+		.cap-idx {
+			font-family: var(--mono);
+			font-size: 0.62rem;
+			color: var(--ink-4);
+			letter-spacing: 0.1em;
+		}
+		.cap-card h3 {
+			font-size: 0.98rem;
+			font-weight: 650;
+			letter-spacing: -0.015em;
+			line-height: 1.25;
+			margin-bottom: 0.5rem;
+		}
+		.cap-card p {
+			font-size: 0.82rem;
+			line-height: 1.6;
+			color: var(--ink-2);
+			font-weight: 300;
+		}
 
 		/* ═══ PROJECTS ═══ */
 		.proj-list { display: flex; flex-direction: column; }
@@ -454,11 +556,11 @@
 			background: radial-gradient(circle at 70% 20%, var(--acid-pale), transparent 60%);
 		}
 		.tile .big {
-			font-family: var(--serif);
-			font-style: italic;
-			font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+			font-family: var(--mono);
+			font-weight: 600;
+			font-size: clamp(1.05rem, 2.4vw, 1.45rem);
 			color: var(--acid);
-			letter-spacing: -0.02em;
+			letter-spacing: -0.01em;
 			line-height: 1;
 			position: relative; z-index: 1;
 			text-align: center;
@@ -503,15 +605,9 @@
 		.proj-title {
 			font-size: clamp(1.25rem, 2.3vw, 1.75rem);
 			font-weight: 700;
-			letter-spacing: -0.025em;
+			letter-spacing: -0.03em;
 			line-height: 1.12;
 			margin-bottom: 0.7rem;
-		}
-		.proj-title em {
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
-			color: var(--acid);
 		}
 		.proj-desc {
 			font-size: 0.9rem;
@@ -596,24 +692,17 @@
 		.contact-title {
 			font-size: clamp(2.6rem, 8vw, 5.5rem);
 			font-weight: 800;
-			letter-spacing: -0.04em;
+			letter-spacing: -0.045em;
 			line-height: 1;
 			margin-bottom: 1.8rem;
 		}
-		.contact-title em {
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
-			color: var(--acid);
-		}
 		.contact-sub {
-			font-family: var(--serif);
-			font-style: italic;
-			font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+			font-size: clamp(1rem, 1.7vw, 1.25rem);
+			font-weight: 400;
 			color: var(--ink-2);
-			max-width: 46ch;
+			max-width: 50ch;
 			margin: 0 auto 2.4rem;
-			line-height: 1.45;
+			line-height: 1.55;
 		}
 		.contact-cta {
 			display: inline-flex; align-items: center; gap: 0.6em;
@@ -667,16 +756,14 @@
 		.marquee-item {
 			font-weight: 800;
 			font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-			letter-spacing: -0.025em;
+			letter-spacing: -0.03em;
 			color: var(--ink);
 			white-space: nowrap;
 		}
 		.marquee-item.alt { color: var(--ink-4); }
 		.marquee-item.acc {
 			color: var(--acid);
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
+			font-weight: 700;
 		}
 
 		/* ═══ FOOTER ═══ */
@@ -694,15 +781,9 @@
 		.footer-brand h4 {
 			font-size: clamp(1.9rem, 5vw, 3rem);
 			font-weight: 800;
-			letter-spacing: -0.035em;
+			letter-spacing: -0.04em;
 			line-height: 1;
 			margin-bottom: 0.5rem;
-		}
-		.footer-brand h4 em {
-			font-family: var(--serif);
-			font-style: italic;
-			font-weight: 400;
-			color: var(--acid);
 		}
 		.footer-brand p {
 			font-family: var(--mono);
@@ -817,7 +898,7 @@
 	</div>
 </section>
 
-<!-- ABOUT -->
+<!-- 01 / ABOUT -->
 <section id="about">
 	<div class="container reveal">
 		<div class="sec-head">
@@ -828,7 +909,10 @@
 			I turn <span class="hl">market data into investment decisions</span> — and charging protocols into automated tests.
 		</p>
 		<p class="about-line" data-i18n="about_line">
-			2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation with a projected €35–45k annual efficiency gain.
+			2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation concept with a projected €35–45k annual efficiency gain (personal estimate).
+		</p>
+		<p class="about-line" data-i18n="about_open">
+			Open to new domains where the management + engineering blend fits — fast ramp-up is part of what I bring.
 		</p>
 		<a href="cv.html" class="about-cv-link">
 			<span data-i18n="about_cv">Read the full story on my CV</span>
@@ -837,11 +921,80 @@
 	</div>
 </section>
 
-<!-- WORK -->
+<!-- 02 / WHAT I CAN DELIVER -->
+<section id="capabilities">
+	<div class="container reveal">
+		<div class="sec-head">
+			<div class="sec-num"><strong>02</strong> / <span data-i18n="sec_cap">WHAT I CAN DELIVER</span></div>
+			<h2 class="sec-title" data-i18n="sec_cap_title">Built to learn fast. <em>Ready for what's next.</em></h2>
+		</div>
+		<p class="cap-lead" data-i18n="cap_lead">
+			The five things I can deliver today were each learned fast — protocols, BI tools, lab work, automation. The same way I picked up the EV charging stack from scratch, I'm confident exploring new domains where my management + engineering blend fits.
+		</p>
+
+		<div class="cap-proof">
+			<div class="proof-card">
+				<div class="pv">≈ 40h</div>
+				<div class="pl" data-i18n="proof1_l">New BI tool → full CPO analysis</div>
+				<p class="pd" data-i18n="proof1_d">Picked up Tableau from scratch and delivered the complete <strong>Germany 2030</strong> Charge Point Operator analysis — research, model, dashboard — in roughly 40 hours.</p>
+			</div>
+			<div class="proof-card">
+				<div class="pv">0 → HiL</div>
+				<div class="pl" data-i18n="proof2_l">Self-taught EV test stack</div>
+				<p class="pd" data-i18n="proof2_d">Learned the full EV-charging test stack independently, on the job — <strong>ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL</strong>. New, complex toolchains don't slow me down for long.</p>
+			</div>
+		</div>
+
+		<div class="cap-grid">
+			<div class="cap-card">
+				<div class="cap-top">
+					<span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 13.5 2 2 4-4.5"/></svg></span>
+					<span class="cap-idx">01</span>
+				</div>
+				<h3 data-i18n="cap1_t">Test Automation</h3>
+				<p data-i18n="cap1_d">Hands-on, protocol-level automation for EV charging — automated test cases for OCPP 2.0.1 and 1.6.</p>
+			</div>
+			<div class="cap-card">
+				<div class="cap-top">
+					<span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+					<span class="cap-idx">02</span>
+				</div>
+				<h3 data-i18n="cap2_t">Embedded Implementation</h3>
+				<p data-i18n="cap2_d">SiL and HiL setups for the EVerest charging software, covering ISO 15118-2 and ISO 15118-20.</p>
+			</div>
+			<div class="cap-card">
+				<div class="cap-top">
+					<span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg></span>
+					<span class="cap-idx">03</span>
+				</div>
+				<h3 data-i18n="cap3_t">Market Analysis &amp; Data</h3>
+				<p data-i18n="cap3_d">E-mobility market analysis for Charge Point Operators — research, modelling and clear presentation.</p>
+			</div>
+			<div class="cap-card">
+				<div class="cap-top">
+					<span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></span>
+					<span class="cap-idx">04</span>
+				</div>
+				<h3 data-i18n="cap4_t">Process Optimisation</h3>
+				<p data-i18n="cap4_d">Self-initiated concept for automating documentation and reporting — Jira-based, designed to take repetitive work off the team's plate.</p>
+			</div>
+			<div class="cap-card">
+				<div class="cap-top">
+					<span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+					<span class="cap-idx">05</span>
+				</div>
+				<h3 data-i18n="cap5_t">Hands-on Support</h3>
+				<p data-i18n="cap5_d">Practical lab support — assembling racking, organising equipment, keeping the workspace running.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 03 / WORK -->
 <section id="work">
 	<div class="container reveal">
 		<div class="sec-head">
-			<div class="sec-num"><strong>02</strong> / <span data-i18n="sec02">SELECTED WORK</span></div>
+			<div class="sec-num"><strong>03</strong> / <span data-i18n="sec02">SELECTED WORK</span></div>
 			<h2 class="sec-title" data-i18n="sec02_title">Projects, <em>shipped.</em></h2>
 		</div>
 
@@ -877,13 +1030,13 @@
 					<span class="badge" data-i18n="badge_int">Internal Initiative</span>
 					<div class="tile">
 						<span class="big">AI × Reporting</span>
-						<span class="small" data-i18n="tile2">Piloting · aixACCT</span>
+						<span class="small" data-i18n="tile2">Proposed · aixACCT</span>
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year" data-i18n="p2_year">May 2026 – ongoing · Strategic efficiency initiative, direct reporting line to department head</div>
+					<div class="proj-year" data-i18n="p2_year">Jun 2026 · Self-initiated efficiency initiative — proposed to department leadership, implementation starting</div>
 					<h3 class="proj-title" data-i18n="p2_title">Documentation <em>Automation Initiative</em></h3>
-					<p class="proj-desc" data-i18n="p2_desc">Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.</p>
+					<p class="proj-desc" data-i18n="p2_desc">Self-initiated concept for AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant by design (planned), human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
@@ -1084,20 +1237,38 @@
 			scroll: "SCROLL",
 			sec01: "ABOUT", sec01_title: "Two halves, <em>one career.</em>",
 			about_lead: "I turn <span class=\"hl\">market data into investment decisions</span> — and charging protocols into automated tests.",
-			about_line: "2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation with a projected €35–45k annual efficiency gain.",
+			about_line: "2.5 years of European market intelligence at <strong>Numbat GmbH</strong>, an M.Sc. from <strong>RWTH Aachen</strong>, and now EV charging test automation at <strong>aixACCT Systems</strong> — where I also initiated an AI-supported reporting automation concept with a projected €35–45k annual efficiency gain (personal estimate).",
+			about_open: "Open to new domains where the management + engineering blend fits — fast ramp-up is part of what I bring.",
 			about_cv: "Read the full story on my CV",
+			sec_cap: "WHAT I CAN DELIVER",
+			sec_cap_title: "Built to learn fast. <em>Ready for what's next.</em>",
+			cap_lead: "The five things I can deliver today were each learned fast — protocols, BI tools, lab work, automation. The same way I picked up the EV charging stack from scratch, I'm confident exploring new domains where my management + engineering blend fits.",
+			proof1_l: "New BI tool → full CPO analysis",
+			proof1_d: "Picked up Tableau from scratch and delivered the complete <strong>Germany 2030</strong> Charge Point Operator analysis — research, model, dashboard — in roughly 40 hours.",
+			proof2_l: "Self-taught EV test stack",
+			proof2_d: "Learned the full EV-charging test stack independently, on the job — <strong>ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL</strong>. New, complex toolchains don't slow me down for long.",
+			cap1_t: "Test Automation",
+			cap1_d: "Hands-on, protocol-level automation for EV charging — automated test cases for OCPP 2.0.1 and 1.6.",
+			cap2_t: "Embedded Implementation",
+			cap2_d: "SiL and HiL setups for the EVerest charging software, covering ISO 15118-2 and ISO 15118-20.",
+			cap3_t: "Market Analysis &amp; Data",
+			cap3_d: "E-mobility market analysis for Charge Point Operators — research, modelling and clear presentation.",
+			cap4_t: "Process Optimisation",
+			cap4_d: "Self-initiated concept for automating documentation and reporting — Jira-based, designed to take repetitive work off the team's plate.",
+			cap5_t: "Hands-on Support",
+			cap5_d: "Practical lab support — assembling racking, organising equipment, keeping the workspace running.",
 			sec02: "SELECTED WORK", sec02_title: "Projects, <em>shipped.</em>",
 			badge_feat: "★ Featured", badge_int: "Internal Initiative", badge_soon: "Repo Coming Soon",
-			tile1: "Tableau Dashboard", tile2: "Piloting · aixACCT", tile3: "Master Thesis · OLS Model",
+			tile1: "Tableau Dashboard", tile2: "Proposed · aixACCT", tile3: "Master Thesis · OLS Model",
 			tile4: "Strategy Project", tile5: "CNN Classifier",
 			p1_year: "Jan – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering",
 			p1_title: "Strategic Investment Planner: <em>Germany 2030</em>",
 			p1_desc: "Interactive Tableau dashboard quantifying Germany's EV charging infrastructure gap through 2030 — What-If scenario sliders that update a <strong>revenue opportunity model</strong> live, built to support Charge Point Operator investment decisions.",
 			p1_kpi: "Revenue Opportunity Gap · AFIR Compliance Index · Infrastructure Sufficiency · 4 Scenario Sliders",
 			p1_t3: "EV Market Analysis", p1_t5: "Scenario Modelling",
-			p2_year: "May 2026 – ongoing · Strategic efficiency initiative, direct reporting line to department head",
+			p2_year: "Jun 2026 · Self-initiated efficiency initiative — proposed to department leadership, implementation starting",
 			p2_title: "Documentation <em>Automation Initiative</em>",
-			p2_desc: "Self-initiated AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.",
+			p2_desc: "Self-initiated concept for AI-supported automation of technical reporting workflows — Python + Jira + Enterprise Claude, GDPR-compliant by design (planned), human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost.",
 			p2_t4: "GDPR", p2_t5: "Process Automation",
 			p2_link: "Internal project — details on request",
 			p3_year: "Mar – Sept 2024 · RWTH Aachen × Numbat GmbH",
@@ -1140,20 +1311,38 @@
 			scroll: "SCROLLEN",
 			sec01: "ÜBER MICH", sec01_title: "Zwei Hälften, <em>eine Karriere.</em>",
 			about_lead: "Ich übersetze <span class=\"hl\">Marktdaten in Investitionsentscheidungen</span> — und Ladeprotokolle in automatisierte Tests.",
-			about_line: "2,5 Jahre europäische Market Intelligence bei <strong>Numbat GmbH</strong>, ein M.Sc. der <strong>RWTH Aachen</strong> und heute Testautomatisierung für EV-Ladeinfrastruktur bei <strong>aixACCT Systems</strong> — wo ich zusätzlich eine KI-gestützte Reporting-Automatisierung mit prognostiziertem Effizienzgewinn von 35–45 T€ pro Jahr initiiert habe.",
+			about_line: "2,5 Jahre europäische Market Intelligence bei <strong>Numbat GmbH</strong>, ein M.Sc. der <strong>RWTH Aachen</strong> und heute Testautomatisierung für EV-Ladeinfrastruktur bei <strong>aixACCT Systems</strong> — wo ich zusätzlich ein Konzept für eine KI-gestützte Reporting-Automatisierung mit prognostiziertem Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung) initiiert habe.",
+			about_open: "Offen für neue Domänen, in denen die Kombination aus Management und Engineering passt — schnelle Einarbeitung gehört dazu.",
 			about_cv: "Die ganze Geschichte im Lebenslauf",
+			sec_cap: "WAS ICH LIEFERN KANN",
+			sec_cap_title: "Schnell eingearbeitet. <em>Bereit für das Nächste.</em>",
+			cap_lead: "Die fünf Bereiche, die ich heute liefern kann, habe ich mir jeweils schnell erarbeitet — Protokolle, BI-Tools, Laborarbeit, Automatisierung. So wie ich mir den EV-Charging-Stack von Grund auf angeeignet habe, bin ich überzeugt, auch neue Domänen zu erschließen, in denen meine Kombination aus Management und Engineering passt.",
+			proof1_l: "Neues BI-Tool → komplette CPO-Analyse",
+			proof1_d: "Tableau von Grund auf gelernt und die komplette <strong>Germany-2030</strong>-Analyse für Charge Point Operators — Recherche, Modell, Dashboard — in rund 40 Stunden geliefert.",
+			proof2_l: "EV-Test-Stack selbst erarbeitet",
+			proof2_d: "Den kompletten EV-Charging-Test-Stack selbstständig im Job erarbeitet — <strong>ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL</strong>. Neue, komplexe Toolchains bremsen mich nicht lange.",
+			cap1_t: "Testautomatisierung",
+			cap1_d: "Hands-on-Automatisierung auf Protokollebene für EV-Charging — automatisierte Testfälle für OCPP 2.0.1 und 1.6.",
+			cap2_t: "Embedded-Implementierung",
+			cap2_d: "SiL- und HiL-Setups für die EVerest-Ladesoftware, inklusive ISO 15118-2 und ISO 15118-20.",
+			cap3_t: "Marktanalyse &amp; Daten",
+			cap3_d: "E-Mobility-Marktanalysen für Charge Point Operators — Recherche, Modellierung und klare Aufbereitung.",
+			cap4_t: "Prozessoptimierung",
+			cap4_d: "Eigeninitiiertes Konzept zur Automatisierung von Dokumentation und Reporting — Jira-basiert, entworfen, um dem Team Routinearbeit abzunehmen.",
+			cap5_t: "Hands-on-Support",
+			cap5_d: "Praktische Laborunterstützung — Regale aufbauen, Equipment organisieren, den Arbeitsplatz am Laufen halten.",
 			sec02: "AUSGEWÄHLTE ARBEITEN", sec02_title: "Projekte, <em>geliefert.</em>",
 			badge_feat: "★ Highlight", badge_int: "Interne Initiative", badge_soon: "Repo folgt",
-			tile1: "Tableau-Dashboard", tile2: "Pilotphase · aixACCT", tile3: "Masterarbeit · OLS-Modell",
+			tile1: "Tableau-Dashboard", tile2: "Vorgeschlagen · aixACCT", tile3: "Masterarbeit · OLS-Modell",
 			tile4: "Strategieprojekt", tile5: "CNN-Klassifikator",
 			p1_year: "Jan – Feb 2026 · Case Study für eine Managementberatung im Bereich Automotive und Engineering",
 			p1_title: "Strategic Investment Planner: <em>Deutschland 2030</em>",
 			p1_desc: "Interaktives Tableau-Dashboard zur Quantifizierung der Ladeinfrastruktur-Lücke in Deutschland bis 2030 — What-If-Szenario-Regler aktualisieren ein <strong>Umsatzpotenzial-Modell</strong> live, entwickelt zur Unterstützung von Investitionsentscheidungen von Charge Point Operators.",
 			p1_kpi: "Revenue Opportunity Gap · AFIR Compliance Index · Infrastruktur-Suffizienz · 4 Szenario-Regler",
 			p1_t3: "EV-Marktanalyse", p1_t5: "Szenario-Modellierung",
-			p2_year: "Mai 2026 – laufend · Strategische Effizienzinitiative mit direkter Berichtslinie an den Bereichsleiter",
+			p2_year: "Jun 2026 · Eigeninitiierte Effizienzinitiative — der Bereichsleitung vorgeschlagen, Umsetzung startet",
 			p2_title: "Dokumentations-<em>Automatisierungsinitiative</em>",
-			p2_desc: "Eigeninitiierte KI-gestützte Automatisierung technischer Reporting-Workflows — Python + Jira + Enterprise Claude, DSGVO-konforme Architektur mit Human-in-the-Loop-Review. <strong>Prognostizierter Effizienzgewinn von 35–45 T€ pro Jahr</strong> bei Implementierungskosten unter 3,3 T€; der Bereichsleitung präsentiert, aktuell in der Pilotphase.",
+			p2_desc: "Eigeninitiiertes Konzept zur KI-gestützten Automatisierung technischer Reporting-Workflows — Python + Jira + Enterprise Claude, DSGVO-konform konzipiert (geplant), Human-in-the-Loop-Review. <strong>Prognostizierter Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€.",
 			p2_t4: "DSGVO", p2_t5: "Prozessautomatisierung",
 			p2_link: "Internes Projekt — Details auf Anfrage",
 			p3_year: "März – Sept 2024 · RWTH Aachen × Numbat GmbH",
