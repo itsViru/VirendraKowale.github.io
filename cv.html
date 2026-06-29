@@ -732,11 +732,11 @@
 					Knowing the market wasn't enough. I wanted to understand the hardware it runs on, so at <strong>aixACCT Systems</strong> I implemented an <strong>EVerest SiL and HiL test automation framework</strong> for ISO 15118-2 &amp; -20 charging controller validation, integrating charger and EV simulator hardware to automate 10-step EV communication sequences, with a projected ~30% reduction in manual test setup time once deployed (personal estimate).
 				</p>
 				<p data-i18n="c4_p2">
-					Day to day: Jenkins, GitLab, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems.
+					Day to day: Jenkins, GitLab CI/CD, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems.
 				</p>
 				<div class="ramp" data-i18n="c4_call">
 					<div class="ramp-k">Fast ramp-up</div>
-					<div class="ramp-t">I taught myself the entire EV-charging test stack on the job: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>
+					<div class="ramp-t">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>
 				</div>
 				<p data-i18n="c4_p3">
 					Out of the documentation work emerged my own initiative: a concept for <strong>AI-supported automation of technical reporting workflows</strong> (Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), human-in-the-loop). It carries a <strong>projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost, proposed to department leadership, with implementation starting. The commercial instinct never left; it just gained an engineering counterpart.
@@ -744,7 +744,7 @@
 				<div class="chap-tags">
 					<span>EVerest SiL/HiL</span><span>ISO 15118-2 &amp; -20</span><span>OCPP 2.0.1</span>
 					<span>IEC 61851</span><span>Wireshark</span><span>Python · Bash</span>
-					<span>Jenkins · GitLab</span><span>Embedded Linux</span>
+					<span>C/C++</span><span>CMake</span><span>Jenkins · GitLab CI/CD</span><span>Embedded Linux</span>
 				</div>
 			</div>
 		</div>
@@ -817,6 +817,7 @@
 					<span class="lang-pill"><strong>Marathi</strong> — native</span>
 				</div>
 				<div class="lang-row" data-i18n="c6_certs">
+					<span class="lang-pill">ISTQB Certified Tester Foundation Level — planned</span>
 					<span class="lang-pill">Python Data Analytics — Meta (2024)</span>
 					<span class="lang-pill">RWTH Career Success in Germany — 1 of 50 selected from 150+</span>
 				</div>
@@ -840,19 +841,10 @@
 
 		<div class="arch-list">
 
-			<a href="https://github.com/itsViru/EV_Charging_Infrastructure_Analysis_Tool" target="_blank" rel="noopener" class="arch">
-				<span class="arch-year">2026</span>
-				<span class="arch-name">Strategic Investment Planner: Germany 2030</span>
-				<span class="arch-tags"><span>Tableau</span><span>Excel</span><span>BI</span><span>Scenario Modelling</span></span>
-				<span class="arch-go">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-			</a>
-
-			<!-- ISO 15118 SiL/HiL Integration — activate by converting div→a when the repo is public,
-			     then remove the soon-tag and update a_iso_go in BOTH the en and de dicts below. -->
 			<div class="arch">
 				<span class="arch-year">2026</span>
 				<span class="arch-name" data-i18n="a_iso_name">ISO 15118-2 &amp; -20 SiL/HiL Integration <span class="soon-tag">Repo soon</span></span>
-				<span class="arch-tags"><span>EVerest</span><span>ISO 15118</span><span>SiL/HiL</span><span>TLS · PKI</span></span>
+				<span class="arch-tags"><span>EVerest</span><span>ISO 15118</span><span>SiL/HiL</span><span>C/C++</span><span>CMake</span><span>TLS · PKI</span></span>
 				<span class="arch-go" data-i18n="a_iso_go">Repo soon</span>
 			</div>
 
@@ -864,6 +856,15 @@
 			</div>
 
 			<!-- Reporting Pipeline — ADD GITHUB URL when confirmed: convert div→a -->
+			<a href="https://github.com/itsViru/EV_Charging_Infrastructure_Analysis_Tool" target="_blank" rel="noopener" class="arch">
+				<span class="arch-year">2026</span>
+				<span class="arch-name">Strategic Investment Planner: Germany 2030</span>
+				<span class="arch-tags"><span>Tableau</span><span>Excel</span><span>BI</span><span>Scenario Modelling</span></span>
+				<span class="arch-go">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+			</a>
+
+			<!-- ISO 15118 SiL/HiL Integration — activate by converting div→a when the repo is public,
+			     then remove the soon-tag and update a_iso_go in BOTH the en and de dicts below. -->
 			<div class="arch">
 				<span class="arch-year">2024 — 25</span>
 				<span class="arch-name" data-i18n="a_pipe_name">Prozessautomatisierung — Reporting Pipeline <span class="soon-tag">Link soon</span></span>
@@ -992,8 +993,8 @@
 			c4_title: "Then going under <em>the hood.</em>",
 			c4_date: "<span class=\"now\">NOW</span><br/>Nov 2025 — Present<span class=\"org\">aixACCT Systems GmbH<br/>Test Automation and Hardware Engineer (Part-time)</span><span class=\"org-desc\">Aachen-based specialist in measurement and test technology for EV charging infrastructure, piezo characterization, and MEMS</span>",
 			c4_p1: "Knowing the market wasn't enough. I wanted to understand the hardware it runs on, so at <strong>aixACCT Systems</strong> I implemented an <strong>EVerest SiL and HiL test automation framework</strong> for ISO 15118-2 &amp; -20 charging controller validation, integrating charger and EV simulator hardware to automate 10-step EV communication sequences, with a projected ~30% reduction in manual test setup time once deployed (personal estimate).",
-			c4_p2: "Day to day: Jenkins, GitLab, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems.",
-			c4_call: "<div class=\"ramp-k\">Fast ramp-up</div><div class=\"ramp-t\">I taught myself the entire EV-charging test stack on the job: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>",
+			c4_p2: "Day to day: Jenkins, GitLab CI/CD, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems.",
+			c4_call: "<div class=\"ramp-k\">Fast ramp-up</div><div class=\"ramp-t\">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>",
 			c4_p3: "Out of the documentation work emerged my own initiative: a concept for <strong>AI-supported automation of technical reporting workflows</strong> (Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), human-in-the-loop). It carries a <strong>projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost, proposed to department leadership, with implementation starting. The commercial instinct never left; it just gained an engineering counterpart.",
 			c5_num: "<strong>05</strong> / FEATURED ANALYSIS",
 			c5_title: "Both halves, <em>one dashboard.</em>",
@@ -1010,7 +1011,7 @@
 			c6_conf: "The list of roles is where I'm strongest today, but the same fast-ramp pattern that built this CV makes me confident in adjacent domains too.",
 			c6_langlabel: "Languages &amp; certificates:",
 			c6_langs: "<span class=\"lang-pill\"><strong>German</strong> — daily working language</span><span class=\"lang-pill\"><strong>English</strong> — C1</span><span class=\"lang-pill\"><strong>Hindi</strong> — native</span><span class=\"lang-pill\"><strong>Marathi</strong> — native</span>",
-			c6_certs: "<span class=\"lang-pill\">Python Data Analytics — Meta (2024)</span><span class=\"lang-pill\">RWTH Career Success in Germany — 1 of 50 selected from 150+</span>",
+			c6_certs: "<span class=\"lang-pill\">ISTQB Certified Tester Foundation Level — planned</span><span class=\"lang-pill\">Python Data Analytics — Meta (2024)</span><span class=\"lang-pill\">RWTH Career Success in Germany — 1 of 50 selected from 150+</span>",
 			c6_run: "Off the clock: half-marathon finisher (Venlo, 2026), the same discipline I bring to work.",
 			c7_num: "<strong>07</strong> / PROJECT ARCHIVE",
 			c7_title: "Everything, <em>in one list.</em>",
@@ -1059,8 +1060,8 @@
 			c4_title: "Dann unter <em>die Haube.</em>",
 			c4_date: "<span class=\"now\">JETZT</span><br/>Nov 2025 — heute<span class=\"org\">aixACCT Systems GmbH<br/>Test Automation and Hardware Engineer (Teilzeit)</span><span class=\"org-desc\">Aachener Spezialist für Mess- und Prüftechnik für EV-Ladeinfrastruktur, Piezo-Charakterisierung und MEMS</span>",
 			c4_p1: "Den Markt zu kennen reichte mir nicht. Ich wollte die Hardware darunter verstehen. Bei <strong>aixACCT Systems</strong> habe ich daher ein <strong>EVerest-SiL- und -HiL-Testautomatisierungs-Framework</strong> für die Validierung von Ladecontrollern nach ISO 15118-2 &amp; -20 implementiert und dabei Charger- und EV-Simulator-Hardware integriert, um 10-stufige EV-Kommunikationssequenzen zu automatisieren, mit einer prognostizierten Reduktion der manuellen Testaufbauzeit um ~30 % nach Deployment (eigene Schätzung).",
-			c4_p2: "Im Alltag: Jenkins, GitLab, Bash und Python-Automatisierung rund um <strong>IEC 61851, ISO 15118 und OCPP 2.0.1</strong>; Log- und Trace-Analyse auf Protokollebene mit Wireshark (TCP-Dump, SocketCAN) zur Fehlerdiagnose; Embedded-Linux-Testsysteme.",
-			c4_call: "<div class=\"ramp-k\">Schnelle Einarbeitung</div><div class=\"ramp-t\">Ich habe mir den kompletten EV-Charging-Test-Stack selbstständig im Job erarbeitet: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. Neue Toolchains bremsen mich nicht lange.</div>",
+			c4_p2: "Im Alltag: Jenkins, GitLab CI/CD, Bash und Python-Automatisierung rund um <strong>IEC 61851, ISO 15118 und OCPP 2.0.1</strong>; Log- und Trace-Analyse auf Protokollebene mit Wireshark (TCP-Dump, SocketCAN) zur Fehlerdiagnose; Embedded-Linux-Testsysteme.",
+			c4_call: "<div class=\"ramp-k\">Schnelle Einarbeitung</div><div class=\"ramp-t\">Ich habe den kompletten EV-Charging-Test-Stack selbstständig umgesetzt: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. Neue Toolchains bremsen mich nicht lange.</div>",
 			c4_p3: "Aus der Dokumentationsarbeit entstand meine eigene Initiative: ein Konzept zur <strong>KI-gestützten Automatisierung technischer Reporting-Workflows</strong> (Python, Jira, GitLab, Enterprise Claude und einen lokalen Server, DSGVO-konform konzipiert (geplant), Human-in-the-Loop). Es bringt einen <strong>prognostizierten Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€, der Bereichsleitung vorgeschlagen, Umsetzung startet. Der kommerzielle Instinkt ist nie verschwunden; er hat nur ein technisches Gegenstück bekommen.",
 			c5_num: "<strong>05</strong> / AUSGEWÄHLTE ANALYSE",
 			c5_title: "Beide Hälften, <em>ein Dashboard.</em>",
@@ -1077,7 +1078,7 @@
 			c6_conf: "Diese Rollen sind heute meine größte Stärke, aber dasselbe Muster schneller Einarbeitung, das diesen Lebenslauf geprägt hat, macht mich auch in angrenzenden Domänen zuversichtlich.",
 			c6_langlabel: "Sprachen &amp; Zertifikate:",
 			c6_langs: "<span class=\"lang-pill\"><strong>Deutsch</strong> — tägliche Arbeitssprache</span><span class=\"lang-pill\"><strong>Englisch</strong> — C1</span><span class=\"lang-pill\"><strong>Hindi</strong> — Muttersprache</span><span class=\"lang-pill\"><strong>Marathi</strong> — Muttersprache</span>",
-			c6_certs: "<span class=\"lang-pill\">Python Data Analytics — Meta (2024)</span><span class=\"lang-pill\">RWTH Career Success in Germany — 1 von 50 aus 150+ ausgewählt</span>",
+			c6_certs: "<span class=\"lang-pill\">ISTQB Certified Tester Foundation Level — geplant</span><span class=\"lang-pill\">Python Data Analytics — Meta (2024)</span><span class=\"lang-pill\">RWTH Career Success in Germany — 1 von 50 aus 150+ ausgewählt</span>",
 			c6_run: "Nach Feierabend: Halbmarathon-Finisher (Venlo 2026), dieselbe Disziplin, die ich in die Arbeit mitbringe.",
 			c7_num: "<strong>07</strong> / PROJEKTARCHIV",
 			c7_title: "Alles, <em>in einer Liste.</em>",
