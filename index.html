@@ -64,96 +64,37 @@
 		}
 
 		html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-		body {
-			font-family: var(--sans);
-			background: var(--bg);
-			color: var(--ink);
-			line-height: 1.5;
-			overflow-x: hidden;
-		}
+		body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.5; overflow-x: hidden; }
 		::selection { background: var(--acid); color: #000; }
 		img { max-width: 100%; display: block; }
 		a { color: inherit; text-decoration: none; }
 
 		.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
-		/* Accent words: upright Geist in acid-lime (no italics anywhere) */
 		h1 em, h2 em, h3 em, .sec-title em, .proj-title em, .contact-title em, .footer-brand h4 em {
-			font-style: normal;
-			font-family: var(--sans);
-			color: var(--acid);
+			font-style: normal; font-family: var(--sans); color: var(--acid);
 		}
 
-		/* ═══ NAV ═══ */
 		.nav {
-			position: fixed;
-			top: 1.5rem; left: 50%;
-			transform: translateX(-50%);
-			z-index: 100;
+			position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100;
 			display: flex; align-items: center; gap: 0.3rem;
 			padding: 0.4rem 0.5rem 0.4rem 1rem;
 			background: rgba(15,15,15,0.78);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 1px solid var(--line);
-			border-radius: 99px;
-			font-family: var(--mono);
-			font-size: 0.78rem;
+			backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+			border: 1px solid var(--line); border-radius: 99px;
+			font-family: var(--mono); font-size: 0.78rem;
 		}
-		.nav-logo {
-			display: inline-flex; align-items: center; gap: 0.5em;
-			color: var(--ink);
-			padding-right: 0.7rem;
-			border-right: 1px solid var(--line);
-		}
-		.nav-logo-dot {
-			width: 7px; height: 7px;
-			background: var(--acid);
-			border-radius: 50%;
-			box-shadow: 0 0 10px var(--acid-glow);
-			animation: dot-pulse 2.4s ease-in-out infinite;
-		}
-		@keyframes dot-pulse {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50%      { opacity: 0.65; transform: scale(0.85); }
-		}
+		.nav-logo { display: inline-flex; align-items: center; gap: 0.5em; color: var(--ink); padding-right: 0.7rem; border-right: 1px solid var(--line); }
+		.nav-logo-dot { width: 7px; height: 7px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 10px var(--acid-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
+		@keyframes dot-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.65; transform: scale(0.85); } }
 		.nav-links { display: flex; gap: 0.1rem; }
-		.nav-links a {
-			padding: 0.45rem 0.85rem;
-			color: var(--ink-3);
-			border-radius: 99px;
-			transition: color 0.2s, background 0.2s;
-			font-size: 0.74rem;
-			letter-spacing: 0.02em;
-		}
+		.nav-links a { padding: 0.45rem 0.85rem; color: var(--ink-3); border-radius: 99px; transition: color 0.2s, background 0.2s; font-size: 0.74rem; letter-spacing: 0.02em; }
 		.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
-		.lang-switch {
-			display: flex; gap: 0.1rem;
-			padding: 0 0.35rem;
-			border-left: 1px solid var(--line);
-		}
-		.lang-switch button {
-			font-family: var(--mono);
-			font-size: 0.68rem;
-			padding: 0.38rem 0.5rem;
-			background: transparent;
-			border: none;
-			color: var(--ink-3);
-			cursor: pointer;
-			border-radius: 99px;
-			transition: color 0.2s, background 0.2s;
-			letter-spacing: 0.04em;
-		}
+		.lang-switch { display: flex; gap: 0.1rem; padding: 0 0.35rem; border-left: 1px solid var(--line); }
+		.lang-switch button { font-family: var(--mono); font-size: 0.68rem; padding: 0.38rem 0.5rem; background: transparent; border: none; color: var(--ink-3); cursor: pointer; border-radius: 99px; transition: color 0.2s, background 0.2s; letter-spacing: 0.04em; }
 		.lang-switch button:hover { color: var(--ink); }
 		.lang-switch button.active { color: var(--acid); background: var(--acid-pale); }
-		.nav-cta {
-			background: var(--acid);
-			color: #0a0a0a !important;
-			padding: 0.5rem 1rem;
-			border-radius: 99px;
-			font-weight: 600;
-			transition: background 0.2s;
-		}
+		.nav-cta { background: var(--acid); color: #0a0a0a !important; padding: 0.5rem 1rem; border-radius: 99px; font-weight: 600; transition: background 0.2s; }
 		.nav-cta:hover { background: var(--acid-dim); }
 		@media (max-width: 720px) {
 			.nav { top: 0.8rem; padding: 0.35rem 0.4rem 0.35rem 0.85rem; }
@@ -162,677 +103,141 @@
 			.nav-cta { padding: 0.45rem 0.75rem; font-size: 0.66rem; }
 		}
 
-		/* ═══ HERO ═══ */
-		.hero {
-			position: relative;
-			min-height: 92vh;
-			padding: 9rem 0 4rem;
-			display: flex;
-			align-items: center;
-			overflow: hidden;
-		}
-		.hero-bg {
-			position: absolute; inset: 0;
-			background-image:
-				linear-gradient(rgba(182,255,60,0.04) 1px, transparent 1px),
-				linear-gradient(90deg, rgba(182,255,60,0.04) 1px, transparent 1px);
-			background-size: 60px 60px;
-			mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%);
-			-webkit-mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%);
-			pointer-events: none;
-		}
-		.hero-bg::after {
-			content: '';
-			position: absolute; inset: 0;
-			background:
-				radial-gradient(circle at 75% 15%, rgba(182,255,60,0.06), transparent 50%),
-				radial-gradient(circle at 10% 85%, rgba(182,255,60,0.04), transparent 50%);
-		}
+		.hero { position: relative; min-height: 92vh; padding: 9rem 0 4rem; display: flex; align-items: center; overflow: hidden; }
+		.hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(182,255,60,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(182,255,60,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 75% 60% at 45% 40%, black 0%, transparent 70%); pointer-events: none; }
+		.hero-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 75% 15%, rgba(182,255,60,0.06), transparent 50%), radial-gradient(circle at 10% 85%, rgba(182,255,60,0.04), transparent 50%); }
 		.hero-inner { position: relative; z-index: 1; width: 100%; }
-
-		.hero-meta {
-			display: inline-flex; align-items: center; gap: 0.6rem;
-			font-family: var(--mono);
-			font-size: 0.74rem;
-			color: var(--ink-3);
-			margin-bottom: 1.8rem;
-			letter-spacing: 0.05em;
-		}
-		.hero-meta-dot {
-			width: 8px; height: 8px;
-			background: var(--acid);
-			border-radius: 50%;
-			box-shadow: 0 0 12px var(--acid-glow);
-			animation: dot-pulse 2.4s ease-in-out infinite;
-		}
-
-		.hero h1 {
-			font-size: clamp(2.6rem, 8vw, 5.6rem);
-			font-weight: 800;
-			line-height: 1.02;
-			letter-spacing: -0.045em;
-			margin-bottom: 1.4rem;
-		}
-		.hero h1 .hi {
-			display: block;
-			font-size: 0.5em;
-			font-weight: 600;
-			letter-spacing: -0.02em;
-			color: var(--ink-2);
-			margin-bottom: 0.25em;
-		}
-		.hero h1 .ser {
-			font-style: normal;
-			font-weight: 800;
-			color: var(--acid);
-			letter-spacing: -0.045em;
-		}
-
-		.hero-sub {
-			font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-			font-weight: 400;
-			color: var(--ink-2);
-			max-width: 52ch;
-			line-height: 1.55;
-			margin-bottom: 2rem;
-			letter-spacing: -0.01em;
-		}
-
-		.pills {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.55rem;
-			margin-bottom: 2.2rem;
-			max-width: 680px;
-		}
-		.pill {
-			display: inline-flex; align-items: center; gap: 0.45em;
-			font-family: var(--mono);
-			font-size: 0.76rem;
-			padding: 0.5em 0.95em;
-			background: var(--bg-2);
-			border: 1px solid var(--line-2);
-			border-radius: 99px;
-			color: var(--ink-2);
-			transition: border-color 0.2s, color 0.2s, background 0.2s;
-			cursor: default;
-		}
-		.pill:hover {
-			border-color: var(--acid);
-			color: var(--ink);
-			background: var(--acid-pale);
-		}
-
+		.hero-meta { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-3); margin-bottom: 1.8rem; letter-spacing: 0.05em; }
+		.hero-meta-dot { width: 8px; height: 8px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 12px var(--acid-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
+		.hero h1 { font-size: clamp(2.6rem, 8vw, 5.6rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.045em; margin-bottom: 1.4rem; }
+		.hero h1 .hi { display: block; font-size: 0.5em; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-2); margin-bottom: 0.25em; }
+		.hero h1 .ser { font-style: normal; font-weight: 800; color: var(--acid); letter-spacing: -0.045em; }
+		.hero-sub { font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; color: var(--ink-2); max-width: 52ch; line-height: 1.55; margin-bottom: 2rem; letter-spacing: -0.01em; }
+		.pills { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 2.2rem; max-width: 680px; }
+		.pill { display: inline-flex; align-items: center; gap: 0.45em; font-family: var(--mono); font-size: 0.76rem; padding: 0.5em 0.95em; background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 99px; color: var(--ink-2); transition: border-color 0.2s, color 0.2s, background 0.2s; cursor: default; }
+		.pill:hover { border-color: var(--acid); color: var(--ink); background: var(--acid-pale); }
 		.hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2.6rem; }
-		.btn {
-			display: inline-flex; align-items: center; gap: 0.5em;
-			font-family: var(--sans);
-			font-size: 0.83rem;
-			font-weight: 600;
-			padding: 0.85em 1.5em;
-			border-radius: 99px;
-			border: 1px solid transparent;
-			transition: all 0.25s var(--ease);
-		}
+		.btn { display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--sans); font-size: 0.83rem; font-weight: 600; padding: 0.85em 1.5em; border-radius: 99px; border: 1px solid transparent; transition: all 0.25s var(--ease); }
 		.btn-primary { background: var(--acid); color: #0a0a0a !important; }
-		.btn-primary:hover {
-			background: var(--acid-dim);
-			box-shadow: 0 0 0 6px var(--acid-pale);
-			transform: translateY(-2px);
-		}
+		.btn-primary:hover { background: var(--acid-dim); box-shadow: 0 0 0 6px var(--acid-pale); transform: translateY(-2px); }
 		.btn-ghost { background: transparent; color: var(--ink) !important; border-color: var(--line-2); }
 		.btn-ghost:hover { border-color: var(--acid); color: var(--acid) !important; }
 		.btn svg { width: 14px; height: 14px; transition: transform 0.25s; }
 		.btn:hover svg { transform: translateX(2px); }
+		.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; max-width: 760px; }
+		.hero-stat { background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; padding: 0.9rem 1rem; }
+		.hero-stat .v { font-family: var(--mono); font-weight: 600; font-size: 1.4rem; color: var(--acid); letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.35rem; }
+		.hero-stat .l { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; }
+		@media (max-width: 720px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+		.hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5em; animation: float 2.2s ease-in-out infinite; }
+		@keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-		.hero-stats {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 0.6rem;
-			max-width: 760px;
-		}
-		.hero-stat {
-			background: var(--bg-2);
-			border: 1px solid var(--line);
-			border-radius: 14px;
-			padding: 0.9rem 1rem;
-		}
-		.hero-stat .v {
-			font-family: var(--mono);
-			font-weight: 600;
-			font-size: 1.4rem;
-			color: var(--acid);
-			letter-spacing: -0.02em;
-			line-height: 1;
-			margin-bottom: 0.35rem;
-		}
-		.hero-stat .l {
-			font-family: var(--mono);
-			font-size: 0.62rem;
-			color: var(--ink-3);
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-		@media (max-width: 720px) {
-			.hero-stats { grid-template-columns: repeat(2, 1fr); }
-		}
-
-		.hero-scroll {
-			position: absolute;
-			bottom: 2rem; left: 50%;
-			transform: translateX(-50%);
-			font-family: var(--mono);
-			font-size: 0.7rem;
-			color: var(--ink-3);
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			display: flex; align-items: center; gap: 0.5em;
-			animation: float 2.2s ease-in-out infinite;
-		}
-		@keyframes float {
-			0%, 100% { transform: translateX(-50%) translateY(0); }
-			50%      { transform: translateX(-50%) translateY(6px); }
-		}
-
-		/* ═══ SECTIONS ═══ */
 		section { padding: 6.5rem 0; }
 		@media (max-width: 720px) { section { padding: 4rem 0; } }
-
-		.sec-head {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 1rem;
-			margin-bottom: 3.5rem;
-		}
-		@media (min-width: 980px) {
-			.sec-head { grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: end; }
-		}
-		.sec-num {
-			font-family: var(--mono);
-			font-size: 0.78rem;
-			color: var(--ink-3);
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			padding-bottom: 0.5rem;
-			border-bottom: 1px solid var(--line);
-			width: fit-content;
-		}
+		.sec-head { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 3.5rem; }
+		@media (min-width: 980px) { .sec-head { grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: end; } }
+		.sec-num { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line); width: fit-content; }
 		.sec-num strong { color: var(--acid); font-weight: 500; }
-		.sec-title {
-			font-size: clamp(1.9rem, 5vw, 3.2rem);
-			font-weight: 800;
-			letter-spacing: -0.04em;
-			line-height: 1.02;
-		}
+		.sec-title { font-size: clamp(1.9rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; }
 
-		/* ═══ ABOUT ═══ */
-		.about-lead {
-			font-size: clamp(1.3rem, 2.4vw, 1.85rem);
-			font-weight: 500;
-			line-height: 1.42;
-			letter-spacing: -0.02em;
-			color: var(--ink);
-			max-width: 36ch;
-			margin-bottom: 1.6rem;
-		}
-		.about-lead .hl {
-			color: var(--acid);
-			background: linear-gradient(transparent 62%, var(--acid-pale) 62%);
-			padding: 0 0.1em;
-		}
-		.about-line {
-			font-size: 1rem;
-			line-height: 1.75;
-			color: var(--ink-2);
-			font-weight: 300;
-			max-width: 60ch;
-			margin-bottom: 1.4rem;
-		}
+		.about-lead { font-size: clamp(1.3rem, 2.4vw, 1.85rem); font-weight: 500; line-height: 1.42; letter-spacing: -0.02em; color: var(--ink); max-width: 36ch; margin-bottom: 1.6rem; }
+		.about-lead .hl { color: var(--acid); background: linear-gradient(transparent 62%, var(--acid-pale) 62%); padding: 0 0.1em; }
+		.about-line { font-size: 1rem; line-height: 1.75; color: var(--ink-2); font-weight: 300; max-width: 60ch; margin-bottom: 1.4rem; }
 		.about-line strong { color: var(--ink); font-weight: 600; }
 		.about-line:last-of-type { margin-bottom: 1.8rem; }
-		.about-cv-link {
-			display: inline-flex; align-items: center; gap: 0.45em;
-			font-family: var(--mono);
-			font-size: 0.82rem;
-			color: var(--ink);
-			padding: 0.6em 0;
-			border-bottom: 1px solid var(--ink-4);
-			transition: color 0.2s, border-color 0.2s, gap 0.25s;
-		}
+		.about-cv-link { display: inline-flex; align-items: center; gap: 0.45em; font-family: var(--mono); font-size: 0.82rem; color: var(--ink); padding: 0.6em 0; border-bottom: 1px solid var(--ink-4); transition: color 0.2s, border-color 0.2s, gap 0.25s; }
 		.about-cv-link:hover { color: var(--acid); border-color: var(--acid); gap: 0.75em; }
 		.about-cv-link svg { width: 13px; height: 13px; }
 
-		/* ═══ CAPABILITIES (What I Can Deliver) ═══ */
-		.cap-lead {
-			font-size: 1rem;
-			line-height: 1.75;
-			color: var(--ink-2);
-			font-weight: 300;
-			max-width: 72ch;
-			margin: -1.6rem 0 2.4rem;
-		}
+		.cap-lead { font-size: 1rem; line-height: 1.75; color: var(--ink-2); font-weight: 300; max-width: 72ch; margin: -1.6rem 0 2.4rem; }
 		.cap-lead strong { color: var(--ink); font-weight: 600; }
-		.cap-proof {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 0.8rem;
-			margin-bottom: 0.8rem;
-		}
-		@media (min-width: 720px) {
-			.cap-proof { grid-template-columns: 1fr 1fr; }
-		}
-		.proof-card {
-			background: linear-gradient(135deg, rgba(182,255,60,0.07), transparent 55%), var(--bg-2);
-			border: 1px solid var(--line-2);
-			border-radius: 16px;
-			padding: 1.4rem 1.5rem;
-			transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
-		}
+		.cap-proof { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin-bottom: 0.8rem; }
+		@media (min-width: 720px) { .cap-proof { grid-template-columns: 1fr 1fr; } }
+		.proof-card { background: linear-gradient(135deg, rgba(182,255,60,0.07), transparent 55%), var(--bg-2); border: 1px solid var(--line-2); border-radius: 16px; padding: 1.4rem 1.5rem; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
 		.proof-card:hover { border-color: var(--acid); transform: translateY(-3px); }
-		.proof-card .pv {
-			font-family: var(--mono);
-			font-weight: 600;
-			font-size: clamp(1.5rem, 3vw, 2rem);
-			color: var(--acid);
-			letter-spacing: -0.02em;
-			line-height: 1;
-			margin-bottom: 0.5rem;
-		}
-		.proof-card .pl {
-			font-family: var(--mono);
-			font-size: 0.62rem;
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
-			color: var(--ink-3);
-			margin-bottom: 0.6rem;
-		}
-		.proof-card .pd {
-			font-size: 0.88rem;
-			line-height: 1.65;
-			color: var(--ink-2);
-			font-weight: 300;
-		}
+		.proof-card .pv { font-family: var(--mono); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--acid); letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.5rem; }
+		.proof-card .pl { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.6rem; }
+		.proof-card .pd { font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); font-weight: 300; }
 		.proof-card .pd strong { color: var(--ink); font-weight: 600; }
-		.cap-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-			gap: 0.8rem;
-		}
-		.cap-card {
-			background: var(--bg-2);
-			border: 1px solid var(--line);
-			border-radius: 16px;
-			padding: 1.3rem 1.2rem;
-			transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), background 0.25s var(--ease);
-		}
-		.cap-card:hover {
-			border-color: var(--acid);
-			transform: translateY(-3px);
-			background: linear-gradient(160deg, var(--acid-pale), transparent 60%), var(--bg-2);
-		}
-		.cap-top {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin-bottom: 0.95rem;
-		}
-		.cap-icon {
-			width: 42px; height: 42px;
-			border-radius: 11px;
-			background: var(--acid-pale);
-			border: 1px solid rgba(182,255,60,0.35);
-			display: flex; align-items: center; justify-content: center;
-			color: var(--acid);
-		}
+		.cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.8rem; }
+		.cap-card { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; padding: 1.3rem 1.2rem; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), background 0.25s var(--ease); }
+		.cap-card:hover { border-color: var(--acid); transform: translateY(-3px); background: linear-gradient(160deg, var(--acid-pale), transparent 60%), var(--bg-2); }
+		.cap-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.95rem; }
+		.cap-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--acid-pale); border: 1px solid rgba(182,255,60,0.35); display: flex; align-items: center; justify-content: center; color: var(--acid); }
 		.cap-icon svg { width: 20px; height: 20px; }
-		.cap-idx {
-			font-family: var(--mono);
-			font-size: 0.62rem;
-			color: var(--ink-4);
-			letter-spacing: 0.1em;
-		}
-		.cap-card h3 {
-			font-size: 0.98rem;
-			font-weight: 650;
-			letter-spacing: -0.015em;
-			line-height: 1.25;
-			margin-bottom: 0.5rem;
-		}
-		.cap-card p {
-			font-size: 0.82rem;
-			line-height: 1.6;
-			color: var(--ink-2);
-			font-weight: 300;
-		}
+		.cap-idx { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-4); letter-spacing: 0.1em; }
+		.cap-card h3 { font-size: 0.98rem; font-weight: 650; letter-spacing: -0.015em; line-height: 1.25; margin-bottom: 0.5rem; }
+		.cap-card p { font-size: 0.82rem; line-height: 1.6; color: var(--ink-2); font-weight: 300; }
 
-		/* ═══ PROJECTS ═══ */
 		.proj-list { display: flex; flex-direction: column; }
-		.proj {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 1.4rem;
-			padding: 2.4rem 0;
-			border-top: 1px solid var(--line);
-			transition: background 0.3s var(--ease), padding 0.3s var(--ease);
-		}
+		.proj { display: grid; grid-template-columns: 1fr; gap: 1.4rem; padding: 2.4rem 0; border-top: 1px solid var(--line); transition: background 0.3s var(--ease), padding 0.3s var(--ease); }
 		.proj:last-child { border-bottom: 1px solid var(--line); }
-		a.proj:hover {
-			background: linear-gradient(90deg, var(--acid-pale), transparent 60%);
-			padding-left: 1.4rem;
-			padding-right: 1.4rem;
-		}
-		@media (min-width: 980px) {
-			.proj { grid-template-columns: 0.7fr 1.3fr 0.9fr; gap: 2.6rem; align-items: start; }
-		}
-
-		.proj-img {
-			aspect-ratio: 4/3;
-			background: var(--bg-2);
-			border: 1px solid var(--line);
-			border-radius: 14px;
-			overflow: hidden;
-			position: relative;
-		}
-
-		/* Consistent metric tiles for ALL projects */
-		.tile {
-			width: 100%; height: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 0.45rem;
-			background-image:
-				linear-gradient(rgba(182,255,60,0.05) 1px, transparent 1px),
-				linear-gradient(90deg, rgba(182,255,60,0.05) 1px, transparent 1px);
-			background-size: 28px 28px;
-			position: relative;
-			transition: transform 0.6s var(--ease);
-		}
+		a.proj:hover { background: linear-gradient(90deg, var(--acid-pale), transparent 60%); padding-left: 1.4rem; padding-right: 1.4rem; }
+		@media (min-width: 980px) { .proj { grid-template-columns: 0.7fr 1.3fr 0.9fr; gap: 2.6rem; align-items: start; } }
+		.proj-img { aspect-ratio: 4/3; background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; position: relative; }
+		.tile { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.45rem; background-image: linear-gradient(rgba(182,255,60,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(182,255,60,0.05) 1px, transparent 1px); background-size: 28px 28px; position: relative; transition: transform 0.6s var(--ease); }
 		.proj:hover .tile { transform: scale(1.03); }
-		.tile::after {
-			content: '';
-			position: absolute; inset: 0;
-			background: radial-gradient(circle at 70% 20%, var(--acid-pale), transparent 60%);
-		}
-		.tile .big {
-			font-family: var(--mono);
-			font-weight: 600;
-			font-size: clamp(1.05rem, 2.4vw, 1.45rem);
-			color: var(--acid);
-			letter-spacing: -0.01em;
-			line-height: 1;
-			position: relative; z-index: 1;
-			text-align: center;
-			padding: 0 0.5rem;
-		}
-		.tile .small {
-			font-family: var(--mono);
-			font-size: 0.62rem;
-			color: var(--ink-3);
-			text-transform: uppercase;
-			letter-spacing: 0.12em;
-			position: relative; z-index: 1;
-			text-align: center;
-			padding: 0 0.5rem;
-		}
-
-		.badge {
-			position: absolute;
-			top: 0.7rem; left: 0.7rem;
-			z-index: 2;
-			font-family: var(--mono);
-			font-size: 0.62rem;
-			padding: 0.25em 0.7em;
-			background: rgba(10,10,10,0.78);
-			backdrop-filter: blur(8px);
-			border: 1px solid var(--acid);
-			color: var(--acid);
-			border-radius: 99px;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-		}
+		.tile::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 20%, var(--acid-pale), transparent 60%); }
+		.tile .big { font-family: var(--mono); font-weight: 600; font-size: clamp(1.05rem, 2.4vw, 1.45rem); color: var(--acid); letter-spacing: -0.01em; line-height: 1; position: relative; z-index: 1; text-align: center; padding: 0 0.5rem; }
+		.tile .small { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.12em; position: relative; z-index: 1; text-align: center; padding: 0 0.5rem; }
+		.badge { position: absolute; top: 0.7rem; left: 0.7rem; z-index: 2; font-family: var(--mono); font-size: 0.62rem; padding: 0.25em 0.7em; background: rgba(10,10,10,0.78); backdrop-filter: blur(8px); border: 1px solid var(--acid); color: var(--acid); border-radius: 99px; letter-spacing: 0.08em; text-transform: uppercase; }
 		.badge.soon { border-color: var(--line-2); color: var(--ink-3); }
-
 		.proj-info { display: flex; flex-direction: column; }
-		.proj-year {
-			font-family: var(--mono);
-			font-size: 0.76rem;
-			color: var(--ink-3);
-			margin-bottom: 0.55rem;
-			letter-spacing: 0.04em;
-		}
-		.proj-title {
-			font-size: clamp(1.25rem, 2.3vw, 1.75rem);
-			font-weight: 700;
-			letter-spacing: -0.03em;
-			line-height: 1.12;
-			margin-bottom: 0.7rem;
-		}
-		.proj-desc {
-			font-size: 0.9rem;
-			line-height: 1.65;
-			color: var(--ink-2);
-			font-weight: 300;
-		}
+		.proj-year { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-3); margin-bottom: 0.55rem; letter-spacing: 0.04em; }
+		.proj-title { font-size: clamp(1.25rem, 2.3vw, 1.75rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 0.7rem; }
+		.proj-desc { font-size: 0.9rem; line-height: 1.65; color: var(--ink-2); font-weight: 300; }
 		.proj-desc strong { color: var(--ink); font-weight: 600; }
-		.proj-kpi {
-			font-family: var(--mono);
-			font-size: 0.68rem;
-			color: var(--ink-3);
-			letter-spacing: 0.05em;
-			margin-top: 0.7rem;
-			text-transform: uppercase;
-		}
-
-		.proj-meta {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			gap: 1.2rem;
-		}
+		.proj-kpi { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-3); letter-spacing: 0.05em; margin-top: 0.7rem; text-transform: uppercase; }
+		.proj-meta { display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem; }
 		.proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-		.proj-stack span {
-			font-family: var(--mono);
-			font-size: 0.68rem;
-			padding: 0.22em 0.65em;
-			background: var(--bg-2);
-			border: 1px solid var(--line-2);
-			color: var(--ink-2);
-			border-radius: 99px;
-		}
-		.proj-link {
-			display: inline-flex; align-items: center; gap: 0.4em;
-			font-family: var(--mono);
-			font-size: 0.78rem;
-			color: var(--ink);
-			padding: 0.6em 0;
-			border-bottom: 1px solid var(--ink-4);
-			width: fit-content;
-			transition: color 0.2s, border-color 0.2s, gap 0.25s;
-		}
+		.proj-stack span { font-family: var(--mono); font-size: 0.68rem; padding: 0.22em 0.65em; background: var(--bg-2); border: 1px solid var(--line-2); color: var(--ink-2); border-radius: 99px; }
+		.proj-link { display: inline-flex; align-items: center; gap: 0.4em; font-family: var(--mono); font-size: 0.78rem; color: var(--ink); padding: 0.6em 0; border-bottom: 1px solid var(--ink-4); width: fit-content; transition: color 0.2s, border-color 0.2s, gap 0.25s; }
 		.proj:hover .proj-link { color: var(--acid); border-color: var(--acid); gap: 0.7em; }
 		.proj-link svg { width: 12px; height: 12px; }
 		.proj-link.muted { color: var(--ink-3); border-style: dashed; }
-
-		.proj.featured {
-			background: linear-gradient(135deg, rgba(182,255,60,0.05), transparent 55%);
-			border: 1px solid var(--line-2);
-			border-radius: 18px;
-			padding: 2rem;
-			margin-bottom: 1.6rem;
-		}
-		.proj.featured:hover {
-			border-color: var(--acid);
-			background: linear-gradient(135deg, rgba(182,255,60,0.09), transparent 60%);
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
+		.proj.featured { background: linear-gradient(135deg, rgba(182,255,60,0.05), transparent 55%); border: 1px solid var(--line-2); border-radius: 18px; padding: 2rem; margin-bottom: 1.6rem; }
+		.proj.featured:hover { border-color: var(--acid); background: linear-gradient(135deg, rgba(182,255,60,0.09), transparent 60%); padding-left: 2rem; padding-right: 2rem; }
 		.proj.featured + .proj { border-top: 1px solid var(--line); }
 
-		/* ═══ CONTACT ═══ */
 		.contact { text-align: center; }
-		.contact-pre {
-			font-family: var(--mono);
-			font-size: 0.78rem;
-			color: var(--acid);
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			margin-bottom: 1.5rem;
-			display: inline-flex; align-items: center; gap: 0.5em;
-		}
-		.contact-pre::before {
-			content: '';
-			width: 8px; height: 8px;
-			background: var(--acid);
-			border-radius: 50%;
-			animation: dot-pulse 2.4s ease-in-out infinite;
-			box-shadow: 0 0 12px var(--acid-glow);
-		}
-		.contact-title {
-			font-size: clamp(2.6rem, 8vw, 5.5rem);
-			font-weight: 800;
-			letter-spacing: -0.045em;
-			line-height: 1;
-			margin-bottom: 1.8rem;
-		}
-		.contact-sub {
-			font-size: clamp(1rem, 1.7vw, 1.25rem);
-			font-weight: 400;
-			color: var(--ink-2);
-			max-width: 50ch;
-			margin: 0 auto 2.4rem;
-			line-height: 1.55;
-		}
-		.contact-cta {
-			display: inline-flex; align-items: center; gap: 0.6em;
-			font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-			font-weight: 600;
-			padding: 1.05em 1.9em;
-			background: var(--acid);
-			color: #0a0a0a !important;
-			border-radius: 99px;
-			transition: all 0.25s var(--ease);
-			margin-bottom: 2.6rem;
-		}
-		.contact-cta:hover {
-			box-shadow: 0 0 0 8px var(--acid-pale);
-			transform: translateY(-2px);
-		}
+		.contact-pre { font-family: var(--mono); font-size: 0.78rem; color: var(--acid); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.5em; }
+		.contact-pre::before { content: ''; width: 8px; height: 8px; background: var(--acid); border-radius: 50%; animation: dot-pulse 2.4s ease-in-out infinite; box-shadow: 0 0 12px var(--acid-glow); }
+		.contact-title { font-size: clamp(2.6rem, 8vw, 5.5rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; margin-bottom: 1.8rem; }
+		.contact-sub { font-size: clamp(1rem, 1.7vw, 1.25rem); font-weight: 400; color: var(--ink-2); max-width: 50ch; margin: 0 auto 2.4rem; line-height: 1.55; }
+		.contact-cta { display: inline-flex; align-items: center; gap: 0.6em; font-size: clamp(0.95rem, 1.3vw, 1.05rem); font-weight: 600; padding: 1.05em 1.9em; background: var(--acid); color: #0a0a0a !important; border-radius: 99px; transition: all 0.25s var(--ease); margin-bottom: 2.6rem; }
+		.contact-cta:hover { box-shadow: 0 0 0 8px var(--acid-pale); transform: translateY(-2px); }
 		.contact-cta svg { width: 17px; height: 17px; transition: transform 0.25s; }
 		.contact-cta:hover svg { transform: translate(3px, -3px); }
-		.contact-channels {
-			display: flex; flex-wrap: wrap; gap: 2rem;
-			justify-content: center;
-			font-family: var(--mono);
-			font-size: 0.8rem;
-		}
-		.contact-channels a {
-			display: inline-flex; align-items: center; gap: 0.4em;
-			color: var(--ink);
-			transition: color 0.2s;
-		}
+		.contact-channels { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; font-family: var(--mono); font-size: 0.8rem; }
+		.contact-channels a { display: inline-flex; align-items: center; gap: 0.4em; color: var(--ink); transition: color 0.2s; }
 		.contact-channels a:hover { color: var(--acid); }
 		.contact-channels svg { width: 14px; height: 14px; }
 
-		/* ═══ MARQUEE ═══ */
-		.marquee {
-			border-top: 1px solid var(--line);
-			border-bottom: 1px solid var(--line);
-			padding: 1.4rem 0;
-			overflow: hidden;
-		}
-		.marquee-track {
-			display: flex;
-			gap: 3rem;
-			width: max-content;
-			animation: marquee 40s linear infinite;
-			align-items: center;
-		}
-		@keyframes marquee {
-			from { transform: translateX(0); }
-			to   { transform: translateX(-50%); }
-		}
-		.marquee-item {
-			font-weight: 800;
-			font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-			letter-spacing: -0.03em;
-			color: var(--ink);
-			white-space: nowrap;
-		}
+		.marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.4rem 0; overflow: hidden; }
+		.marquee-track { display: flex; gap: 3rem; width: max-content; animation: marquee 40s linear infinite; align-items: center; }
+		@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+		.marquee-item { font-weight: 800; font-size: clamp(1.4rem, 3.5vw, 2.2rem); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
 		.marquee-item.alt { color: var(--ink-4); }
-		.marquee-item.acc {
-			color: var(--acid);
-			font-weight: 700;
-		}
+		.marquee-item.acc { color: var(--acid); font-weight: 700; }
 
-		/* ═══ FOOTER ═══ */
 		footer { padding: 3rem 0 2.5rem; }
-		.footer-grid {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 2rem;
-			align-items: end;
-			margin-bottom: 2.6rem;
-		}
-		@media (min-width: 720px) {
-			.footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
-		}
-		.footer-brand h4 {
-			font-size: clamp(1.9rem, 5vw, 3rem);
-			font-weight: 800;
-			letter-spacing: -0.04em;
-			line-height: 1;
-			margin-bottom: 0.5rem;
-		}
-		.footer-brand p {
-			font-family: var(--mono);
-			font-size: 0.75rem;
-			color: var(--ink-3);
-		}
-		.footer-col h5 {
-			font-family: var(--mono);
-			font-size: 0.65rem;
-			color: var(--ink-3);
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
-			margin-bottom: 0.9rem;
-			font-weight: 500;
-		}
+		.footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: end; margin-bottom: 2.6rem; }
+		@media (min-width: 720px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
+		.footer-brand h4 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.5rem; }
+		.footer-brand p { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-3); }
+		.footer-col h5 { font-family: var(--mono); font-size: 0.65rem; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.9rem; font-weight: 500; }
 		.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
 		.footer-col a { font-size: 0.85rem; color: var(--ink-2); transition: color 0.2s; }
 		.footer-col a:hover { color: var(--acid); }
-		.footer-bottom {
-			padding-top: 2rem;
-			border-top: 1px solid var(--line);
-			display: flex; flex-wrap: wrap;
-			justify-content: space-between;
-			gap: 1rem;
-			font-family: var(--mono);
-			font-size: 0.7rem;
-			color: var(--ink-3);
-		}
+		.footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); }
 
-		/* ═══ REVEAL ═══ */
-		.reveal {
-			opacity: 0;
-			transform: translateY(28px);
-			transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
-		}
+		.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
 		.reveal.in { opacity: 1; transform: translateY(0); }
-		@media (prefers-reduced-motion: reduce) {
-			*, ::before, ::after {
-				animation-duration: 0.01ms !important;
-				animation-iteration-count: 1 !important;
-				transition-duration: 0.01ms !important;
-			}
-			.reveal { opacity: 1; transform: none; }
-		}
+		@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } .reveal { opacity: 1; transform: none; } }
 	</style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
 	<a href="#top" class="nav-logo">
 		<span class="nav-logo-dot"></span>
@@ -850,7 +255,6 @@
 	<a href="mailto:kowalevirendra@gmail.com" class="nav-cta" data-i18n="nav_cta">Get in touch</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="top">
 	<div class="hero-bg"></div>
 	<div class="container hero-inner">
@@ -873,7 +277,7 @@
 			<span class="pill" data-i18n="pill2">⚡&nbsp; E-Mobility / EV Charging Consultant</span>
 			<span class="pill" data-i18n="pill3">📊&nbsp; Business &amp; Data Analyst</span>
 			<span class="pill" data-i18n="pill4">🎓&nbsp; M.Sc. RWTH Aachen</span>
-			<span class="pill" data-i18n="pill5">🇩🇪&nbsp; German — daily working language</span>
+			<span class="pill" data-i18n="pill5">🇩🇪&nbsp; German (daily working language)</span>
 			<span class="pill" data-i18n="pill6">📍&nbsp; Aachen, Germany</span>
 		</div>
 
@@ -898,7 +302,6 @@
 	</div>
 </section>
 
-<!-- 01 / ABOUT -->
 <section id="about">
 	<div class="container reveal">
 		<div class="sec-head">
@@ -921,7 +324,6 @@
 	</div>
 </section>
 
-<!-- 02 / WHAT I CAN DELIVER -->
 <section id="capabilities">
 	<div class="container reveal">
 		<div class="sec-head">
@@ -982,7 +384,6 @@
 	</div>
 </section>
 
-<!-- 03 / WORK -->
 <section id="work">
 	<div class="container reveal">
 		<div class="sec-head">
@@ -992,11 +393,7 @@
 
 		<div class="proj-list">
 
-			<!-- ISO 15118-2 & -20 SiL/HiL Integration (EVerest) -->
-			<!-- TO ACTIVATE GITHUB LINK: change this <div class="proj featured"> to
-			     <a href="GITHUB_REPO_URL" target="_blank" rel="noopener" class="proj">
-			     and the closing </div> to </a> (keep the .featured class), remove the .soon badge, and
-			     update the iso_link string in BOTH the en and de dicts below. -->
+			<!-- ISO 15118 -->
 			<div class="proj featured">
 				<div class="proj-img">
 					<span class="badge soon" data-i18n="badge_soon">Repo Coming Soon</span>
@@ -1020,7 +417,7 @@
 				</div>
 			</div>
 
-			<!-- ChargeGap Europe — live open-source successor to Germany 2030 -->
+			<!-- ChargeGap Europe -->
 			<a href="https://itsviru.github.io/chargegap-europe/" target="_blank" rel="noopener" class="proj">
 				<div class="proj-img">
 					<span class="badge" data-i18n="badge_live">★ Live</span>
@@ -1030,9 +427,9 @@
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year" data-i18n="cg_year">Jul 2026 – ongoing · Self-initiated open-source tool — building in public</div>
+					<div class="proj-year" data-i18n="cg_year">Jul 2026 – ongoing · Self-initiated open-source tool, building in public</div>
 					<h3 class="proj-title" data-i18n="cg_title">ChargeGap <em>Europe</em></h3>
-					<p class="proj-desc" data-i18n="cg_desc">Open-source EV charging investment planner that extends my Germany-2030 model to <strong>14 European markets</strong>: a live Revenue-Opportunity-Gap cockpit, AFIR compliance tracking, an Opportunity-Score ranking — plus a German <strong>Standort-Check</strong> for per-site break-even, payback and THG stress tests. <strong>No backend, no frameworks</strong>, MIT-licensed — in active development, feedback welcome.</p>
+					<p class="proj-desc" data-i18n="cg_desc">Open-source EV charging investment planner that extends my Germany-2030 model to <strong>14 European markets</strong>: a live Revenue-Opportunity-Gap cockpit, AFIR compliance tracking, an Opportunity-Score ranking, plus a German <strong>Standort-Check</strong> for per-site break-even, payback and THG stress tests. <strong>No backend, no frameworks</strong>, MIT-licensed, in active development, feedback welcome.</p>
 					<p class="proj-kpi" data-i18n="cg_kpi">Revenue Opportunity Gap · AFIR Index · Opportunity Score · Standort-Check · Scenario Permalinks</p>
 				</div>
 				<div class="proj-meta">
@@ -1043,7 +440,7 @@
 				</div>
 			</a>
 
-			<!-- Documentation Automation Initiative -->
+			<!-- Doc Automation -->
 			<div class="proj">
 				<div class="proj-img">
 					<span class="badge" data-i18n="badge_int">Internal Initiative</span>
@@ -1053,9 +450,9 @@
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year" data-i18n="p2_year">May 2026 – ongoing · Self-initiated efficiency initiative — proposed to department leadership, implementation starting at aixACCT Systems GmbH</div>
+					<div class="proj-year" data-i18n="p2_year">May 2026 – ongoing · Self-initiated efficiency initiative, proposed to department leadership, implementation starting at aixACCT Systems GmbH</div>
 					<h3 class="proj-title" data-i18n="p2_title">Documentation <em>Automation Initiative</em></h3>
-					<p class="proj-desc" data-i18n="p2_desc">A self-initiated concept for AI-supported automation of technical reporting workflows, using Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost.</p>
+					<p class="proj-desc" data-i18n="p2_desc">Self-initiated AI-supported automation of technical reporting workflows, using Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
@@ -1066,7 +463,7 @@
 				</div>
 			</div>
 
-			<!-- Germany 2030 — Strategic Investment Planner -->
+			<!-- Germany 2030 -->
 			<a href="https://github.com/itsViru/EV_Charging_Infrastructure_Analysis_Tool" target="_blank" rel="noopener" class="proj">
 				<div class="proj-img">
 					<div class="tile">
@@ -1099,8 +496,8 @@
 				</div>
 				<div class="proj-info">
 					<div class="proj-year" data-i18n="p3_year">Mar 2024 – Sept 2024 · RWTH Aachen × Numbat GmbH</div>
-					<h3 class="proj-title" data-i18n="p3_title">Master Thesis — <em>E-Mobility Market Dynamics</em></h3>
-					<p class="proj-desc" data-i18n="p3_desc">Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm. The key finding: home and wallbox charging access, not price, is the dominant adoption driver. KPI recommendations presented to senior management.</p>
+					<h3 class="proj-title" data-i18n="p3_title">Master Thesis: <em>E-Mobility Market Dynamics</em></h3>
+					<p class="proj-desc" data-i18n="p3_desc">Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm, finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
@@ -1112,9 +509,6 @@
 			</a>
 
 			<!-- StreetScooter -->
-			<!-- TO ACTIVATE GITHUB LINK: change this <div class="proj"> to
-			     <a href="GITHUB_REPO_URL" target="_blank" rel="noopener" class="proj">
-			     and the closing </div> to </a>, then remove the .soon badge. -->
 			<div class="proj">
 				<div class="proj-img">
 					<span class="badge soon" data-i18n="badge_soon">Repo Coming Soon</span>
@@ -1126,7 +520,7 @@
 				<div class="proj-info">
 					<div class="proj-year" data-i18n="p4_year">Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course</div>
 					<h3 class="proj-title" data-i18n="p4_title">Strategieprojekt <em>StreetScooter GmbH</em></h3>
-					<p class="proj-desc" data-i18n="p4_desc">Strategy case on Aachen's own EV pioneer. I developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.</p>
+					<p class="proj-desc" data-i18n="p4_desc">Strategy case on Aachen's own EV pioneer, developing a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
@@ -1161,12 +555,11 @@
 	</div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
 	<div class="container reveal">
 		<span class="contact-pre" data-i18n="contact_pre">AVAILABLE FOR FULL-TIME ROLES</span>
 		<h2 class="contact-title" data-i18n="contact_title">Let's <em>talk.</em></h2>
-		<p class="contact-sub" data-i18n="contact_sub">Test Automation Engineer · E-Mobility / EV Charging Consultant · Business &amp; Data Analyst — Aachen, EU, or remote.</p>
+		<p class="contact-sub" data-i18n="contact_sub">Test Automation Engineer · E-Mobility / EV Charging Consultant · Business &amp; Data Analyst. Aachen, EU, or remote.</p>
 		<a href="mailto:kowalevirendra@gmail.com" class="contact-cta">
 			kowalevirendra@gmail.com
 			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1188,7 +581,6 @@
 	</div>
 </section>
 
-<!-- MARQUEE — end of page -->
 <div class="marquee" aria-hidden="true">
 	<div class="marquee-track">
 		<span class="marquee-item" data-i18n="m1">Business Analysis</span><span class="marquee-item acc">★</span>
@@ -1201,7 +593,6 @@
 		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">Market Intelligence</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt" data-i18n="m8">Product Strategy</span><span class="marquee-item acc">★</span>
-		<!-- duplicate for seamless loop -->
 		<span class="marquee-item" data-i18n="m1">Business Analysis</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt" data-i18n="m2">Data Analytics</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item" data-i18n="m3">Test Automation</span><span class="marquee-item acc">★</span>
@@ -1215,7 +606,6 @@
 	</div>
 </div>
 
-<!-- FOOTER -->
 <footer>
 	<div class="container">
 		<div class="footer-grid">
@@ -1249,7 +639,6 @@
 </footer>
 
 <script>
-/* ═══ Scroll reveal ═══ */
 (function() {
 	if ('IntersectionObserver' in window) {
 		var io = new IntersectionObserver(function(entries) {
@@ -1263,7 +652,6 @@
 	}
 })();
 
-/* ═══ EN / DE language toggle ═══ */
 (function() {
 	var I18N = {
 		en: {
@@ -1275,7 +663,7 @@
 			pill2: "⚡&nbsp; E-Mobility / EV Charging Consultant",
 			pill3: "📊&nbsp; Business &amp; Data Analyst",
 			pill4: "🎓&nbsp; M.Sc. RWTH Aachen",
-			pill5: "🇩🇪&nbsp; German — daily working language",
+			pill5: "🇩🇪&nbsp; German (daily working language)",
 			pill6: "📍&nbsp; Aachen, Germany",
 			btn_work: "See selected work", btn_story: "Read my story",
 			stat1: "Years in E-Mobility", stat2: "EU markets analysed",
@@ -1318,23 +706,23 @@
 			iso_link: "GitHub link coming soon",
 			cg_big: "14 Markets",
 			cg_tile: "Live Tool · Open Source",
-			cg_year: "Jul 2026 – ongoing · Self-initiated open-source tool — building in public",
+			cg_year: "Jul 2026 – ongoing · Self-initiated open-source tool, building in public",
 			cg_title: "ChargeGap <em>Europe</em>",
-			cg_desc: "Open-source EV charging investment planner that extends my Germany-2030 model to <strong>14 European markets</strong>: a live Revenue-Opportunity-Gap cockpit, AFIR compliance tracking, an Opportunity-Score ranking — plus a German <strong>Standort-Check</strong> for per-site break-even, payback and THG stress tests. <strong>No backend, no frameworks</strong>, MIT-licensed — in active development, feedback welcome.",
+			cg_desc: "Open-source EV charging investment planner that extends my Germany-2030 model to <strong>14 European markets</strong>: a live Revenue-Opportunity-Gap cockpit, AFIR compliance tracking, an Opportunity-Score ranking, plus a German <strong>Standort-Check</strong> for per-site break-even, payback and THG stress tests. <strong>No backend, no frameworks</strong>, MIT-licensed, in active development, feedback welcome.",
 			cg_kpi: "Revenue Opportunity Gap · AFIR Index · Opportunity Score · Standort-Check · Scenario Permalinks",
 			cg_link: "Open the live tool",
-			p2_year: "May 2026 – ongoing · Self-initiated efficiency initiative — proposed to department leadership, implementation starting at aixACCT Systems GmbH",
+			p2_year: "May 2026 – ongoing · Self-initiated efficiency initiative, proposed to department leadership, implementation starting at aixACCT Systems GmbH",
 			p2_title: "Documentation <em>Automation Initiative</em>",
-			p2_desc: "A self-initiated concept for AI-supported automation of technical reporting workflows, using Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost.",
+			p2_desc: "Self-initiated AI-supported automation of technical reporting workflows, using Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant architecture with human-in-the-loop review. <strong>Projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost; presented to department leadership, now piloting.",
 			p2_t4: "GDPR", p2_t5: "Process Automation",
 			p2_link: "Internal project · details on request",
 			p3_year: "Mar 2024 – Sept 2024 · RWTH Aachen × Numbat GmbH",
-			p3_title: "Master Thesis — <em>E-Mobility Market Dynamics</em>",
-			p3_desc: "Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm. The key finding: home and wallbox charging access, not price, is the dominant adoption driver. KPI recommendations presented to senior management.",
+			p3_title: "Master Thesis: <em>E-Mobility Market Dynamics</em>",
+			p3_desc: "Mixed-methods study of 25+ European markets with an OLS regression model (<strong>R² = 0.735</strong>) and a Python location-ranking algorithm, finding home/wallbox charging access, not price, as the dominant adoption driver. KPI recommendations presented to senior management.",
 			p3_t4: "OLS Regression",
 			p4_year: "Nov 2021 – Feb 2022 · RWTH Aachen, Strategic Management course",
 			p4_title: "Strategieprojekt <em>StreetScooter GmbH</em>",
-			p4_desc: "Strategy case on Aachen's own EV pioneer. I developed a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.",
+			p4_desc: "Strategy case on Aachen's own EV pioneer, developing a <strong>battery-swapping PaaS business model with break-even in 5 years</strong>, coordinating requirements between technical and commercial teams.",
 			p4_t1: "Strategy", p4_t2: "Business Model",
 			p4_link: "GitHub link coming soon",
 			p5_year: "Nov 2020 – Feb 2021 · RWTH Aachen course project",
@@ -1343,7 +731,7 @@
 			link_gh: "View on GitHub", link_gh2: "View on GitHub", link_gh3: "View on GitHub",
 			contact_pre: "AVAILABLE FOR FULL-TIME ROLES",
 			contact_title: "Let's <em>talk.</em>",
-			contact_sub: "Test Automation Engineer · E-Mobility / EV Charging Consultant · Business &amp; Data Analyst — Aachen, EU, or remote.",
+			contact_sub: "Test Automation Engineer · E-Mobility / EV Charging Consultant · Business &amp; Data Analyst. Aachen, EU, or remote.",
 			m1: "Business Analysis", m2: "Data Analytics", m3: "Test Automation", m_ccpp: "C/C++ · CMake (learning)", m8: "Product Strategy",
 			f_copy: "© Virendra Kowale 2026 · Aachen, Germany",
 			f_nav: "Navigation", f_home: "Home", f_work: "Work", f_about: "About", f_cv: "CV",
@@ -1360,7 +748,7 @@
 			pill2: "⚡&nbsp; E-Mobility / EV-Charging-Consultant",
 			pill3: "📊&nbsp; Business &amp; Data Analyst",
 			pill4: "🎓&nbsp; M.Sc. RWTH Aachen",
-			pill5: "🇩🇪&nbsp; Deutsch — tägliche Arbeitssprache",
+			pill5: "🇩🇪&nbsp; Deutsch (tägliche Arbeitssprache)",
 			pill6: "📍&nbsp; Aachen, Deutschland",
 			btn_work: "Ausgewählte Projekte", btn_story: "Mein Werdegang",
 			stat1: "Jahre E-Mobility", stat2: "EU-Märkte analysiert",
@@ -1403,23 +791,23 @@
 			iso_link: "GitHub-Link folgt in Kürze",
 			cg_big: "14 Märkte",
 			cg_tile: "Live-Tool · Open Source",
-			cg_year: "Jul 2026 – laufend · Eigeninitiiertes Open-Source-Tool — Building in Public",
+			cg_year: "Jul 2026 – laufend · Eigeninitiiertes Open-Source-Tool, Building in Public",
 			cg_title: "ChargeGap <em>Europe</em>",
-			cg_desc: "Open-Source-Investitionsplaner für EV-Ladeinfrastruktur, der mein Germany-2030-Modell auf <strong>14 europäische Märkte</strong> erweitert: Live-Cockpit für den Revenue Opportunity Gap, AFIR-Compliance-Tracking, Opportunity-Score-Ranking — plus ein deutscher <strong>Standort-Check</strong> für Break-even, Amortisation und THG-Stresstests pro Standort. <strong>Ohne Backend, ohne Frameworks</strong>, MIT-lizenziert — in aktiver Entwicklung, Feedback willkommen.",
+			cg_desc: "Open-Source-Investitionsplaner für EV-Ladeinfrastruktur, der mein Germany-2030-Modell auf <strong>14 europäische Märkte</strong> erweitert: Live-Cockpit für den Revenue Opportunity Gap, AFIR-Compliance-Tracking, Opportunity-Score-Ranking, plus ein deutscher <strong>Standort-Check</strong> für Break-even, Amortisation und THG-Stresstests pro Standort. <strong>Ohne Backend, ohne Frameworks</strong>, MIT-lizenziert, in aktiver Entwicklung, Feedback willkommen.",
 			cg_kpi: "Revenue Opportunity Gap · AFIR-Index · Opportunity Score · Standort-Check · Szenario-Permalinks",
 			cg_link: "Live-Tool öffnen",
-			p2_year: "Mai 2026 – laufend · Eigeninitiierte Effizienzinitiative — der Bereichsleitung vorgeschlagen, Umsetzung startet bei aixACCT Systems GmbH",
+			p2_year: "Mai 2026 – laufend · Eigeninitiierte Effizienzinitiative, der Bereichsleitung vorgeschlagen, Umsetzung startet bei aixACCT Systems GmbH",
 			p2_title: "Dokumentations-<em>Automatisierungsinitiative</em>",
-			p2_desc: "Eigeninitiiertes Konzept zur KI-gestützten Automatisierung technischer Reporting-Workflows, mit Python, Jira, GitLab, Enterprise Claude und einem lokalen Server, DSGVO-konform konzipiert (geplant), mit Human-in-the-Loop-Review. <strong>Prognostizierter Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€.",
+			p2_desc: "Eigeninitiierte KI-gestützte Automatisierung technischer Reporting-Workflows, mit Python, Jira, GitLab, Enterprise Claude und einem lokalen Server, DSGVO-konforme Architektur mit Human-in-the-Loop-Review. <strong>Prognostizierter Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€; der Bereichsleitung präsentiert, aktuell in der Pilotphase.",
 			p2_t4: "DSGVO", p2_t5: "Prozessautomatisierung",
 			p2_link: "Internes Projekt · Details auf Anfrage",
 			p3_year: "März 2024 – Sept 2024 · RWTH Aachen × Numbat GmbH",
-			p3_title: "Masterarbeit — <em>E-Mobility Market Dynamics</em>",
-			p3_desc: "Mixed-Methods-Studie über 25+ europäische Märkte mit OLS-Regressionsmodell (<strong>R² = 0,735</strong>) und Python-Standort-Ranking-Algorithmus. Zentrales Ergebnis: Zugang zu privaten Wallboxen, nicht der Preis, ist der dominierende Adoptionstreiber. KPI-Empfehlungen ans Senior Management präsentiert.",
+			p3_title: "Masterarbeit: <em>E-Mobility Market Dynamics</em>",
+			p3_desc: "Mixed-Methods-Studie über 25+ europäische Märkte mit OLS-Regressionsmodell (<strong>R² = 0,735</strong>) und Python-Standort-Ranking-Algorithmus, zentrales Ergebnis: Zugang zu privaten Wallboxen, nicht der Preis, ist der dominierende Adoptionstreiber. KPI-Empfehlungen ans Senior Management präsentiert.",
 			p3_t4: "OLS-Regression",
 			p4_year: "Nov 2021 – Feb 2022 · RWTH Aachen, Kurs Strategisches Management",
 			p4_title: "Strategieprojekt <em>StreetScooter GmbH</em>",
-			p4_desc: "Strategie-Case zu Aachens eigenem EV-Pionier. Entwicklung eines <strong>Battery-Swapping-PaaS-Geschäftsmodells mit Break-even in 5 Jahren</strong>, Koordination der Anforderungen zwischen technischen und kommerziellen Teams.",
+			p4_desc: "Strategie-Case zu Aachens eigenem EV-Pionier, Entwicklung eines <strong>Battery-Swapping-PaaS-Geschäftsmodells mit Break-even in 5 Jahren</strong>, Koordination der Anforderungen zwischen technischen und kommerziellen Teams.",
 			p4_t1: "Strategie", p4_t2: "Geschäftsmodell",
 			p4_link: "GitHub-Link folgt in Kürze",
 			p5_year: "Nov 2020 – Feb 2021 · RWTH Aachen, Kursprojekt",
@@ -1428,7 +816,7 @@
 			link_gh: "Auf GitHub ansehen", link_gh2: "Auf GitHub ansehen", link_gh3: "Auf GitHub ansehen",
 			contact_pre: "VERFÜGBAR FÜR FESTANSTELLUNGEN",
 			contact_title: "Sprechen <em>wir.</em>",
-			contact_sub: "Test Automation Engineer · E-Mobility / EV-Charging-Consultant · Business &amp; Data Analyst — Aachen, EU oder remote.",
+			contact_sub: "Test Automation Engineer · E-Mobility / EV-Charging-Consultant · Business &amp; Data Analyst. Aachen, EU oder remote.",
 			m1: "Business-Analyse", m2: "Datenanalyse", m3: "Testautomatisierung", m_ccpp: "C/C++ · CMake (in Einarbeitung)", m8: "Produktstrategie",
 			f_copy: "© Virendra Kowale 2026 · Aachen, Deutschland",
 			f_nav: "Navigation", f_home: "Start", f_work: "Projekte", f_about: "Über mich", f_cv: "Lebenslauf",
