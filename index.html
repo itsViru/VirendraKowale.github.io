@@ -420,9 +420,8 @@
 			</a>
 
 			<!-- Configurable Log Levels — FEATURE (assigned work at aixACCT), not a standalone project. No public link.
-			     HONESTY: "implemented and hardware-verified" only. Never "shipped / merged / in production"
-			     until the work is pushed and merged. Masking stays "in progress" until all five
-			     identifiers are verified and the coverage audit is closed. -->
+			     STATUS: merged. Hardware-verified for log levels and RFID UID masking. Masking: implemented for UID, EMAID, MAC and contract-cert serials (OCSP is never logged).
+			     Only RFID UID masking is hardware-verified: do not call the others "verified" until tested. -->
 			<div class="proj">
 				<div class="proj-img">
 					<span class="badge" data-i18n="badge_fw">Feature · aixACCT</span>
@@ -433,9 +432,9 @@
 				</div>
 				<div class="proj-info">
 					<div class="proj-year" data-i18n="fw_year">2026 – ongoing · aixACCT Systems · Assigned feature, implemented end to end within my role</div>
-					<h3 class="proj-title" data-i18n="fw_title">Configurable Log Levels: <em>Firmware Feature</em></h3>
-					<p class="proj-desc" data-i18n="fw_desc">The goal: cut flash write-volume on the charge controller without losing diagnostics. <strong>My role:</strong> my lead specified the feature in a single ticket; I implemented it end to end. I turned a 15-group requirements table into code: <strong>fifteen log groups</strong> (ERROR &lt; NOTICE &lt; INFO, plus a <strong>service-technician-only DEBUG level</strong> enforced server-side), set from the WebUI, persisted to the controller's log4cpp configuration and applied live without a restart. It spans a <strong>C++ back-end handler</strong> in the existing firmware, a <strong>PHP socket bridge</strong> and a <strong>net-new Angular/TypeScript</strong> configuration page, cross-compiled for ARM with the Buildroot toolchain. <strong>Result:</strong> on a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. <strong>Status:</strong> log levels verified on hardware, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.</p>
-					<p class="proj-kpi" data-i18n="fw_kpi">~750 KB/day log line silenced · 15 log groups · Service-only DEBUG gate · Live apply, no restart · ARM cross-compile</p>
+					<h3 class="proj-title" data-i18n="fw_title">Log Levels &amp; Identifier Masking: <em>Firmware Feature</em></h3>
+					<p class="proj-desc" data-i18n="fw_desc">An assigned feature I implemented end to end: <strong>15 configurable log groups</strong> (service-only DEBUG) to cut flash writes, plus <strong>masking of RFID UIDs, EMAIDs, MAC addresses and contract-certificate serials</strong> in everyday logs. Built across C++ firmware, a PHP bridge and a new Angular page, cross-compiled for ARM. On a live charger it silenced a ~750 KB/day log line and masked tapped RFID UIDs.</p>
+					<p class="proj-kpi" data-i18n="fw_kpi">~750 KB/day log line silenced · 15 log groups · 4 identifier types masked · ARM</p>
 				</div>
 				<div class="proj-meta">
 					<div class="proj-stack">
@@ -739,9 +738,9 @@
 			iso_link: "Read the project overview",
 			fw_tile: "Firmware feature · hardware-verified",
 			fw_year: "2026 – ongoing · aixACCT Systems · Assigned feature, implemented end to end within my role",
-			fw_title: "Configurable Log Levels: <em>Firmware Feature</em>",
-			fw_desc: "The goal: cut flash write-volume on the charge controller without losing diagnostics. <strong>My role:</strong> my lead specified the feature in a single ticket; I implemented it end to end. I turned a 15-group requirements table into code: <strong>fifteen log groups</strong> (ERROR &lt; NOTICE &lt; INFO, plus a <strong>service-technician-only DEBUG level</strong> enforced server-side), set from the WebUI, persisted to the controller's log4cpp configuration and applied live without a restart. It spans a <strong>C++ back-end handler</strong> in the existing firmware, a <strong>PHP socket bridge</strong> and a <strong>net-new Angular/TypeScript</strong> configuration page, cross-compiled for ARM with the Buildroot toolchain. <strong>Result:</strong> on a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. <strong>Status:</strong> log levels verified on hardware, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.",
-			fw_kpi: "~750 KB/day log line silenced · 15 log groups · Service-only DEBUG gate · Live apply, no restart · ARM cross-compile",
+			fw_title: "Log Levels &amp; Identifier Masking: <em>Firmware Feature</em>",
+			fw_desc: "An assigned feature I implemented end to end: <strong>15 configurable log groups</strong> (service-only DEBUG) to cut flash writes, plus <strong>masking of RFID UIDs, EMAIDs, MAC addresses and contract-certificate serials</strong> in everyday logs. Built across C++ firmware, a PHP bridge and a new Angular page, cross-compiled for ARM. On a live charger it silenced a ~750 KB/day log line and masked tapped RFID UIDs.",
+			fw_kpi: "~750 KB/day log line silenced · 15 log groups · 4 identifier types masked · ARM",
 			fw_link: "Work feature · details on request",
 			cg_big: "14 Markets",
 			cg_tile: "Live Tool · Open Source",
@@ -830,9 +829,9 @@
 			iso_link: "Projektüberblick lesen",
 			fw_tile: "Firmware-Feature · Hardware-verifiziert",
 			fw_year: "2026 – laufend · aixACCT Systems · Feature-Entwicklung im Rahmen meiner Tätigkeit, end-to-end umgesetzt",
-			fw_title: "Konfigurierbare Loglevel: <em>Firmware-Feature</em>",
-			fw_desc: "Das Ziel: das Flash-Schreibvolumen des Ladecontrollers senken, ohne Diagnosefähigkeit zu verlieren. <strong>Meine Rolle:</strong> Mein Teamleiter hat das Feature in einem Ticket spezifiziert, ich habe es end-to-end umgesetzt. Eine Anforderungstabelle mit 15 Gruppen habe ich in Code übersetzt: <strong>fünfzehn Log-Gruppen</strong> (ERROR &lt; NOTICE &lt; INFO, dazu ein serverseitig abgesichertes <strong>DEBUG nur für Servicetechniker</strong>), einstellbar in der WebUI, gespeichert in der log4cpp-Konfiguration des Controllers und ohne Neustart live angewendet. Es umfasst einen <strong>C++-Backend-Handler</strong> in der bestehenden Firmware, eine <strong>PHP-Socket-Brücke</strong> und eine <strong>neue Angular/TypeScript</strong>-Konfigurationsseite, mit der Buildroot-Toolchain für ARM cross-kompiliert. <strong>Ergebnis:</strong> Auf einem echten Charger verstummte mit der OCPP-Gruppe auf NOTICE eine Logzeile, die ~750 KB pro Tag schrieb. <strong>Status:</strong> Loglevel auf Hardware verifiziert, noch nicht gemergt; Maskierung von Kennungen teilweise umgesetzt, die RFID-Karten-UID ist auf Hardware verifiziert.",
-			fw_kpi: "~750-KB/Tag-Logzeile gestoppt · 15 Log-Gruppen · DEBUG nur für Service · Live-Anwendung ohne Neustart · ARM-Cross-Compile",
+			fw_title: "Loglevel &amp; Maskierung von Kennungen: <em>Firmware-Feature</em>",
+			fw_desc: "Ein übertragenes Feature, von mir end-to-end umgesetzt: <strong>15 konfigurierbare Log-Gruppen</strong> (DEBUG nur für Service) für weniger Flash-Schreibzugriffe, plus <strong>Maskierung von RFID-UIDs, EMAIDs, MAC-Adressen und Vertragszertifikat-Seriennummern</strong> in den Alltags-Logs. Umgesetzt in C++-Firmware, PHP-Brücke und neuer Angular-Seite, für ARM cross-kompiliert. Auf einem echten Charger stoppte es eine Logzeile mit ~750 KB/Tag und maskierte RFID-UIDs.",
+			fw_kpi: "~750-KB/Tag-Logzeile gestoppt · 15 Log-Gruppen · 4 Kennungstypen maskiert · ARM",
 			fw_link: "Feature im Job · Details auf Anfrage",
 			cg_big: "14 Märkte",
 			cg_tile: "Live-Tool · Open Source",
