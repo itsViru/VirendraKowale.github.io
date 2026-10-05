@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Virendra Kowale — Test Automation Engineer & E-Mobility Analyst </title>
+	<title>Virendra Kowale — Test Automation Engineer & E-Mobility Consultant</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="E-Mobility and energy professional in Aachen, Germany. EV charging test automation (OCPP, ISO 15118, SiL/HiL) plus 2.5 years of European market intelligence across 25+ markets. Open to Test Automation, E-Mobility / EV Charging Consultant, and Business & Data Analyst roles." />
+	<meta name="description" content="E-Mobility and energy professional in Aachen, Germany. EV charging test automation (OCPP, ISO 15118, SiL/HiL), embedded charger-firmware work cross-compiled for ARM, plus 2.5 years of European market intelligence across 25+ markets. Open to Test Automation, E-Mobility / EV Charging Consultant, and Business & Data Analyst roles." />
 	<meta name="author" content="Virendra Kowale" />
 	<meta name="theme-color" content="#0a0a0a" />
 
@@ -362,7 +362,7 @@
 					<span class="cap-idx">02</span>
 				</div>
 				<h3 data-i18n="cap2_t">Embedded Implementation</h3>
-				<p data-i18n="cap2_d">SiL and HiL setups on the C++ EVerest stack (built with CMake), covering ISO 15118-2 and ISO 15118-20.</p>
+				<p data-i18n="cap2_d">Cross-stack embedded work on the charger firmware: a C++ back-end handler, a PHP bridge and a net-new Angular/TypeScript UI, cross-compiled for ARM and verified on live hardware. Plus SiL and HiL setups on the C++ EVerest stack (CMake) for ISO 15118-2 and -20.</p>
 			</div>
 			<div class="cap-card">
 				<div class="cap-top">
@@ -388,7 +388,7 @@
 	<div class="container reveal">
 		<div class="sec-head">
 			<div class="sec-num"><strong>03</strong> / <span data-i18n="sec02">SELECTED WORK</span></div>
-			<h2 class="sec-title" data-i18n="sec02_title">Projects, <em>shipped.</em></h2>
+			<h2 class="sec-title" data-i18n="sec02_title">Work, <em>built and tested.</em></h2>
 		</div>
 
 		<div class="proj-list">
@@ -418,6 +418,33 @@
 					<span class="proj-link"><span data-i18n="iso_link">Read the project overview</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
 				</div>
 			</a>
+
+			<!-- Configurable Log Levels — FEATURE (assigned work at aixACCT), not a standalone project. No public link.
+			     HONESTY: "implemented and hardware-verified" only. Never "shipped / merged / in production"
+			     until the work is pushed and merged. Masking stays "in progress" until all five
+			     identifiers are verified and the coverage audit is closed. -->
+			<div class="proj">
+				<div class="proj-img">
+					<span class="badge" data-i18n="badge_fw">Feature · aixACCT</span>
+					<div class="tile">
+						<span class="big">C++ → ARM</span>
+						<span class="small" data-i18n="fw_tile">Firmware feature · hardware-verified</span>
+					</div>
+				</div>
+				<div class="proj-info">
+					<div class="proj-year" data-i18n="fw_year">2026 – ongoing · aixACCT Systems · Assigned feature, implemented end to end within my role</div>
+					<h3 class="proj-title" data-i18n="fw_title">Configurable Log Levels: <em>Firmware Feature</em></h3>
+					<p class="proj-desc" data-i18n="fw_desc">The goal: cut flash write-volume on the charge controller without losing diagnostics. <strong>My role:</strong> my lead specified the feature in a single ticket; I implemented it end to end. I turned a 15-group requirements table into code: <strong>fifteen log groups</strong> (ERROR &lt; NOTICE &lt; INFO, plus a <strong>service-technician-only DEBUG level</strong> enforced server-side), set from the WebUI, persisted to the controller's log4cpp configuration and applied live without a restart. It spans a <strong>C++ back-end handler</strong> in the existing firmware, a <strong>PHP socket bridge</strong> and a <strong>net-new Angular/TypeScript</strong> configuration page, cross-compiled for ARM with the Buildroot toolchain. <strong>Result:</strong> on a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. <strong>Status:</strong> log levels verified on hardware, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.</p>
+					<p class="proj-kpi" data-i18n="fw_kpi">~750 KB/day log line silenced · 15 log groups · Service-only DEBUG gate · Live apply, no restart · ARM cross-compile</p>
+				</div>
+				<div class="proj-meta">
+					<div class="proj-stack">
+						<span>C++</span><span>log4cpp</span><span>PHP</span><span>Angular</span><span>TypeScript</span>
+						<span>ARM</span><span>Buildroot</span><span>Embedded Linux</span>
+					</div>
+					<span class="proj-link muted" data-i18n="fw_link">Work feature · details on request</span>
+				</div>
+			</div>
 
 			<!-- ChargeGap Europe -->
 			<a href="https://itsviru.github.io/chargegap-europe/" target="_blank" rel="noopener" class="proj">
@@ -589,7 +616,9 @@
 		<span class="marquee-item alt" data-i18n="m2">Data Analytics</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item" data-i18n="m3">Test Automation</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">CI/CD · GitLab</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item" data-i18n="m_ccpp">C/C++ · CMake (learning)</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m_ccpp">C/C++ · CMake</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Embedded Linux · ARM</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Angular · TypeScript</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
@@ -599,7 +628,9 @@
 		<span class="marquee-item alt" data-i18n="m2">Data Analytics</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item" data-i18n="m3">Test Automation</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">CI/CD · GitLab</span><span class="marquee-item acc">★</span>
-		<span class="marquee-item" data-i18n="m_ccpp">C/C++ · CMake (learning)</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item" data-i18n="m_ccpp">C/C++ · CMake</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item alt">Embedded Linux · ARM</span><span class="marquee-item acc">★</span>
+		<span class="marquee-item">Angular · TypeScript</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">E-Mobility</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item">OCPP · ISO 15118</span><span class="marquee-item acc">★</span>
 		<span class="marquee-item alt">SQL · Power BI · Tableau</span><span class="marquee-item acc">★</span>
@@ -686,13 +717,13 @@
 			cap1_t: "Test Automation",
 			cap1_d: "Hands-on, protocol-level automation for EV charging: automated OCPP 2.0.1 &amp; 1.6 test cases, built and run in GitLab CI/CD.",
 			cap2_t: "Embedded Implementation",
-			cap2_d: "SiL and HiL setups on the C++ EVerest stack (built with CMake), covering ISO 15118-2 and ISO 15118-20.",
+			cap2_d: "Cross-stack embedded work on the charger firmware: a C++ back-end handler, a PHP bridge and a net-new Angular/TypeScript UI, cross-compiled for ARM and verified on live hardware. Plus SiL and HiL setups on the C++ EVerest stack (CMake) for ISO 15118-2 and -20.",
 			cap3_t: "Market Analysis &amp; Data",
 			cap3_d: "E-mobility market analysis for Charge Point Operators: research, modelling and clear presentation.",
 			cap4_t: "Process Optimisation",
 			cap4_d: "A self-initiated concept for automating documentation and reporting. Jira-based, designed to take repetitive work off the team's plate.",
-			sec02: "SELECTED WORK", sec02_title: "Projects, <em>shipped.</em>",
-			badge_feat: "★ Featured", badge_int: "Internal Initiative", badge_soon: "Repo Coming Soon", badge_live: "★ Live", badge_overview: "★ Delivered",
+			sec02: "SELECTED WORK", sec02_title: "Work, <em>built and tested.</em>",
+			badge_feat: "★ Featured", badge_int: "Internal Initiative", badge_soon: "Repo Coming Soon", badge_live: "★ Live", badge_overview: "★ Delivered", badge_fw: "Feature · aixACCT",
 			tile1: "Tableau Dashboard", tile2: "Proposed · aixACCT", tile3: "Master Thesis · OLS Model",
 			tile4: "Strategy Project", tile5: "Gait Classification",
 			p1_year: "Jan 2026 – Feb 2026 · Case study for a management consultancy in automotive &amp; engineering",
@@ -706,6 +737,12 @@
 			iso_desc: "The goal: develop, create and run test cases for the new <strong>ISO 15118-20</strong> charging protocol on aixACCT's <strong>existing charger and EV-simulator hardware</strong> test setup, validating ISO 15118-2 alongside as a baseline. I built the bench on the open-source EVerest stack, software-first (SiL) then hardware-in-the-loop (HiL) over a CCS/PLC link, exercising every protocol step from SLAC to SessionStop. Along the way I configured <strong>TLS and a PKI</strong> under a unified V2G Root CA and root-caused a PKI trust-chain mismatch from charger logs and Wireshark traces.",
 			iso_kpi: "ISO 15118-20 test cases · SiL → HiL · TLS 1.2 / 1.3 · PKI / X.509 · XML-DSIG · Wireshark (TLS-keylog decrypt)",
 			iso_link: "Read the project overview",
+			fw_tile: "Firmware feature · hardware-verified",
+			fw_year: "2026 – ongoing · aixACCT Systems · Assigned feature, implemented end to end within my role",
+			fw_title: "Configurable Log Levels: <em>Firmware Feature</em>",
+			fw_desc: "The goal: cut flash write-volume on the charge controller without losing diagnostics. <strong>My role:</strong> my lead specified the feature in a single ticket; I implemented it end to end. I turned a 15-group requirements table into code: <strong>fifteen log groups</strong> (ERROR &lt; NOTICE &lt; INFO, plus a <strong>service-technician-only DEBUG level</strong> enforced server-side), set from the WebUI, persisted to the controller's log4cpp configuration and applied live without a restart. It spans a <strong>C++ back-end handler</strong> in the existing firmware, a <strong>PHP socket bridge</strong> and a <strong>net-new Angular/TypeScript</strong> configuration page, cross-compiled for ARM with the Buildroot toolchain. <strong>Result:</strong> on a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. <strong>Status:</strong> log levels verified on hardware, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.",
+			fw_kpi: "~750 KB/day log line silenced · 15 log groups · Service-only DEBUG gate · Live apply, no restart · ARM cross-compile",
+			fw_link: "Work feature · details on request",
 			cg_big: "14 Markets",
 			cg_tile: "Live Tool · Open Source",
 			cg_year: "Jul 2026 – ongoing · Self-initiated open-source tool, building in public",
@@ -734,7 +771,7 @@
 			contact_pre: "AVAILABLE FOR FULL-TIME ROLES",
 			contact_title: "Let's <em>talk.</em>",
 			contact_sub: "Test Automation Engineer · E-Mobility / EV Charging Consultant · Business &amp; Data Analyst. Aachen, EU, or remote.",
-			m1: "Business Analysis", m2: "Data Analytics", m3: "Test Automation", m_ccpp: "C/C++ · CMake (learning)", m8: "Product Strategy",
+			m1: "Business Analysis", m2: "Data Analytics", m3: "Test Automation", m_ccpp: "C/C++ · CMake", m8: "Product Strategy",
 			f_copy: "© Virendra Kowale 2026 · Aachen, Germany",
 			f_nav: "Navigation", f_home: "Home", f_work: "Work", f_about: "About", f_cv: "CV",
 			f_conn: "Connect", f_email: "Email",
@@ -771,13 +808,13 @@
 			cap1_t: "Testautomatisierung",
 			cap1_d: "Hands-on-Automatisierung auf Protokollebene für EV-Charging: automatisierte OCPP-2.0.1- &amp; -1.6-Testfälle, gebaut und ausgeführt in GitLab CI/CD.",
 			cap2_t: "Embedded-Implementierung",
-			cap2_d: "SiL- und HiL-Setups auf dem C++-Stack EVerest (gebaut mit CMake), inklusive ISO 15118-2 und ISO 15118-20.",
+			cap2_d: "Stack-übergreifende Embedded-Arbeit an der Ladecontroller-Firmware: ein C++-Backend-Handler, eine PHP-Brücke und eine neue Angular/TypeScript-Oberfläche, für ARM cross-kompiliert und auf echter Hardware verifiziert. Dazu SiL- und HiL-Setups auf dem C++-Stack EVerest (CMake) für ISO 15118-2 und -20.",
 			cap3_t: "Marktanalyse &amp; Daten",
 			cap3_d: "E-Mobility-Marktanalysen für Charge Point Operators: Recherche, Modellierung und klare Aufbereitung.",
 			cap4_t: "Prozessoptimierung",
 			cap4_d: "Eigeninitiiertes Konzept zur Automatisierung von Dokumentation und Reporting. Jira-basiert, entworfen, um dem Team Routinearbeit abzunehmen.",
-			sec02: "AUSGEWÄHLTE ARBEITEN", sec02_title: "Projekte, <em>geliefert.</em>",
-			badge_feat: "★ Highlight", badge_int: "Interne Initiative", badge_soon: "Repo folgt", badge_live: "★ Live", badge_overview: "★ Geliefert",
+			sec02: "AUSGEWÄHLTE ARBEITEN", sec02_title: "Arbeiten, <em>gebaut und getestet.</em>",
+			badge_feat: "★ Highlight", badge_int: "Interne Initiative", badge_soon: "Repo folgt", badge_live: "★ Live", badge_overview: "★ Geliefert", badge_fw: "Feature · aixACCT",
 			tile1: "Tableau-Dashboard", tile2: "Vorgeschlagen · aixACCT", tile3: "Masterarbeit · OLS-Modell",
 			tile4: "Strategieprojekt", tile5: "Gang-Klassifikation",
 			p1_year: "Jan 2026 – Feb 2026 · Case Study für eine Managementberatung im Bereich Automotive und Engineering",
@@ -791,6 +828,12 @@
 			iso_desc: "Das Ziel: Testfälle für das neue Ladeprotokoll <strong>ISO 15118-20</strong> entwickeln, erstellen und ausführen, auf dem <strong>bestehenden Charger- und EV-Simulator-Hardware-Testaufbau</strong> von aixACCT, und ISO 15118-2 als Baseline daneben validieren. Den Prüfstand habe ich auf dem Open-Source-Stack EVerest aufgebaut, zuerst rein softwareseitig (SiL), dann Hardware-in-the-Loop (HiL) über CCS/PLC, wobei jeder Protokollschritt von SLAC bis SessionStop durchlief. Dabei habe ich <strong>TLS und eine PKI</strong> unter gemeinsamer V2G-Root-CA eingerichtet und eine PKI-Trust-Chain-Diskrepanz anhand von Ladegerät-Logs und Wireshark-Traces per Root-Cause-Analyse gelöst.",
 			iso_kpi: "ISO-15118-20-Testfälle · SiL → HiL · TLS 1.2 / 1.3 · PKI / X.509 · XML-DSIG · Wireshark (TLS-keylog decrypt)",
 			iso_link: "Projektüberblick lesen",
+			fw_tile: "Firmware-Feature · Hardware-verifiziert",
+			fw_year: "2026 – laufend · aixACCT Systems · Feature-Entwicklung im Rahmen meiner Tätigkeit, end-to-end umgesetzt",
+			fw_title: "Konfigurierbare Loglevel: <em>Firmware-Feature</em>",
+			fw_desc: "Das Ziel: das Flash-Schreibvolumen des Ladecontrollers senken, ohne Diagnosefähigkeit zu verlieren. <strong>Meine Rolle:</strong> Mein Teamleiter hat das Feature in einem Ticket spezifiziert, ich habe es end-to-end umgesetzt. Eine Anforderungstabelle mit 15 Gruppen habe ich in Code übersetzt: <strong>fünfzehn Log-Gruppen</strong> (ERROR &lt; NOTICE &lt; INFO, dazu ein serverseitig abgesichertes <strong>DEBUG nur für Servicetechniker</strong>), einstellbar in der WebUI, gespeichert in der log4cpp-Konfiguration des Controllers und ohne Neustart live angewendet. Es umfasst einen <strong>C++-Backend-Handler</strong> in der bestehenden Firmware, eine <strong>PHP-Socket-Brücke</strong> und eine <strong>neue Angular/TypeScript</strong>-Konfigurationsseite, mit der Buildroot-Toolchain für ARM cross-kompiliert. <strong>Ergebnis:</strong> Auf einem echten Charger verstummte mit der OCPP-Gruppe auf NOTICE eine Logzeile, die ~750 KB pro Tag schrieb. <strong>Status:</strong> Loglevel auf Hardware verifiziert, noch nicht gemergt; Maskierung von Kennungen teilweise umgesetzt, die RFID-Karten-UID ist auf Hardware verifiziert.",
+			fw_kpi: "~750-KB/Tag-Logzeile gestoppt · 15 Log-Gruppen · DEBUG nur für Service · Live-Anwendung ohne Neustart · ARM-Cross-Compile",
+			fw_link: "Feature im Job · Details auf Anfrage",
 			cg_big: "14 Märkte",
 			cg_tile: "Live-Tool · Open Source",
 			cg_year: "Jul 2026 – laufend · Eigeninitiiertes Open-Source-Tool, Building in Public",
@@ -819,7 +862,7 @@
 			contact_pre: "VERFÜGBAR FÜR FESTANSTELLUNGEN",
 			contact_title: "Sprechen <em>wir.</em>",
 			contact_sub: "Test Automation Engineer · E-Mobility / EV-Charging-Consultant · Business &amp; Data Analyst. Aachen, EU oder remote.",
-			m1: "Business-Analyse", m2: "Datenanalyse", m3: "Testautomatisierung", m_ccpp: "C/C++ · CMake (in Einarbeitung)", m8: "Produktstrategie",
+			m1: "Business-Analyse", m2: "Datenanalyse", m3: "Testautomatisierung", m_ccpp: "C/C++ · CMake", m8: "Produktstrategie",
 			f_copy: "© Virendra Kowale 2026 · Aachen, Deutschland",
 			f_nav: "Navigation", f_home: "Start", f_work: "Projekte", f_about: "Über mich", f_cv: "Lebenslauf",
 			f_conn: "Kontakt", f_email: "E-Mail",
