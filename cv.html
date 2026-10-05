@@ -4,7 +4,7 @@
 	<title>CV — Virendra Kowale</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="The career story of Virendra Kowale. European EV market intelligence at Numbat GmbH, an RWTH Aachen M.Sc., and EV charging test automation at aixACCT Systems. German daily working language." />
+	<meta name="description" content="The career story of Virendra Kowale. European EV market intelligence at Numbat GmbH, an RWTH Aachen M.Sc., and EV charging test automation plus embedded charger-firmware work at aixACCT Systems. German daily working language." />
 	<meta name="author" content="Virendra Kowale" />
 	<meta name="theme-color" content="#0a0a0a" />
 
@@ -336,6 +336,9 @@
 				<p data-i18n="c4_p2">
 					Day to day: Jenkins, GitLab CI/CD, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems. I also extended the team's existing <strong>Grafana observability dashboard</strong> covering eight EV charging points by adding <strong>ISO 15118 session views</strong> on top of the existing car-to-charger interaction graphs, using a SQL data source, so ISO 15118 behaviour can be monitored alongside the rest of the session data.
 				</p>
+				<p data-i18n="c4_p_fw">
+					Then I moved from testing the firmware to adding to it, through a feature my lead specified in one ticket and I implemented end to end: <strong>configurable, per-subsystem log levels</strong> for the charge controller, built to cut flash write-volume without losing diagnostics. Fifteen log groups and a <strong>service-technician-only DEBUG level</strong> enforced server-side, set from the WebUI and applied live. The work spans <strong>C++ (my first feature contributions in the existing firmware codebase)</strong>, a PHP socket bridge and a <strong>net-new Angular/TypeScript</strong> configuration page, <strong>cross-compiled for ARM</strong> with the Buildroot toolchain. On a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. Status: log levels hardware-verified, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.
+				</p>
 				<div class="ramp" data-i18n="c4_call">
 					<div class="ramp-k">Fast ramp-up</div>
 					<div class="ramp-t">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>
@@ -346,7 +349,8 @@
 				<div class="chap-tags">
 					<span>EVerest SiL/HiL</span><span>ISO 15118-2 &amp; -20</span><span>OCPP 2.0.1</span>
 					<span>IEC 61851</span><span>Wireshark</span><span>OpenSSL</span><span>Python · Bash</span>
-					<span>C/C++</span><span>CMake</span><span>Jenkins · GitLab CI/CD</span><span>Embedded Linux</span><span>Grafana</span><span>SQL</span>
+					<span>C/C++</span><span>CMake</span><span>log4cpp</span><span>Angular · TypeScript</span><span>PHP</span>
+					<span>ARM cross-compile</span><span>Buildroot</span><span>Jenkins · GitLab CI/CD</span><span>Embedded Linux</span><span>Grafana</span><span>SQL</span>
 				</div>
 			</div>
 		</div>
@@ -458,6 +462,14 @@
 				<span class="arch-tags"><span>EVerest</span><span>ISO 15118</span><span>SiL/HiL</span><span>C/C++</span><span>CMake</span><span>TLS · PKI</span><span>OpenSSL</span></span>
 				<span class="arch-go" data-i18n="a_iso_go">Read overview ↗</span>
 			</a>
+
+			<!-- Configurable Log Levels — FEATURE (assigned work), not a project; "hardware-verified · pre-merge" until merged -->
+			<div class="arch">
+				<span class="arch-year" data-i18n="a_fw_year">2026 – now</span>
+				<span class="arch-name" data-i18n="a_fw_name">Configurable Log Levels (charger firmware) <span class="soon-tag">Feature</span></span>
+				<span class="arch-tags"><span>C++</span><span>log4cpp</span><span>PHP</span><span>Angular</span><span>TypeScript</span><span>ARM</span><span>Buildroot</span></span>
+				<span class="arch-go" data-i18n="a_fw_go">Hardware-verified · pre-merge</span>
+			</div>
 
 			<div class="arch">
 				<span class="arch-year">2026</span>
@@ -597,6 +609,7 @@
 			c4_date: "<span class=\"now\">NOW</span><br/>Nov 2025 – Present<span class=\"org\">aixACCT Systems GmbH<br/>Test Automation and Hardware Engineer (Part-time)</span><span class=\"org-desc\">Aachen-based specialist in measurement and test technology for EV charging infrastructure, piezo characterization, and MEMS</span>",
 			c4_p1: "Knowing the market wasn't enough. I wanted to understand the hardware it runs on, so at <strong>aixACCT Systems</strong> my main task became <strong>bringing up the new ISO 15118-20 charging protocol</strong> on the company's existing charger and EV-simulator hardware test setup, developing and running the -20 test cases end to end and validating ISO 15118-2 alongside as a baseline. I built the bench on the open-source EVerest stack, software-first (SiL) then hardware-in-the-loop (HiL), automating 10-step EV communication sequences so a hand-driven session becomes a repeatable, scripted run.",
 			c4_p2: "Day to day: Jenkins, GitLab CI/CD, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems. I also extended the team's existing <strong>Grafana observability dashboard</strong> covering eight EV charging points by adding <strong>ISO 15118 session views</strong> on top of the existing car-to-charger interaction graphs, using a SQL data source, so ISO 15118 behaviour can be monitored alongside the rest of the session data.",
+			c4_p_fw: "Then I moved from testing the firmware to adding to it, through a feature my lead specified in one ticket and I implemented end to end: <strong>configurable, per-subsystem log levels</strong> for the charge controller, built to cut flash write-volume without losing diagnostics. Fifteen log groups and a <strong>service-technician-only DEBUG level</strong> enforced server-side, set from the WebUI and applied live. The work spans <strong>C++ (my first feature contributions in the existing firmware codebase)</strong>, a PHP socket bridge and a <strong>net-new Angular/TypeScript</strong> configuration page, <strong>cross-compiled for ARM</strong> with the Buildroot toolchain. On a live charger, setting the OCPP group to NOTICE silenced a log line writing ~750 KB/day. Status: log levels hardware-verified, not yet merged; identifier masking partly implemented, with the RFID card UID verified on hardware.",
 			c4_call: "<div class=\"ramp-k\">Fast ramp-up</div><div class=\"ramp-t\">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>",
 			c4_p3: "Out of the documentation work emerged my own initiative: a concept for <strong>AI-supported automation of technical reporting workflows</strong> (Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), human-in-the-loop). It carries a <strong>projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost, proposed to department leadership, with implementation starting. The commercial instinct never left; it just gained an engineering counterpart.",
 			c5_num: "<strong>05</strong> / FEATURED ANALYSIS",
@@ -624,6 +637,9 @@
 			c7_title: "Everything, <em>in one list.</em>",
 			a_iso_name: "ISO 15118-2 &amp; -20 SiL/HiL Integration",
 			a_iso_go: "Read overview ↗",
+			a_fw_year: "2026 – now",
+			a_fw_name: "Configurable Log Levels (charger firmware) <span class=\"soon-tag\">Feature</span>",
+			a_fw_go: "Hardware-verified · pre-merge",
 			a_doc_name: "Documentation Automation Initiative <span class=\"soon-tag\">Internal</span>",
 			a_doc_go: "Details on request",
 			a_pipe_name: "Prozessautomatisierung: Reporting Pipeline <span class=\"soon-tag\">Link soon</span>",
@@ -668,6 +684,7 @@
 			c4_date: "<span class=\"now\">JETZT</span><br/>Nov 2025 – heute<span class=\"org\">aixACCT Systems GmbH<br/>Test Automation and Hardware Engineer (Teilzeit)</span><span class=\"org-desc\">Aachener Spezialist für Mess- und Prüftechnik für EV-Ladeinfrastruktur, Piezo-Charakterisierung und MEMS</span>",
 			c4_p1: "Den Markt zu kennen reichte mir nicht. Ich wollte die Hardware darunter verstehen. Bei <strong>aixACCT Systems</strong> wurde meine Hauptaufgabe daher, <strong>das neue Ladeprotokoll ISO 15118-20 in Betrieb zu nehmen</strong>, auf dem bestehenden Charger- und EV-Simulator-Hardware-Testaufbau des Unternehmens: die -20-Testfälle end-to-end zu entwickeln und auszuführen und ISO 15118-2 als Baseline daneben zu validieren. Den Prüfstand habe ich auf dem Open-Source-Stack EVerest aufgebaut, zuerst softwareseitig (SiL), dann Hardware-in-the-Loop (HiL), und dabei 10-stufige EV-Kommunikationssequenzen automatisiert, sodass aus einer manuell gefahrenen Session ein wiederholbarer, skriptgesteuerter Lauf wird.",
 			c4_p2: "Im Alltag: Jenkins, GitLab CI/CD, Bash und Python-Automatisierung rund um <strong>IEC 61851, ISO 15118 und OCPP 2.0.1</strong>; Log- und Trace-Analyse auf Protokollebene mit Wireshark (TCP-Dump, SocketCAN) zur Fehlerdiagnose; Embedded-Linux-Testsysteme. Zudem habe ich das bestehende <strong>Grafana-Observability-Dashboard</strong> des Teams für acht Ladepunkte erweitert und <strong>ISO-15118-Session-Views</strong> zusätzlich zu den bereits vorhandenen Auto-zu-Ladegerät-Interaktionsgraphen ergänzt, unter Nutzung einer SQL-Datenquelle, sodass sich das ISO-15118-Verhalten zusammen mit den übrigen Session-Daten beobachten lässt.",
+			c4_p_fw: "Danach bin ich vom Testen der Firmware zum Erweitern übergegangen, mit einem Feature, das mein Teamleiter in einem Ticket spezifiziert und ich end-to-end umgesetzt habe: <strong>konfigurierbare Loglevel pro Subsystem</strong> für den Ladecontroller, um das Flash-Schreibvolumen zu senken, ohne Diagnosefähigkeit zu verlieren. Fünfzehn Log-Gruppen und ein serverseitig abgesichertes <strong>DEBUG nur für Servicetechniker</strong>, einstellbar in der WebUI und live angewendet. Die Arbeit umfasst <strong>C++ (meine ersten Feature-Beiträge in der bestehenden Firmware-Codebasis)</strong>, eine PHP-Socket-Brücke und eine <strong>neue Angular/TypeScript</strong>-Konfigurationsseite, mit der Buildroot-Toolchain <strong>für ARM cross-kompiliert</strong>. Auf einem echten Charger verstummte mit der OCPP-Gruppe auf NOTICE eine Logzeile, die ~750 KB pro Tag schrieb. Status: Loglevel auf Hardware verifiziert, noch nicht gemergt; Maskierung von Kennungen teilweise umgesetzt, die RFID-Karten-UID ist auf Hardware verifiziert.",
 			c4_call: "<div class=\"ramp-k\">Schnelle Einarbeitung</div><div class=\"ramp-t\">Ich habe den kompletten EV-Charging-Test-Stack selbstständig umgesetzt: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. Neue Toolchains bremsen mich nicht lange.</div>",
 			c4_p3: "Aus der Dokumentationsarbeit entstand meine eigene Initiative: ein Konzept zur <strong>KI-gestützten Automatisierung technischer Reporting-Workflows</strong> (Python, Jira, GitLab, Enterprise Claude und einen lokalen Server, DSGVO-konform konzipiert (geplant), Human-in-the-Loop). Es bringt einen <strong>prognostizierten Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€, der Bereichsleitung vorgeschlagen, Umsetzung startet. Der kommerzielle Instinkt ist nie verschwunden; er hat nur ein technisches Gegenstück bekommen.",
 			c5_num: "<strong>05</strong> / AUSGEWÄHLTE ANALYSE",
@@ -695,6 +712,9 @@
 			c7_title: "Alles, <em>in einer Liste.</em>",
 			a_iso_name: "ISO 15118-2 &amp; -20 SiL-/HiL-Integration",
 			a_iso_go: "Überblick lesen ↗",
+			a_fw_year: "2026 – heute",
+			a_fw_name: "Konfigurierbare Loglevel (Ladecontroller-Firmware) <span class=\"soon-tag\">Feature</span>",
+			a_fw_go: "Auf Hardware verifiziert · vor dem Merge",
 			a_doc_name: "Dokumentations-Automatisierungsinitiative <span class=\"soon-tag\">Intern</span>",
 			a_doc_go: "Details auf Anfrage",
 			a_pipe_name: "Prozessautomatisierung: Reporting Pipeline <span class=\"soon-tag\">Link folgt</span>",
