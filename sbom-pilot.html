@@ -99,9 +99,9 @@
 
 <section>
   <h2>01 · The goal, and what I set up</h2>
-  <p class="lead"><b>The goal:</b> know, continuously and with an audit trail, which publicly known vulnerabilities could affect the software inside a charger firmware. In a <b>20-hour pilot</b> I set up <b>Dependency-Track</b> and connected a bridge tool that repairs missing component identifiers and adds EU vulnerability data, so the firmware's software bill of materials (SBOM, 72 components) is checked against three public sources on a schedule.</p>
-  <p>The pilot answered one question: does the chain work end to end on real firmware? It does. This page describes the method and what I learned; the follow-up planning is internal.</p>
-  <div><span class="stage">Pilot &nbsp;running on one workstation</span><span class="stage proposed">Next stage &nbsp;internal</span></div>
+  <p class="lead"><b>The goal:</b> know, continuously and with an audit trail, which publicly known vulnerabilities could affect the software inside a charger firmware. In a <b>20-hour pilot</b> I set up <b>Dependency-Track</b> and connected a bridge tool that repairs missing component identifiers and adds EU vulnerability data, so the firmware's software bill of materials (SBOM, 72 components) was checked against three public sources on a schedule.</p>
+  <p>The pilot answered one question: does the chain work end to end on real firmware? It did. This page describes the method and what I learned; the follow-up planning is internal.</p>
+  <div><span class="stage">Pilot &nbsp;completed on one workstation</span><span class="stage proposed">Next stage &nbsp;internal</span></div>
 </section>
 
 <section>
@@ -346,9 +346,9 @@
   <div class="grid">
     <ul>
       <li><b>All 72 components accounted for:</b> 52 checked automatically, 20 explained.</li>
-      <li><b>The three-source check runs end to end,</b> every 6 hours and on every upload.</li>
-      <li><b>EU data is merged into the findings</b> inside Dependency-Track, next to the NVD match.</li>
-      <li>Results are available as JSON for whatever comes next.</li>
+      <li><b>The three-source check ran end to end,</b> every 6 hours and on every upload.</li>
+      <li><b>EU data was merged into the findings</b> inside Dependency-Track, next to the NVD match.</li>
+      <li>Results were available as JSON for whatever comes next.</li>
     </ul>
     <ul>
       <li><span class="k">Triage stays human.</span> A score is not a verdict: a flaw can carry a top severity rating and still not apply, for example when it only affects another operating system or a feature that is not built in. Each decision is recorded with its reason.</li>
