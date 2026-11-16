@@ -4,9 +4,9 @@
 	<title>CV — Virendra Kowale</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="The career story of Virendra Kowale. European EV market intelligence at Numbat GmbH, an RWTH Aachen M.Sc., and EV charging test automation plus embedded charger-firmware work at aixACCT Systems. German daily working language." />
+	<meta name="description" content="The career story of Virendra Kowale. European EV market intelligence at Numbat GmbH, an RWTH Aachen M.Sc., and EV charging test automation, embedded charger-firmware work and an SBOM vulnerability-tracking pilot at aixACCT Systems. German daily working language." />
 	<meta name="author" content="Virendra Kowale" />
-	<meta name="theme-color" content="#0a0a0a" />
+	<meta name="theme-color" content="#FBF8F3" />
 
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://itsviru.github.io/VirendraKowale.github.io/cv.html" />
@@ -14,7 +14,7 @@
 	<meta property="og:description" content="I pair commercial acumen with technical depth: European EV market strategy plus charging-protocol test engineering. M.Sc. RWTH Aachen." />
 	<meta name="twitter:card" content="summary" />
 
-	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23B6FF3C'%3EV%3C/text%3E%3C/svg%3E" />
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A31'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23F0A873'%3EV%3C/text%3E%3C/svg%3E" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,19 +41,28 @@
 		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 		:root {
-			--bg:        #0a0a0a;
-			--bg-2:      #111111;
-			--bg-3:      #161616;
-			--ink:       #f5f5f5;
-			--ink-2:     rgba(245,245,245,0.74);
-			--ink-3:     rgba(245,245,245,0.46);
-			--ink-4:     rgba(245,245,245,0.22);
-			--line:      rgba(245,245,245,0.10);
-			--line-2:    rgba(245,245,245,0.18);
-			--acid:      #B6FF3C;
-			--acid-dim:  #98DC2A;
-			--acid-pale: rgba(182, 255, 60, 0.10);
-			--acid-glow: rgba(182, 255, 60, 0.35);
+			/* ── COLOUR SCHEME: Copper & Petrol. Swap these lines (same block on every page) to re-theme. ── */
+			--bg:          #FBF8F3;
+			--bg-rgb:      251,248,243;
+			--bg-2:        #F3EEE6;
+			--bg-3:        #DCE9E8;
+			--ink:         #12272E;
+			--ink-rgb:     18,39,46;
+			--ink-2:       #34474D;
+			--ink-3:       #55676C;
+			--ink-4:       #A3ADAC;
+			--line:        #E6DFD3;
+			--line-2:      #D3CABB;
+			--accent:      #A8481A;
+			--accent-rgb:  168,72,26;
+			--accent-dim:  #8A3A13;
+			--accent-pale: #F8E6D8;
+			--accent-glow: rgba(var(--accent-rgb), 0.28);
+			--on-accent:   #FFFFFF;
+			--accent-2:      #0F5C66;
+			--accent-2-rgb:  15,92,102;
+			--accent-2-pale: #DFEEEE;
+			/* ── end colour scheme ── */
 			--sans:      'Geist', system-ui, sans-serif;
 			--mono:      'Geist Mono', monospace;
 			--ease:      cubic-bezier(0.22, 1, 0.36, 1);
@@ -64,26 +73,26 @@
 
 		html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 		body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.5; overflow-x: hidden; }
-		::selection { background: var(--acid); color: #000; }
+		::selection { background: var(--accent); color: var(--on-accent); }
 		a { color: inherit; text-decoration: none; }
 		.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
-		.cv-hero h1 em, .chap-title em, .cv-contact h2 em { font-style: normal; font-family: var(--sans); color: var(--acid); }
+		.cv-hero h1 em, .chap-title em, .cv-contact h2 em { font-style: normal; font-family: var(--sans); color: var(--accent); }
 
-		.nav { position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 0.3rem; padding: 0.4rem 0.5rem 0.4rem 1rem; background: rgba(15,15,15,0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--line); border-radius: 99px; font-family: var(--mono); font-size: 0.78rem; }
+		.nav { position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 0.3rem; padding: 0.4rem 0.5rem 0.4rem 1rem; background: rgba(var(--bg-rgb),0.84); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--line-2); border-radius: 99px; box-shadow: 0 6px 24px rgba(var(--ink-rgb),0.08); font-family: var(--mono); font-size: 0.78rem; }
 		.nav-logo { display: inline-flex; align-items: center; gap: 0.5em; color: var(--ink); padding-right: 0.7rem; border-right: 1px solid var(--line); }
-		.nav-logo-dot { width: 7px; height: 7px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 10px var(--acid-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
+		.nav-logo-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
 		@keyframes dot-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.65; transform: scale(0.85); } }
 		.nav-links { display: flex; gap: 0.1rem; }
 		.nav-links a { padding: 0.45rem 0.85rem; color: var(--ink-3); border-radius: 99px; transition: color 0.2s, background 0.2s; font-size: 0.74rem; letter-spacing: 0.02em; }
-		.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
-		.nav-links a.active { color: var(--acid); }
+		.nav-links a:hover { color: var(--ink); background: rgba(var(--ink-rgb),0.06); }
+		.nav-links a.active { color: var(--accent); }
 		.lang-switch { display: flex; gap: 0.1rem; padding: 0 0.35rem; border-left: 1px solid var(--line); }
 		.lang-switch button { font-family: var(--mono); font-size: 0.68rem; padding: 0.38rem 0.5rem; background: transparent; border: none; color: var(--ink-3); cursor: pointer; border-radius: 99px; transition: color 0.2s, background 0.2s; letter-spacing: 0.04em; }
 		.lang-switch button:hover { color: var(--ink); }
-		.lang-switch button.active { color: var(--acid); background: var(--acid-pale); }
-		.nav-cta { background: var(--acid); color: #0a0a0a !important; padding: 0.5rem 1rem; border-radius: 99px; font-weight: 600; transition: background 0.2s; }
-		.nav-cta:hover { background: var(--acid-dim); }
+		.lang-switch button.active { color: var(--accent); background: var(--accent-pale); }
+		.nav-cta { background: var(--accent); color: var(--on-accent) !important; padding: 0.5rem 1rem; border-radius: 99px; font-weight: 600; transition: background 0.2s; }
+		.nav-cta:hover { background: var(--accent-dim); }
 		@media (max-width: 720px) {
 			.nav { top: 0.8rem; padding: 0.35rem 0.4rem 0.35rem 0.85rem; }
 			.nav-links a { padding: 0.4rem 0.5rem; font-size: 0.66rem; }
@@ -92,30 +101,30 @@
 		}
 
 		.cv-hero { position: relative; padding: 10rem 0 4rem; overflow: hidden; }
-		.cv-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(182,255,60,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(182,255,60,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, black 0%, transparent 70%); pointer-events: none; }
+		.cv-hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--accent-2-rgb),0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--accent-2-rgb),0.09) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, black 0%, transparent 70%); pointer-events: none; }
 		.cv-hero-inner { position: relative; z-index: 1; }
-		.cv-eyebrow { font-family: var(--mono); font-size: 0.74rem; color: var(--acid); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.4rem; display: inline-flex; align-items: center; gap: 0.5em; }
-		.cv-eyebrow::before { content: ''; width: 8px; height: 8px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 12px var(--acid-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
+		.cv-eyebrow { font-family: var(--mono); font-size: 0.74rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.4rem; display: inline-flex; align-items: center; gap: 0.5em; }
+		.cv-eyebrow::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px var(--accent-glow); animation: dot-pulse 2.4s ease-in-out infinite; }
 		.cv-hero h1 { font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; margin-bottom: 1.4rem; }
 		.cv-hero-sub { font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; color: var(--ink-2); max-width: 52ch; line-height: 1.55; margin-bottom: 2.2rem; letter-spacing: -0.01em; }
 		.cv-meta-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 		.cv-meta-pill { display: inline-flex; align-items: center; gap: 0.45em; font-family: var(--mono); font-size: 0.74rem; padding: 0.45em 0.9em; background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 99px; color: var(--ink-2); }
-		.print-btn { display: inline-flex; align-items: center; gap: 0.45em; font-family: var(--mono); font-size: 0.74rem; padding: 0.45em 0.95em; background: var(--acid-pale); border: 1px solid var(--acid); border-radius: 99px; color: var(--acid) !important; cursor: pointer; transition: background 0.2s; }
-		.print-btn:hover { background: rgba(182,255,60,0.18); }
+		.print-btn { display: inline-flex; align-items: center; gap: 0.45em; font-family: var(--mono); font-size: 0.74rem; padding: 0.45em 0.95em; background: var(--accent-pale); border: 1px solid var(--accent); border-radius: 99px; color: var(--accent) !important; cursor: pointer; transition: background 0.2s; }
+		.print-btn:hover { background: rgba(var(--accent-rgb),0.18); }
 
 		section { padding: 4.5rem 0; }
 		.chap-head { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin-bottom: 2.4rem; }
 		@media (min-width: 880px) { .chap-head { grid-template-columns: 1fr 2fr; gap: 3rem; align-items: end; } }
 		.chap-num { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line); width: fit-content; }
-		.chap-num strong { color: var(--acid); font-weight: 500; }
+		.chap-num strong { color: var(--accent); font-weight: 500; }
 		.chap-title { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
 
 		.chap-body { display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
 		@media (min-width: 880px) { .chap-body { grid-template-columns: 190px 1fr; gap: 3rem; } }
 		.chap-date { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.04em; padding-top: 0.25rem; }
 		.chap-date .org { display: block; color: var(--ink-2); margin-top: 0.4rem; font-size: 0.74rem; line-height: 1.5; }
-		.chap-date .now { display: inline-flex; align-items: center; gap: 0.35em; color: var(--acid); font-weight: 600; }
-		.chap-date .now::before { content: ''; width: 6px; height: 6px; background: var(--acid); border-radius: 50%; animation: dot-pulse 2.4s ease-in-out infinite; }
+		.chap-date .now { display: inline-flex; align-items: center; gap: 0.35em; color: var(--accent); font-weight: 600; }
+		.chap-date .now::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: dot-pulse 2.4s ease-in-out infinite; }
 		.org-desc { display: block; color: var(--ink-3); font-size: 0.7rem; margin-top: 0.35rem; line-height: 1.5; font-family: var(--sans); font-weight: 300; }
 		.chap-text p { font-size: 0.96rem; line-height: 1.78; color: var(--ink-2); font-weight: 300; margin-bottom: 1rem; max-width: 62ch; }
 		.chap-text p strong { color: var(--ink); font-weight: 600; }
@@ -123,15 +132,15 @@
 		.chap-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 		.chap-tags span { font-family: var(--mono); font-size: 0.68rem; padding: 0.22em 0.65em; background: var(--bg-2); border: 1px solid var(--line-2); color: var(--ink-2); border-radius: 99px; }
 
-		.ramp { border: 1px solid var(--line-2); border-left: 2px solid var(--acid); background: var(--bg-2); border-radius: 12px; padding: 1rem 1.2rem; margin: 0 0 1.3rem; max-width: 62ch; }
-		.ramp-k { font-family: var(--mono); font-size: 0.62rem; color: var(--acid); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+		.ramp { border: 1px solid var(--line-2); border-left: 2px solid var(--accent); background: var(--bg-2); border-radius: 12px; padding: 1rem 1.2rem; margin: 0 0 1.3rem; max-width: 62ch; }
+		.ramp-k { font-family: var(--mono); font-size: 0.62rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
 		.ramp-t { font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); font-weight: 300; }
 
 		.divider { border: none; border-top: 1px solid var(--line); margin: 0 auto; max-width: var(--max); }
 
-		.feat-card { display: block; background: linear-gradient(135deg, rgba(182,255,60,0.06), transparent 55%), var(--bg-2); border: 1px solid var(--line-2); border-radius: 18px; padding: 1.8rem 2rem; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); margin-bottom: 1.2rem; }
-		.feat-card:hover { border-color: var(--acid); transform: translateY(-3px); }
-		.feat-card .fc-eyebrow { font-family: var(--mono); font-size: 0.66rem; color: var(--acid); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.7rem; }
+		.feat-card { display: block; background: linear-gradient(135deg, rgba(var(--accent-rgb),0.06), transparent 55%), var(--bg-2); border: 1px solid var(--line-2); border-radius: 18px; padding: 1.8rem 2rem; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); margin-bottom: 1.2rem; }
+		.feat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+		.feat-card .fc-eyebrow { font-family: var(--mono); font-size: 0.66rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.7rem; }
 		.feat-card h3 { font-weight: 650; font-size: clamp(1.25rem, 2.4vw, 1.6rem); letter-spacing: -0.025em; margin-bottom: 0.7rem; line-height: 1.2; }
 		.feat-card p { font-size: 0.9rem; line-height: 1.7; color: var(--ink-2); font-weight: 300; max-width: 62ch; margin-bottom: 1rem; }
 		.feat-card p strong { color: var(--ink); font-weight: 600; }
@@ -142,7 +151,7 @@
 		.thesis-mi .v { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
 
 		.role-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.4rem; }
-		.role-pill { font-family: var(--mono); font-size: 0.8rem; padding: 0.6em 1.1em; background: var(--acid-pale); border: 1px solid var(--acid); color: var(--acid); border-radius: 99px; }
+		.role-pill { font-family: var(--mono); font-size: 0.8rem; padding: 0.6em 1.1em; background: var(--accent-pale); border: 1px solid var(--accent); color: var(--accent); border-radius: 99px; }
 		.lang-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 		.lang-pill { font-family: var(--mono); font-size: 0.72rem; padding: 0.35em 0.8em; background: var(--bg-2); border: 1px solid var(--line-2); color: var(--ink-2); border-radius: 99px; }
 		.lang-pill strong { color: var(--ink); font-weight: 600; }
@@ -150,7 +159,7 @@
 		.arch-list { display: flex; flex-direction: column; }
 		.arch { display: grid; grid-template-columns: 1fr; gap: 0.6rem; padding: 1.4rem 0; border-top: 1px solid var(--line); transition: background 0.3s var(--ease), padding 0.3s var(--ease); }
 		.arch:last-child { border-bottom: 1px solid var(--line); }
-		a.arch:hover { background: linear-gradient(90deg, var(--acid-pale), transparent 60%); padding-left: 1rem; padding-right: 1rem; }
+		a.arch:hover { background: linear-gradient(90deg, var(--accent-pale), transparent 60%); padding-left: 1rem; padding-right: 1rem; }
 		@media (min-width: 880px) { .arch { grid-template-columns: 130px 1.5fr 1fr auto; gap: 1.6rem; align-items: center; } }
 		.arch-year { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-3); }
 		.arch-name { font-size: 0.98rem; font-weight: 600; letter-spacing: -0.01em; }
@@ -158,33 +167,45 @@
 		.arch-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 		.arch-tags span { font-family: var(--mono); font-size: 0.64rem; padding: 0.18em 0.55em; background: var(--bg-2); border: 1px solid var(--line); color: var(--ink-3); border-radius: 99px; }
 		.arch-go { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-3); display: inline-flex; align-items: center; gap: 0.35em; transition: color 0.2s; }
-		a.arch:hover .arch-go { color: var(--acid); }
+		a.arch:hover .arch-go { color: var(--accent); }
 		.arch-go svg { width: 11px; height: 11px; }
 
 		.cv-contact { text-align: center; padding: 6rem 0; }
 		.cv-contact h2 { font-size: clamp(2.2rem, 6.5vw, 4.2rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; margin-bottom: 1.6rem; }
 		.cv-contact .sub { font-size: clamp(1rem, 1.7vw, 1.25rem); font-weight: 400; color: var(--ink-2); max-width: 48ch; margin: 0 auto 2.2rem; line-height: 1.55; }
-		.contact-cta { display: inline-flex; align-items: center; gap: 0.6em; font-size: 1rem; font-weight: 600; padding: 1.05em 1.9em; background: var(--acid); color: #0a0a0a !important; border-radius: 99px; transition: all 0.25s var(--ease); }
-		.contact-cta:hover { box-shadow: 0 0 0 8px var(--acid-pale); transform: translateY(-2px); }
+		.contact-cta { display: inline-flex; align-items: center; gap: 0.6em; font-size: 1rem; font-weight: 600; padding: 1.05em 1.9em; background: var(--accent); color: var(--on-accent) !important; border-radius: 99px; transition: all 0.25s var(--ease); }
+		.contact-cta:hover { box-shadow: 0 0 0 8px var(--accent-pale); transform: translateY(-2px); }
 		.contact-cta svg { width: 17px; height: 17px; transition: transform 0.25s; }
 		.contact-cta:hover svg { transform: translate(3px, -3px); }
 
 		footer { border-top: 1px solid var(--line); padding: 2.4rem 0; }
 		.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); }
-		.footer-bottom a:hover { color: var(--acid); }
+		.footer-bottom a:hover { color: var(--accent); }
 
 		.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
 		.reveal.in { opacity: 1; transform: translateY(0); }
 		@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } .reveal { opacity: 1; transform: none; } }
 
+		/* ── SECOND COLOUR (petrol): small labels and numbers ── */
+		.chap-num strong, .feat-card .fc-eyebrow, .thesis-mi .k { color: var(--accent-2); }
+		.lang-switch button.active { color: var(--accent-2); background: var(--accent-2-pale); }
+		.ramp { border-left-color: var(--accent-2); } .ramp-k { color: var(--accent-2); }
+		/* ── DARK BAND: these elements invert the scheme (deep petrol, light copper accent) ── */
+		.cv-contact, footer {
+			--bg: #0F2A31; --bg-rgb: 15,42,49; --bg-2: #17363E; --ink: #F6F1E8; --ink-rgb: 246,241,232; --ink-2: #D5DCDA; --ink-3: #9FB2B3; --ink-4: #5F777B;
+			--line: #24444C; --line-2: #345860; --accent: #F0A873; --accent-rgb: 240,168,115; --accent-dim: #F6BC92; --accent-pale: rgba(var(--accent-rgb), 0.14); --accent-glow: rgba(var(--accent-rgb), 0.3); --on-accent: #12272E;
+		}
+		.cv-contact, footer { background: var(--bg); color: var(--ink); }
+
 		@media print {
-			:root { --bg: #ffffff; --bg-2: #f6f6f6; --bg-3: #efefef; --ink: #111; --ink-2: #333; --ink-3: #666; --ink-4: #999; --line: #ddd; --line-2: #ccc; --acid: #4a7c00; --acid-pale: #eef6df; --acid-glow: transparent; }
-			body { background: #fff; color: #111; }
+			:root { --bg: #ffffff; --bg-rgb: 255,255,255; --accent-glow: transparent; }
+			.cv-contact, footer { --bg: #ffffff; --ink: #12272E; --ink-2: #34474D; --ink-3: #55676C; --line: #E6DFD3; --accent: #A8481A; --on-accent: #ffffff; }
+			body { background: #fff; color: var(--ink); }
 			.nav, .cv-hero-bg, .print-btn { display: none !important; }
 			.cv-hero { padding: 1.5rem 0 1rem; }
 			section { padding: 1.2rem 0; }
 			.reveal { opacity: 1 !important; transform: none !important; }
-			a { color: #111; }
+			a { color: var(--ink); }
 			.feat-card, .arch, .chap-body, .ramp { break-inside: avoid; }
 		}
 	</style>
@@ -339,6 +360,10 @@
 				<p data-i18n="c4_p_fw">
 					Then I moved from testing the firmware to adding to it: an assigned feature I implemented end to end, with <strong>15 configurable log groups</strong> (service-only DEBUG) to cut flash writes and <strong>masking of RFID UIDs, EMAIDs, MAC addresses and contract-certificate serials</strong> in everyday logs. It spans <strong>C++ (my first contributions to the existing firmware)</strong>, PHP and a new Angular page, cross-compiled for ARM. On a live charger it silenced a ~750 KB/day log line and masked tapped RFID UIDs.
 				</p>
+				<!-- SBOM vulnerability-tracking pilot (aixACCT). Status wording: pilot; company setup proposed. Overview page: sbom-pilot.html -->
+				<p data-i18n="c4_p_sbom">
+					Most recently I ran a 20-hour pilot for <strong>continuous vulnerability tracking</strong> of that same firmware: <strong>Dependency-Track</strong> plus a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data. In the pilot, the 72-component Buildroot SBOM is checked every 6 hours against three deliberately chosen sources: <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws. I closed or classified every identifier gap (52 components matched automatically, the other 20 explained) and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong> for actively exploited vulnerabilities.
+				</p>
 				<div class="ramp" data-i18n="c4_call">
 					<div class="ramp-k">Fast ramp-up</div>
 					<div class="ramp-t">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>
@@ -351,6 +376,7 @@
 					<span>IEC 61851</span><span>Wireshark</span><span>OpenSSL</span><span>Python · Bash</span>
 					<span>C/C++</span><span>CMake</span><span>log4cpp</span><span>Angular · TypeScript</span><span>PHP</span>
 					<span>ARM cross-compile</span><span>Buildroot</span><span>Jenkins · GitLab CI/CD</span><span>Embedded Linux</span><span>Grafana</span><span>SQL</span>
+					<span>SBOM · Dependency-Track</span><span>NVD · EUVD · KEV</span><span>CPE</span><span>Cyber Resilience Act</span>
 				</div>
 			</div>
 		</div>
@@ -471,6 +497,14 @@
 				<span class="arch-tags"><span>C++</span><span>log4cpp</span><span>Data masking</span><span>PHP</span><span>Angular</span><span>TypeScript</span><span>ARM</span><span>Buildroot</span></span>
 				<span class="arch-go" data-i18n="a_fw_go">Merged · hardware-verified</span>
 			</div>
+
+			<!-- SBOM vulnerability-tracking pilot (aixACCT). Status wording: pilot; company setup proposed. Overview page: sbom-pilot.html -->
+			<a href="sbom-pilot.html" target="_blank" rel="noopener" class="arch">
+				<span class="arch-year" data-i18n="a_sbom_year">2026 – now</span>
+				<span class="arch-name" data-i18n="a_sbom_name">Vulnerability Tracking Pilot: SBOM + Dependency-Track <span class="soon-tag">Pilot</span></span>
+				<span class="arch-tags"><span>Dependency-Track</span><span>SBOM</span><span>CPE</span><span>NVD · EUVD · KEV</span><span>Python</span><span>Buildroot</span><span>CRA</span></span>
+				<span class="arch-go" data-i18n="a_sbom_go">Read overview ↗</span>
+			</a>
 
 			<div class="arch">
 				<span class="arch-year">2026</span>
@@ -611,6 +645,7 @@
 			c4_p1: "Knowing the market wasn't enough. I wanted to understand the hardware it runs on, so at <strong>aixACCT Systems</strong> my main task became <strong>bringing up the new ISO 15118-20 charging protocol</strong> on the company's existing charger and EV-simulator hardware test setup, developing and running the -20 test cases end to end and validating ISO 15118-2 alongside as a baseline. I built the bench on the open-source EVerest stack, software-first (SiL) then hardware-in-the-loop (HiL), automating 10-step EV communication sequences so a hand-driven session becomes a repeatable, scripted run.",
 			c4_p2: "Day to day: Jenkins, GitLab CI/CD, Bash, and Python automation across <strong>IEC 61851, ISO 15118, and OCPP 2.0.1</strong>; protocol-level log and trace analysis with Wireshark (TCP dump, SocketCAN) for fault diagnosis; embedded Linux test systems. I also extended the team's existing <strong>Grafana observability dashboard</strong> covering eight EV charging points by adding <strong>ISO 15118 session views</strong> on top of the existing car-to-charger interaction graphs, using a SQL data source, so ISO 15118 behaviour can be monitored alongside the rest of the session data.",
 			c4_p_fw: "Then I moved from testing the firmware to adding to it: an assigned feature I implemented end to end, with <strong>15 configurable log groups</strong> (service-only DEBUG) to cut flash writes and <strong>masking of RFID UIDs, EMAIDs, MAC addresses and contract-certificate serials</strong> in everyday logs. It spans <strong>C++ (my first contributions to the existing firmware)</strong>, PHP and a new Angular page, cross-compiled for ARM. On a live charger it silenced a ~750 KB/day log line and masked tapped RFID UIDs.",
+			c4_p_sbom: "Most recently I ran a 20-hour pilot for <strong>continuous vulnerability tracking</strong> of that same firmware: <strong>Dependency-Track</strong> plus a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data. In the pilot, the 72-component Buildroot SBOM is checked every 6 hours against three deliberately chosen sources: <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws. I closed or classified every identifier gap (52 components matched automatically, the other 20 explained) and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong> for actively exploited vulnerabilities.",
 			c4_call: "<div class=\"ramp-k\">Fast ramp-up</div><div class=\"ramp-t\">I implemented the entire EV-charging test stack independently: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. New toolchains don't slow me down for long.</div>",
 			c4_p3: "Out of the documentation work emerged my own initiative: a concept for <strong>AI-supported automation of technical reporting workflows</strong> (Python, Jira, GitLab, Enterprise Claude and a local server, GDPR-compliant by design (planned), human-in-the-loop). It carries a <strong>projected €35–45k annual efficiency gain (personal estimate)</strong> at under €3.3k implementation cost, proposed to department leadership, with implementation starting. The commercial instinct never left; it just gained an engineering counterpart.",
 			c5_num: "<strong>05</strong> / FEATURED ANALYSIS",
@@ -641,6 +676,9 @@
 			a_fw_year: "2026 – now",
 			a_fw_name: "Log Levels &amp; Identifier Masking (charger firmware) <span class=\"soon-tag\">Feature</span>",
 			a_fw_go: "Merged · hardware-verified",
+			a_sbom_year: "2026 – now",
+			a_sbom_name: "Vulnerability Tracking Pilot: SBOM + Dependency-Track <span class=\"soon-tag\">Pilot</span>",
+			a_sbom_go: "Read overview ↗",
 			a_doc_name: "Documentation Automation Initiative <span class=\"soon-tag\">Internal</span>",
 			a_doc_go: "Details on request",
 			a_pipe_name: "Prozessautomatisierung: Reporting Pipeline <span class=\"soon-tag\">Link soon</span>",
@@ -686,6 +724,7 @@
 			c4_p1: "Den Markt zu kennen reichte mir nicht. Ich wollte die Hardware darunter verstehen. Bei <strong>aixACCT Systems</strong> wurde meine Hauptaufgabe daher, <strong>das neue Ladeprotokoll ISO 15118-20 in Betrieb zu nehmen</strong>, auf dem bestehenden Charger- und EV-Simulator-Hardware-Testaufbau des Unternehmens: die -20-Testfälle end-to-end zu entwickeln und auszuführen und ISO 15118-2 als Baseline daneben zu validieren. Den Prüfstand habe ich auf dem Open-Source-Stack EVerest aufgebaut, zuerst softwareseitig (SiL), dann Hardware-in-the-Loop (HiL), und dabei 10-stufige EV-Kommunikationssequenzen automatisiert, sodass aus einer manuell gefahrenen Session ein wiederholbarer, skriptgesteuerter Lauf wird.",
 			c4_p2: "Im Alltag: Jenkins, GitLab CI/CD, Bash und Python-Automatisierung rund um <strong>IEC 61851, ISO 15118 und OCPP 2.0.1</strong>; Log- und Trace-Analyse auf Protokollebene mit Wireshark (TCP-Dump, SocketCAN) zur Fehlerdiagnose; Embedded-Linux-Testsysteme. Zudem habe ich das bestehende <strong>Grafana-Observability-Dashboard</strong> des Teams für acht Ladepunkte erweitert und <strong>ISO-15118-Session-Views</strong> zusätzlich zu den bereits vorhandenen Auto-zu-Ladegerät-Interaktionsgraphen ergänzt, unter Nutzung einer SQL-Datenquelle, sodass sich das ISO-15118-Verhalten zusammen mit den übrigen Session-Daten beobachten lässt.",
 			c4_p_fw: "Danach bin ich vom Testen der Firmware zum Erweitern übergegangen: ein übertragenes Feature, von mir end-to-end umgesetzt, mit <strong>15 konfigurierbaren Log-Gruppen</strong> (DEBUG nur für Service) für weniger Flash-Schreibzugriffe und <strong>Maskierung von RFID-UIDs, EMAIDs, MAC-Adressen und Vertragszertifikat-Seriennummern</strong> in den Alltags-Logs. Es umfasst <strong>C++ (meine ersten Beiträge zur bestehenden Firmware)</strong>, PHP und eine neue Angular-Seite, für ARM cross-kompiliert. Auf einem echten Charger stoppte es eine Logzeile mit ~750 KB/Tag und maskierte RFID-UIDs.",
+			c4_p_sbom: "Zuletzt habe ich einen 20-Stunden-Pilot für <strong>kontinuierliches Schwachstellen-Tracking</strong> derselben Firmware durchgeführt: <strong>Dependency-Track</strong> plus eine Brücke, die fehlende Komponentenkennungen (CPEs) ergänzt und EU-Schwachstellendaten hinzufügt. Im Pilot wird die Buildroot-SBOM mit 72 Komponenten alle 6 Stunden gegen drei bewusst gewählte Quellen geprüft: <strong>NVD, EUVD und die KEV-Listen</strong> aktiv ausgenutzter Schwachstellen. Jede Kennungslücke habe ich geschlossen oder eingeordnet (52 Komponenten automatisch zugeordnet, die übrigen 20 begründet) und einen Vorschlag für die nächste Stufe erarbeitet, ausgerichtet an der <strong>24-Stunden-Meldefrist des Cyber Resilience Act</strong> für aktiv ausgenutzte Schwachstellen.",
 			c4_call: "<div class=\"ramp-k\">Schnelle Einarbeitung</div><div class=\"ramp-t\">Ich habe den kompletten EV-Charging-Test-Stack selbstständig umgesetzt: ISO 15118-2 &amp; -20, OCPP 1.6 &amp; 2.0.1, IEC 61851, EVerest SiL + HiL. Neue Toolchains bremsen mich nicht lange.</div>",
 			c4_p3: "Aus der Dokumentationsarbeit entstand meine eigene Initiative: ein Konzept zur <strong>KI-gestützten Automatisierung technischer Reporting-Workflows</strong> (Python, Jira, GitLab, Enterprise Claude und einen lokalen Server, DSGVO-konform konzipiert (geplant), Human-in-the-Loop). Es bringt einen <strong>prognostizierten Effizienzgewinn von 35–45 T€ pro Jahr (eigene Schätzung)</strong> bei Implementierungskosten unter 3,3 T€, der Bereichsleitung vorgeschlagen, Umsetzung startet. Der kommerzielle Instinkt ist nie verschwunden; er hat nur ein technisches Gegenstück bekommen.",
 			c5_num: "<strong>05</strong> / AUSGEWÄHLTE ANALYSE",
@@ -716,6 +755,9 @@
 			a_fw_year: "2026 – heute",
 			a_fw_name: "Loglevel &amp; Maskierung von Kennungen (Ladecontroller-Firmware) <span class=\"soon-tag\">Feature</span>",
 			a_fw_go: "Gemergt · auf Hardware verifiziert",
+			a_sbom_year: "2026 – heute",
+			a_sbom_name: "Schwachstellen-Tracking-Pilot: SBOM + Dependency-Track <span class=\"soon-tag\">Pilot</span>",
+			a_sbom_go: "Überblick lesen ↗",
 			a_doc_name: "Dokumentations-Automatisierungsinitiative <span class=\"soon-tag\">Intern</span>",
 			a_doc_go: "Details auf Anfrage",
 			a_pipe_name: "Prozessautomatisierung: Reporting Pipeline <span class=\"soon-tag\">Link folgt</span>",
