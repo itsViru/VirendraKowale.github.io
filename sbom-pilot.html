@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FBF8F3">
+<meta name="description" content="Overview of a pilot for continuous firmware vulnerability tracking with an SBOM, Dependency-Track and three public data sources (NVD, EUVD, KEV). Method only; product and finding details omitted.">
+<title>SBOM Vulnerability Tracking Pilot Overview</title>
+<style>
+  :root{
+    /* ── COLOUR SCHEME: Copper & Petrol. Swap these lines (same block on every page) to re-theme. ── */
+    --bg:          #FBF8F3;
+    --bg-rgb:      251,248,243;
+    --bg-2:        #F3EEE6;
+    --bg-3:        #DCE9E8;
+    --ink:         #12272E;
+    --ink-rgb:     18,39,46;
+    --ink-2:       #34474D;
+    --ink-3:       #55676C;
+    --ink-4:       #A3ADAC;
+    --line:        #E6DFD3;
+    --line-2:      #D3CABB;
+    --accent:      #A8481A;
+    --accent-rgb:  168,72,26;
+    --accent-dim:  #8A3A13;
+    --accent-pale: #F8E6D8;
+    --accent-glow: rgba(var(--accent-rgb), 0.28);
+    --on-accent:   #FFFFFF;
+    --accent-2:      #0F5C66;
+    --accent-2-rgb:  15,92,102;
+    --accent-2-pale: #DFEEEE;
+    /* ── end colour scheme ── */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:400 19px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding:48px 40px 80px;
+  }
+  .wrap{max-width:1120px;margin:0 auto}
+  .back{display:inline-block;margin-bottom:22px;color:var(--accent);font-weight:700;text-decoration:none;font-size:15px}
+  header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:12px}
+  h1{font-size:34px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--ink-3);font-size:16px;margin:0}
+  section{padding:34px 0;border-bottom:1px solid var(--line-2);page-break-inside:avoid;break-inside:avoid}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:14px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;font-weight:700}
+  p{margin:0 0 14px;max-width:74ch}
+  .lead{font-size:22px;line-height:1.5}
+  ul{margin:0;padding:0;list-style:none}
+  li{margin:0 0 12px;padding-left:26px;position:relative;max-width:80ch}
+  li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:2px;background:var(--accent)}
+  b{font-weight:700}
+  .k{color:var(--accent);font-weight:700}
+  .stage{display:inline-block;border:2px solid var(--ink);border-radius:4px;
+    padding:5px 13px;margin:8px 10px 0 0;font-size:15px;font-weight:700}
+  .stage.proposed{border:2px dashed var(--ink-3);color:var(--ink-3)}
+  figure{margin:0}
+  svg{width:100%;height:auto;display:block;border:1px solid var(--line-2);border-radius:6px}
+  figcaption{color:var(--ink-3);font-size:15px;margin-top:12px;max-width:90ch}
+  .steps{counter-reset:s;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:22px}
+  .steps div{counter-increment:s;padding:12px 14px 12px 46px;position:relative;
+    background:var(--bg-2);border-radius:5px;font-size:17px;line-height:1.45}
+  .steps div::before{content:counter(s);position:absolute;left:14px;top:12px;
+    font-weight:700;color:var(--accent);font-size:17px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 30px}
+  .note{background:var(--bg-2);border-left:5px solid var(--accent);
+    padding:16px 20px;border-radius:0 5px 5px 0;font-size:17px;margin-top:18px}
+  footer{margin-top:34px;color:var(--ink-3);font-size:14px;line-height:1.5}
+  /* SVG colours follow the scheme: these rules re-map the hex attributes inside the diagrams to the tokens above. */
+  svg [fill="#1B1F24"]{fill:var(--ink)}       svg [stroke="#1B1F24"]{stroke:var(--ink)}
+  svg [fill="#55606D"]{fill:var(--ink-3)}     svg [stroke="#55606D"]{stroke:var(--ink-3)}
+  svg [fill="#C9D1D9"]{fill:var(--line-2)}    svg [stroke="#C9D1D9"]{stroke:var(--line-2)}
+  svg [fill="#F1F3F5"]{fill:var(--bg-2)}      svg [fill="#DDE2E8"]{fill:var(--bg-3)}
+  svg [fill="#8A3B12"]{fill:var(--accent)}    svg [stroke="#8A3B12"]{stroke:var(--accent)}
+  svg [fill="#FBEEE6"]{fill:var(--accent-pale)}
+  svg [fill="#0F5C66"]{fill:var(--accent-2)}  svg [stroke="#0F5C66"]{stroke:var(--accent-2)}
+  svg{background:#FFFFFF}
+  /* phones: keep diagram labels readable by letting the diagram scroll sideways */
+  .dia{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  @media (max-width:820px){.dia svg{min-width:760px}}
+  @media print{
+    body{padding:0;font-size:11.5pt}
+    h1{font-size:20pt} .lead{font-size:13pt}
+    section{padding:16px 0} svg{border:0}
+    .steps div,.grid{font-size:11pt}
+  }
+  @page{size:A4;margin:14mm}
+  @media (max-width:820px){.steps,.grid{grid-template-columns:1fr}body{padding:28px 20px}}
+</style>
+</head>
+<body><div class="wrap">
+<a href="index.html" class="back">&larr; Back to portfolio</a>
+<header>
+  <h1>Firmware vulnerability tracking: an SBOM and Dependency-Track pilot</h1>
+  <p class="sub">Method, data sources and triage logic. Product, component and finding details deliberately omitted.</p>
+</header>
+
+<section>
+  <h2>01 · The goal, and what I set up</h2>
+  <p class="lead"><b>The goal:</b> know, continuously and with an audit trail, which publicly known vulnerabilities could affect the software inside a charger firmware. In a <b>20-hour pilot</b> I set up <b>Dependency-Track</b> and connected a bridge tool that repairs missing component identifiers and adds EU vulnerability data, so the firmware's software bill of materials (SBOM, 72 components) is checked against three public sources on a schedule.</p>
+  <p>The pilot answered one question: does the chain work end to end on real firmware? It does. This page describes the method and what I learned; the follow-up planning is internal.</p>
+  <div><span class="stage">Pilot &nbsp;running on one workstation</span><span class="stage proposed">Next stage &nbsp;internal</span></div>
+</section>
+
+<section>
+  <h2>02 · How it works, from build to decision</h2>
+  <figure>
+<div class="dia">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 420" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img" aria-label="Pipeline from firmware build to human decision">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1B1F24"/></marker>
+<marker id="pb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#55606D"/></marker></defs>
+<rect x="0" y="0" width="1060" height="420" fill="#FFFFFF"/>
+<text x="24" y="30" font-size="17" font-weight="700" fill="#1B1F24">From firmware build to a human decision</text>
+<text x="24" y="48" font-size="12" fill="#55606D">Roles and public data sources only. Product, component and finding details omitted.</text>
+<text x="24" y="92" font-size="13" font-weight="700" fill="#8A3B12">Three sources,</text>
+<text x="24" y="109" font-size="13" font-weight="700" fill="#8A3B12">chosen on purpose</text>
+<text x="24" y="128" font-size="11.5" fill="#55606D">authoritative, free, and easy</text>
+<text x="24" y="143" font-size="11.5" fill="#55606D">to justify to an auditor</text>
+<rect x="342" y="70" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#0F5C66" stroke-width="2"/>
+<text x="356" y="93" font-size="15" font-weight="700" fill="#0F5C66">EUVD</text>
+<text x="528" y="93" font-size="11" fill="#55606D" text-anchor="end">ENISA · EU</text>
+<text x="356" y="116" font-size="11.5" fill="#55606D">EU IDs, EU exploitation status</text>
+<rect x="562" y="70" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#0F5C66" stroke-width="2"/>
+<text x="576" y="93" font-size="15" font-weight="700" fill="#0F5C66">NVD</text>
+<text x="748" y="93" font-size="11" fill="#55606D" text-anchor="end">NIST · US</text>
+<text x="576" y="116" font-size="11.5" fill="#55606D">matched by product identifier</text>
+<rect x="782" y="70" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#0F5C66" stroke-width="2"/>
+<text x="796" y="93" font-size="15" font-weight="700" fill="#0F5C66">KEV</text>
+<text x="968" y="93" font-size="11" fill="#55606D" text-anchor="end">CISA + ENISA</text>
+<text x="796" y="116" font-size="11.5" fill="#55606D">flaws being actively exploited</text>
+<line x1="442" y1="132" x2="442" y2="192" stroke="#55606D" stroke-width="1.6" marker-end="url(#pb)"/>
+<line x1="610" y1="132" x2="610" y2="192" stroke="#55606D" stroke-width="1.6" marker-end="url(#pb)"/>
+<path d="M882,132 V162 H646 V192" fill="none" stroke="#55606D" stroke-width="1.6" marker-end="url(#pb)"/>
+<rect x="15" y="196" width="150" height="92" rx="8" fill="#F1F3F5" stroke="#1B1F24" stroke-width="1.6"/>
+<circle cx="19" cy="198" r="11" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="19" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">1</text>
+<text x="90" y="222" font-size="15" font-weight="700" fill="#1B1F24" text-anchor="middle">Build</text>
+<text x="90" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">Buildroot</text>
+<text x="90" y="260" font-size="11.5" fill="#55606D" text-anchor="middle">firmware build</text>
+<line x1="167" y1="242" x2="188" y2="242" stroke="#1B1F24" stroke-width="1.8" marker-end="url(#pa)"/>
+<rect x="191" y="196" width="150" height="92" rx="8" fill="#F1F3F5" stroke="#1B1F24" stroke-width="1.6"/>
+<circle cx="195" cy="198" r="11" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="195" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">2</text>
+<text x="266" y="222" font-size="15" font-weight="700" fill="#1B1F24" text-anchor="middle">SBOM</text>
+<text x="266" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">inventory of</text>
+<text x="266" y="260" font-size="11.5" fill="#55606D" text-anchor="middle">72 components</text>
+<line x1="343" y1="242" x2="364" y2="242" stroke="#1B1F24" stroke-width="1.8" marker-end="url(#pa)"/>
+<rect x="367" y="196" width="150" height="92" rx="8" fill="#DDE2E8" stroke="#1B1F24" stroke-width="2.4"/>
+<circle cx="371" cy="198" r="11" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="371" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">3</text>
+<text x="442" y="222" font-size="15" font-weight="700" fill="#1B1F24" text-anchor="middle">Repair + enrich</text>
+<text x="442" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">bridge tool:</text>
+<text x="442" y="260" font-size="11.5" fill="#55606D" text-anchor="middle">repairs identifiers,</text>
+<text x="442" y="276" font-size="11.5" fill="#55606D" text-anchor="middle">adds EU data</text>
+<line x1="519" y1="242" x2="540" y2="242" stroke="#1B1F24" stroke-width="1.8" marker-end="url(#pa)"/>
+<rect x="543" y="196" width="150" height="92" rx="8" fill="#DDE2E8" stroke="#1B1F24" stroke-width="2.4"/>
+<circle cx="547" cy="198" r="11" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="547" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">4</text>
+<text x="618" y="222" font-size="15" font-weight="700" fill="#1B1F24" text-anchor="middle">Match</text>
+<text x="618" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">Dependency-Track:</text>
+<text x="618" y="260" font-size="11.5" fill="#55606D" text-anchor="middle">portfolio and</text>
+<text x="618" y="276" font-size="11.5" fill="#55606D" text-anchor="middle">audit trail</text>
+<line x1="695" y1="242" x2="716" y2="242" stroke="#1B1F24" stroke-width="1.8" marker-end="url(#pa)"/>
+<rect x="719" y="196" width="150" height="92" rx="8" fill="#FBEEE6" stroke="#8A3B12" stroke-width="2.4"/>
+<circle cx="723" cy="198" r="11" fill="#FFFFFF" stroke="#8A3B12" stroke-width="1.6"/>
+<text x="723" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">5</text>
+<text x="794" y="222" font-size="15" font-weight="700" fill="#8A3B12" text-anchor="middle">Decide</text>
+<text x="794" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">engineers triage:</text>
+<text x="794" y="260" font-size="11.5" fill="#55606D" text-anchor="middle">affected or not?</text>
+<line x1="871" y1="242" x2="892" y2="242" stroke="#1B1F24" stroke-width="1.8" marker-end="url(#pa)"/>
+<rect x="895" y="196" width="150" height="92" rx="8" fill="#F1F3F5" stroke="#1B1F24" stroke-width="1.6"/>
+<circle cx="899" cy="198" r="11" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="899" y="202" font-size="11.5" font-weight="700" fill="#8A3B12" text-anchor="middle">6</text>
+<text x="970" y="222" font-size="15" font-weight="700" fill="#1B1F24" text-anchor="middle">Report</text>
+<text x="970" y="244" font-size="11.5" fill="#55606D" text-anchor="middle">results as JSON</text>
+<path d="M618,288 V320 H442 V292" fill="none" stroke="#8A3B12" stroke-width="2" marker-end="url(#pa)"/>
+<text x="530" y="340" font-size="12" font-weight="700" fill="#8A3B12" text-anchor="middle">re-checked every 6 hours</text>
+<text x="530" y="356" font-size="11.5" fill="#55606D" text-anchor="middle">and on every upload</text>
+<text x="794" y="310" font-size="12" font-weight="700" fill="#8A3B12" text-anchor="middle">tools flag, people decide</text>
+<text x="24" y="398" font-size="11.5" fill="#55606D">Warm boxes are people and decisions; the other boxes are tools and data.</text>
+<text x="24" y="340" font-size="11.5" fill="#55606D">Without step 3, a component with no</text>
+<text x="24" y="356" font-size="11.5" fill="#55606D">identifier is silently skipped by step 4.</text>
+</svg>
+</div>
+    <figcaption>Read left to right. The build produces an inventory; the repair step gives components the identifiers the matcher needs and adds EU data; Dependency-Track keeps the portfolio and the audit trail; engineers decide what a finding means for the product.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>03 · Why now: a 24-hour clock</h2>
+  <figure>
+<div class="dia">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 310" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img" aria-label="Cyber Resilience Act reporting clock: 24 hours, 72 hours, 14 days">
+<rect x="0" y="0" width="1060" height="310" fill="#FFFFFF"/>
+<text x="24" y="30" font-size="17" font-weight="700" fill="#1B1F24">The reporting clock for an actively exploited vulnerability</text>
+<text x="24" y="48" font-size="12" fill="#55606D">EU Cyber Resilience Act, Article 14 · applies since 11 September 2026 · spacing not to scale</text>
+<line x1="90" y1="150" x2="940" y2="150" stroke="#C9D1D9" stroke-width="4"/>
+<line x1="90" y1="150" x2="340" y2="150" stroke="#8A3B12" stroke-width="10"/>
+<circle cx="90" cy="150" r="10" fill="#1B1F24"/>
+<circle cx="340" cy="150" r="12" fill="#8A3B12"/>
+<circle cx="610" cy="150" r="9" fill="#FFFFFF" stroke="#1B1F24" stroke-width="3"/>
+<circle cx="940" cy="150" r="9" fill="#FFFFFF" stroke="#1B1F24" stroke-width="3"/>
+<text x="90" y="118" font-size="22" font-weight="700" fill="#1B1F24" text-anchor="middle">T0</text>
+<text x="340" y="120" font-size="44" font-weight="700" fill="#8A3B12" text-anchor="middle">24 h</text>
+<text x="610" y="120" font-size="34" font-weight="700" fill="#1B1F24" text-anchor="middle">72 h</text>
+<text x="940" y="120" font-size="34" font-weight="700" fill="#1B1F24" text-anchor="middle">14 days</text>
+<text x="90" y="186" font-size="12.5" font-weight="700" fill="#1B1F24" text-anchor="middle">manufacturer</text>
+<text x="90" y="202" font-size="12.5" font-weight="700" fill="#1B1F24" text-anchor="middle">becomes aware</text>
+<text x="340" y="186" font-size="12.5" font-weight="700" fill="#8A3B12" text-anchor="middle">early warning</text>
+<text x="610" y="186" font-size="12.5" font-weight="700" fill="#1B1F24" text-anchor="middle">full notification</text>
+<text x="940" y="186" font-size="12.5" font-weight="700" fill="#1B1F24" text-anchor="middle">final report</text>
+<text x="940" y="202" font-size="11.5" fill="#55606D" text-anchor="middle">after a fix is available</text>
+<rect x="24" y="236" width="316" height="52" rx="8" fill="#F1F3F5" stroke="#1B1F24" stroke-width="1.6"/>
+<text x="40" y="258" font-size="12.5" font-weight="700" fill="#1B1F24">Tooling: "are we affected?" becomes a lookup</text>
+<text x="40" y="276" font-size="11.5" fill="#55606D">an SBOM matched against the KEV lists</text>
+<rect x="360" y="236" width="330" height="52" rx="8" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.6"/>
+<text x="376" y="258" font-size="12.5" font-weight="700" fill="#8A3B12">Process: triage, ownership, reporting</text>
+<text x="376" y="276" font-size="11.5" fill="#55606D">the parts no tool does for you</text>
+<text x="714" y="258" font-size="11.5" fill="#55606D">Reports go to the national CSIRT and ENISA</text>
+<text x="714" y="276" font-size="11.5" fill="#55606D">through the EU single reporting platform.</text>
+</svg>
+</div>
+    <figcaption>Since 11 September 2026 a manufacturer has to report an actively exploited vulnerability in a product it sells, starting with an early warning within 24 hours of becoming aware. Twenty-four hours from awareness leaves no time to find out what is inside a product, so that answer has to exist before the flaw does. Continuous SBOM tracking provides it; triage, ownership and reporting are process work around the tool.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>04 · The identifier gap, worked</h2>
+  <figure>
+<div class="dia">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 280" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img" aria-label="72 components: 52 checked automatically, 20 explained">
+<rect x="0" y="0" width="1060" height="280" fill="#FFFFFF"/>
+<text x="24" y="30" font-size="17" font-weight="700" fill="#1B1F24">72 components, every one accounted for</text>
+<text x="24" y="48" font-size="12" fill="#55606D">One square per component in the SBOM. Component names deliberately omitted.</text>
+<rect x="30" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="30" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="30" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="30" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="62" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="62" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="62" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="62" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="94" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="94" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="94" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="94" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="126" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="126" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="126" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="126" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="158" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="158" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="158" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="158" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="190" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="190" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="190" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="190" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="222" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="222" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="222" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="222" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="254" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="254" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="254" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="254" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="286" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="286" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="286" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="286" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="318" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="318" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="318" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="318" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="350" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="350" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="350" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="350" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="382" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="382" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="382" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="382" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="414" y="72" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="414" y="104" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="414" y="136" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="414" y="168" width="26" height="26" rx="5" fill="#0F5C66"/>
+<rect x="464" y="72" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="496" y="72" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="528" y="72" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="560" y="72" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="592" y="72" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="464" y="104" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="496" y="104" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="528" y="104" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="560" y="104" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="592" y="104" width="26" height="26" rx="5" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<rect x="464" y="136" width="26" height="26" rx="5" fill="#8A3B12"/>
+<rect x="496" y="136" width="26" height="26" rx="5" fill="#8A3B12"/>
+<rect x="528" y="136" width="26" height="26" rx="5" fill="#8A3B12"/>
+<rect x="560" y="136" width="26" height="26" rx="5" fill="#8A3B12"/>
+<rect x="592" y="136" width="26" height="26" rx="5" fill="#8A3B12"/>
+<rect x="464" y="168" width="26" height="26" rx="5" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="496" y="168" width="26" height="26" rx="5" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="528" y="168" width="26" height="26" rx="5" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="560" y="168" width="26" height="26" rx="5" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6" stroke-dasharray="4 3"/>
+<rect x="592" y="168" width="26" height="26" rx="5" fill="#DDE2E8" stroke="#1B1F24" stroke-width="1.8"/>
+<line x1="30" y1="208" x2="440" y2="208" stroke="#0F5C66" stroke-width="2"/>
+<text x="235" y="228" font-size="13" font-weight="700" fill="#0F5C66" text-anchor="middle">52 checked automatically</text>
+<line x1="464" y1="208" x2="618" y2="208" stroke="#8A3B12" stroke-width="1.6"/>
+<text x="541" y="228" font-size="13" font-weight="700" fill="#8A3B12" text-anchor="middle">20 explained by hand</text>
+<rect x="668" y="74" width="20" height="20" rx="4" fill="#0F5C66"/>
+<text x="724" y="89" font-size="14" font-weight="700" fill="#1B1F24" text-anchor="end">52</text>
+<text x="734" y="89" font-size="12.5" fill="#55606D">matched by identifier, checked automatically</text>
+<rect x="668" y="104" width="20" height="20" rx="4" fill="#FBEEE6" stroke="#8A3B12" stroke-width="1.8"/>
+<text x="724" y="119" font-size="14" font-weight="700" fill="#1B1F24" text-anchor="end">10</text>
+<text x="734" y="119" font-size="12.5" fill="#55606D">never had a published CVE</text>
+<rect x="668" y="134" width="20" height="20" rx="4" fill="#8A3B12"/>
+<text x="724" y="149" font-size="14" font-weight="700" fill="#1B1F24" text-anchor="end">5</text>
+<text x="734" y="149" font-size="12.5" fill="#55606D">name appears only in other products' CVEs</text>
+<rect x="668" y="164" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#1B1F24" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="724" y="179" font-size="14" font-weight="700" fill="#1B1F24" text-anchor="end">4</text>
+<text x="734" y="179" font-size="12.5" fill="#55606D">no identifier by design</text>
+<rect x="668" y="194" width="20" height="20" rx="4" fill="#DDE2E8" stroke="#1B1F24" stroke-width="1.8"/>
+<text x="724" y="209" font-size="14" font-weight="700" fill="#1B1F24" text-anchor="end">1</text>
+<text x="734" y="209" font-size="12.5" fill="#55606D">covered through the Linux kernel</text>
+<text x="24" y="262" font-size="13" font-weight="700" fill="#8A3B12">Every one of the 20 has a written reason.</text>
+<text x="290" y="262" font-size="12" fill="#55606D">The EU data added in the repair step is a second net for components without an identifier.</text>
+</svg>
+</div>
+  </figure>
+  <div class="steps">
+    <div><b>Symptom.</b> The first upload looked healthy, but a share of the components came back with no findings at all. Not "clean": never checked.</div>
+    <div><b>Localize.</b> Those components had no machine-readable identifier (CPE), so the matcher had nothing to look up and skipped them without a warning.</div>
+    <div><b>Hypothesis.</b> The build system and the vulnerability catalogue name the same software differently, so identifiers are missing or do not line up.</div>
+    <div><b>Verify.</b> Three search passes against NVD. A plain keyword search missed one product because NVD spells it differently, so the final pass read identifiers straight from NVD's own CVE records.</div>
+    <div><b>Fix.</b> Added identifiers where a correct one exists. Deliberately left one component alone, because the only matching identifier belonged to a different product.</div>
+    <div><b>Classify.</b> Sorted the remaining 20 into four classes, each with a written reason, so nothing is silently unchecked.</div>
+  </div>
+  <p class="note"><b>The point:</b> a component without an identifier is not safe, it is unchecked. And a wrong identifier is worse than none, because it produces false findings that cost trust. The cleaner long-term fix is to set the identifier fields in the Buildroot package files, so every SBOM is correct at the source.</p>
+</section>
+
+<section>
+  <h2>05 · What the pilot shows, and how I know</h2>
+  <div class="grid">
+    <ul>
+      <li><b>All 72 components accounted for:</b> 52 checked automatically, 20 explained.</li>
+      <li><b>The three-source check runs end to end,</b> every 6 hours and on every upload.</li>
+      <li><b>EU data is merged into the findings</b> inside Dependency-Track, next to the NVD match.</li>
+      <li>Results are available as JSON for whatever comes next.</li>
+    </ul>
+    <ul>
+      <li><span class="k">Triage stays human.</span> A score is not a verdict: a flaw can carry a top severity rating and still not apply, for example when it only affects another operating system or a feature that is not built in. Each decision is recorded with its reason.</li>
+      <li><span class="k">A raw count is not a result.</span> In embedded Linux firmware, most candidate findings typically come from the kernel, many for drivers that are not compiled in. Filtering by kernel configuration is the standard way to cut that noise.</li>
+      <li><span class="k">Information, not decisions.</span> Tracking shows what may apply. Whether and when to update a component stays with the product team.</li>
+    </ul>
+  </div>
+  <p style="margin-top:14px">One trade-off accepted on purpose: limiting the check to three authoritative sources means no automatic upgrade targets and more findings for manual review. Part of that automation can be restored later without adding another vulnerability source.</p>
+</section>
+
+<section>
+  <h2>06 · What I took from it</h2>
+  <ul>
+    <li><b>An SBOM is only as good as its identifiers.</b> Count the components that were never checked before you trust the findings.</li>
+    <li><b>Few sources you can defend beat many you can't.</b> Three authoritative, free sources keep every finding explainable to an auditor.</li>
+    <li><b>Fix data at the source.</b> Identifiers belong in the build system's package definitions, not in a list of manual overrides.</li>
+    <li><b>Keep the human step visible.</b> The tool flags; a person decides, and writes down why.</li>
+  </ul>
+  <p style="margin-top:14px">After the pilot I prepared a proposal for the next stage. Its contents are internal.</p>
+</section>
+
+<footer>
+  Sources and standards referenced: NVD (NIST) · EUVD (ENISA) · KEV lists (CISA, ENISA) · CPE identifiers · Regulation (EU) 2024/2847 (Cyber Resilience Act), Article 14.<br>
+  Dependency-Track is open-source (OWASP). Method and public sources described throughout; no installation-specific detail.<br>
+  Built at aixACCT Systems. The choice of the three data sources was made together with a colleague.
+</footer>
+</div></body></html>
