@@ -467,7 +467,7 @@
 				</div>
 			</div>
 
-			<!-- SBOM vulnerability-tracking pilot (aixACCT). Status wording: pilot; company setup proposed. Overview page: sbom-pilot.html -->
+			<!-- SBOM vulnerability-tracking pilot (aixACCT). Status: pilot COMPLETED; company setup proposed. Overview page: sbom-pilot.html -->
 			<a href="sbom-pilot.html" target="_blank" rel="noopener" class="proj">
 				<div class="proj-img">
 					<span class="badge" data-i18n="badge_sbom">Pilot · aixACCT</span>
@@ -477,9 +477,9 @@
 					</div>
 				</div>
 				<div class="proj-info">
-					<div class="proj-year" data-i18n="sbom_year">2026 – ongoing · aixACCT Systems · 20-hour pilot, proposal for the next stage prepared</div>
+					<div class="proj-year" data-i18n="sbom_year">2026 · aixACCT Systems · 20-hour pilot, proposal for the next stage prepared</div>
 					<h3 class="proj-title" data-i18n="sbom_title">SBOM Vulnerability Tracking: <em>Dependency-Track Pilot</em></h3>
-					<p class="proj-desc" data-i18n="sbom_desc">A pilot for continuous vulnerability tracking of the charger firmware. I set up <strong>Dependency-Track</strong> and connected a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data, so the firmware's 72-component Buildroot SBOM is checked against <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws every 6 hours. I closed or classified every identifier gap and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong>.</p>
+					<p class="proj-desc" data-i18n="sbom_desc">A pilot for continuous vulnerability tracking of the charger firmware. I set up <strong>Dependency-Track</strong> and connected a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data, so the firmware's 72-component Buildroot SBOM was checked against <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws every 6 hours. I closed or classified every identifier gap and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong>.</p>
 					<p class="proj-kpi" data-i18n="sbom_kpi">72-component SBOM · NVD · EUVD · KEV · 52/72 auto-matched, 20 gaps classified · re-check every 6 h</p>
 				</div>
 				<div class="proj-meta">
@@ -790,9 +790,9 @@
 			fw_desc: "An assigned feature I implemented end to end: <strong>15 configurable log groups</strong> (service-only DEBUG) to cut flash writes, plus <strong>masking of RFID UIDs, EMAIDs, MAC addresses and contract-certificate serials</strong> in everyday logs. Built across C++ firmware, a PHP bridge and a new Angular page, cross-compiled for ARM. On a live charger it silenced a ~750 KB/day log line and masked tapped RFID UIDs.",
 			fw_kpi: "~750 KB/day log line silenced · 15 log groups · 4 identifier types masked · ARM",
 			sbom_tile: "Pilot · NVD · EUVD · KEV",
-			sbom_year: "2026 – ongoing · aixACCT Systems · 20-hour pilot, proposal for the next stage prepared",
+			sbom_year: "2026 · aixACCT Systems · 20-hour pilot, proposal for the next stage prepared",
 			sbom_title: "SBOM Vulnerability Tracking: <em>Dependency-Track Pilot</em>",
-			sbom_desc: "A pilot for continuous vulnerability tracking of the charger firmware. I set up <strong>Dependency-Track</strong> and connected a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data, so the firmware's 72-component Buildroot SBOM is checked against <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws every 6 hours. I closed or classified every identifier gap and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong>.",
+			sbom_desc: "A pilot for continuous vulnerability tracking of the charger firmware. I set up <strong>Dependency-Track</strong> and connected a bridge tool that repairs missing component identifiers (CPEs) and adds EU vulnerability data, so the firmware's 72-component Buildroot SBOM was checked against <strong>NVD, EUVD and the KEV lists</strong> of actively exploited flaws every 6 hours. I closed or classified every identifier gap and prepared a proposal for the next stage, framed around the <strong>Cyber Resilience Act's 24-hour reporting clock</strong>.",
 			sbom_kpi: "72-component SBOM · NVD · EUVD · KEV · 52/72 auto-matched, 20 gaps classified · re-check every 6 h",
 			sbom_link: "Read the pilot overview",
 			cg_big: "14 Markets",
@@ -886,9 +886,9 @@
 			fw_desc: "Ein übertragenes Feature, von mir end-to-end umgesetzt: <strong>15 konfigurierbare Log-Gruppen</strong> (DEBUG nur für Service) für weniger Flash-Schreibzugriffe, plus <strong>Maskierung von RFID-UIDs, EMAIDs, MAC-Adressen und Vertragszertifikat-Seriennummern</strong> in den Alltags-Logs. Umgesetzt in C++-Firmware, PHP-Brücke und neuer Angular-Seite, für ARM cross-kompiliert. Auf einem echten Charger stoppte es eine Logzeile mit ~750 KB/Tag und maskierte RFID-UIDs.",
 			fw_kpi: "~750-KB/Tag-Logzeile gestoppt · 15 Log-Gruppen · 4 Kennungstypen maskiert · ARM",
 			sbom_tile: "Pilot · NVD · EUVD · KEV",
-			sbom_year: "2026 – laufend · aixACCT Systems · 20-Stunden-Pilot, Vorschlag für die nächste Stufe erarbeitet",
+			sbom_year: "2026 · aixACCT Systems · 20-Stunden-Pilot, Vorschlag für die nächste Stufe erarbeitet",
 			sbom_title: "SBOM-Schwachstellen-Tracking: <em>Dependency-Track-Pilot</em>",
-			sbom_desc: "Ein Pilot für kontinuierliches Schwachstellen-Tracking der Ladecontroller-Firmware. Ich habe <strong>Dependency-Track</strong> aufgesetzt und eine Brücke angebunden, die fehlende Komponentenkennungen (CPEs) ergänzt und EU-Schwachstellendaten hinzufügt. So wird die Buildroot-SBOM der Firmware mit 72 Komponenten alle 6 Stunden gegen <strong>NVD, EUVD und die KEV-Listen</strong> aktiv ausgenutzter Schwachstellen geprüft. Jede Kennungslücke habe ich geschlossen oder eingeordnet und einen Vorschlag für die nächste Stufe erarbeitet, ausgerichtet an der <strong>24-Stunden-Meldefrist des Cyber Resilience Act</strong>.",
+			sbom_desc: "Ein Pilot für kontinuierliches Schwachstellen-Tracking der Ladecontroller-Firmware. Ich habe <strong>Dependency-Track</strong> aufgesetzt und eine Brücke angebunden, die fehlende Komponentenkennungen (CPEs) ergänzt und EU-Schwachstellendaten hinzufügt. So wurde die Buildroot-SBOM der Firmware mit 72 Komponenten alle 6 Stunden gegen <strong>NVD, EUVD und die KEV-Listen</strong> aktiv ausgenutzter Schwachstellen geprüft. Jede Kennungslücke habe ich geschlossen oder eingeordnet und einen Vorschlag für die nächste Stufe erarbeitet, ausgerichtet an der <strong>24-Stunden-Meldefrist des Cyber Resilience Act</strong>.",
 			sbom_kpi: "SBOM mit 72 Komponenten · NVD · EUVD · KEV · 52/72 automatisch zugeordnet, 20 Lücken eingeordnet · Prüfung alle 6 h",
 			sbom_link: "Pilot-Überblick lesen",
 			cg_big: "14 Märkte",
